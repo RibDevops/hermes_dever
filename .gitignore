@@ -1,0 +1,8 @@
+.env
+*.log
+*.tmp
+cookies.json
+telegram_cfg.json
+agenda*.json
+__pycache__/
+venv/

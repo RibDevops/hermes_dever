@@ -1,123 +1,167 @@
 #!/usr/bin/env python3
 """
-notify_telegram.py
-    • Lê o arquivo agenda_events_by_date.json (gerado por extract_details.py)
-    • Para cada dia cria uma mensagem contendo:
-        – Data (dd/mm/aaaa)
-        – Lista de eventos com: título, horário, descrição e link de download (se houver)
-    • Envia cada mensagem separadamente ao Telegram usando o Bot Token e Chat ID
-      que estão armazenados em telegram_cfg.json (formato:
-        {
-            "token": "8982897650:AAGaTtKqDQb-3AGzE2Ejrj82hGFGf5y64l0",
-            "chat_id": -5380461608
-        })
-    • Usa a API HTTP do Telegram (método sendMessage) – não depende de
-      nenhum módulo externos além do stdlib.
+Lê agenda_events_by_date.json e envia uma mensagem por dia
+ao Telegram com botão "✅ Concluir" para cada dever.
 """
 
-import json
-import pathlib
+import os
 import sys
-import urllib.request
+import json
+import re
+from datetime import datetime
 
-# ---------- Carrega credenciais do Telegram ----------
-CONFIG_PATH = pathlib.Path("/home/vboxuser/agenda/telegram_cfg.json")
-if not CONFIG_PATH.is_file():
-    sys.stderr.write("Arquivo de configuração telegram_cfg.json não encontrado.\n")
-    sys.exit(1)
+import requests
+from dotenv import load_dotenv
 
-try:
-    cfg_content = json.loads(CONFIG_PATH.read_text(encoding="utf-8"))
-    BOT_TOKEN = cfg_content["token"]
-    CHAT_ID   = str(cfg_content["chat_id"])   # Telegram aceita string numérica
-except (KeyError, json.JSONDecodeError) as e:
-    sys.stderr.write(f"Configuração inválida em telegram_cfg.json: {e}\n")
-    sys.exit(1)
+load_dotenv()
 
-# ---------- Função para enviar mensagem ----------
-def telegram_send(text: str) -> None:
-    """
-    Envia *text* para o chat especificado via método HTTP simples.
-    O Telegram aceita mensagens até 4096 caracteres; se o texto for maior,
-    ele será dividido em blocos menores.
-    """
-    url = f"https://api.telegram.org/bot{BOT_TOKEN}/sendMessage"
-    # Telegram permite parse_mode=MarkdownV2 ou HTML – aqui usamos MarkdownV2
-    payload = {
-        "chat_id": CHAT_ID,
-        "text":    text,
-        "parse_mode": "MarkdownV2"
+TELEGRAM_BOT_TOKEN = os.getenv("TELEGRAM_BOT_TOKEN", "").strip()
+TELEGRAM_CHAT_ID = os.getenv("TELEGRAM_CHAT_ID", "").strip()
+API_URL = f"https://api.telegram.org/bot{TELEGRAM_BOT_TOKEN}"
+
+MAX_MSG_LEN = 3800
+TIMEOUT = 30
+
+
+def log(msg: str):
+    print(f"[{datetime.now().isoformat()}] {msg}", flush=True)
+
+
+def escape_md(text: str) -> str:
+    return re.sub(r"([_\*\[\]\(\)~`>\#\+\-=|{}\.!])", r"\\\1", str(text))
+
+
+def truncate(text: str, max_len: int = 600) -> str:
+    if len(text) <= max_len:
+        return text
+    return text[: max_len - 3].rsplit(" ", 1)[0] + " …"
+
+
+def format_event(ev: dict, idx: int) -> tuple[str, dict]:
+    """Retorna (texto_markdown, reply_markup_inline)."""
+    title = escape_md(ev["title"])
+    time_ = escape_md(ev["time"])
+    ev_type = escape_md(ev["type"].upper())
+    author = escape_md(ev["author"])
+    desc = escape_md(truncate(ev["description"], 500))
+    eid = ev["id"]
+
+    lines = [
+        f"*🕐 {time_}*  \|  _{ev_type}_",
+        f"*{title}*",
+    ]
+    if desc:
+        lines.append(f"{desc}")
+    lines.append(f"👤 {author}")
+
+    if ev["links"]:
+        for i, link in enumerate(ev["links"][:3], 1):
+            lines.append(f"📎 [Anexo {i}]({link})")
+
+    text = "\n".join(lines)
+
+    # Botão inline para marcar como concluído
+    reply_markup = {
+        "inline_keyboard": [
+            [{"text": "✅ Concluir", "callback_data": eid}]
+        ]
     }
 
-    data = json.dumps(payload).encode("utf-8")
-    req = urllib.request.Request(url, data=data, headers={"Content-Type": "application/json"})
-    try:
-        with urllib.request.urlopen(req) as resp:
-            if resp.status != 200:
-                raise RuntimeError(f"Telegram API returned status {resp.status}")
-    except Exception as exc:
-        sys.stderr.write(f"Erro ao enviar mensagem ao Telegram: {exc}\n")
+    return text, reply_markup
 
-# ---------- Monta a mensagem por dia ----------
-def build_daily_message(date: str, events: list[dict]) -> str:
-    """
-    Recebe a data já formatada (dd/mm/aaaa) e a lista de eventos.
-    Retorna uma string pronta para ser enviada ao Telegram usando MarkdownV2.
-    """
-    lines = [f"*{date}*", ""]  # título da data em negrito
+
+def format_day(date_str: str, events: list[dict]) -> tuple[str, list[dict]]:
+    """Retorna (texto_cabeçalho, lista_de_eventos_formatados)."""
+    dt = datetime.strptime(date_str, "%Y-%m-%d")
+    weekday = ["Seg", "Ter", "Qua", "Qui", "Sex", "Sáb", "Dom"][dt.weekday()]
+    header = f"📅 *{escape_md(weekday)}, {dt.strftime('%d/%m/%Y')}*\n\n"
+    return header, events
+
+
+def send_message(text: str, reply_markup: dict = None) -> dict:
+    """Envia mensagem. Retorna dict da resposta do Telegram."""
+    url = f"{API_URL}/sendMessage"
+    payload = {
+        "chat_id": TELEGRAM_CHAT_ID,
+        "text": text,
+        "parse_mode": "MarkdownV2",
+        "disable_web_page_preview": True,
+    }
+    if reply_markup:
+        payload["reply_markup"] = json.dumps(reply_markup)
+
+    try:
+        resp = requests.post(url, json=payload, timeout=TIMEOUT)
+        resp.raise_for_status()
+        return resp.json()
+    except requests.RequestException as exc:
+        log(f"Falha ao enviar: {exc}")
+        return {"ok": False}
+
+
+def split_events(events: list[dict], header: str) -> list[tuple[str, list[dict]]]:
+    """Divide eventos em partes que caibam no limite de caracteres."""
+    parts = []
+    current_text = header
+    current_events = []
 
     for ev in events:
-        title   = ev.get("title", "Sem título")
-        time    = ev.get("time", "")
-        desc    = ev.get("description", "")
-        dl_url  = ev.get("download_url")
+        ev_text, markup = format_event(ev, 0)
+        block = ev_text + "\n\n"
+        if len(current_text) + len(block) > MAX_MSG_LEN and current_events:
+            parts.append((current_text, current_events))
+            current_text = header + block
+            current_events = [(ev_text, markup)]
+        else:
+            current_text += block
+            current_events.append((ev_text, markup))
 
-        # Construção da linha do evento
-        line = f"{time} – *{title}*"
-        if desc:
-            line += f": {desc}"
-        if dl_url:
-            # Marca o link como clickable no MarkdownV2 (escapando pontos e parênteses)
-            esc_url = dl_url.replace(".", r"\.").replace("(", r"\(").replace(")", r"\)")
-            line += f" [🔗]({esc_url})"
-        lines.append(line)
+    if current_events:
+        parts.append((current_text, current_events))
 
-    # Garante que não excedamos 4096 caracteres (limite do Telegram)
-    full_msg = "\n".join(lines)
-    if len(full_msg) > 4096:
-        # Divide em blocos de até 4000 caracteres (um pouco de margem)
-        chunks = [full_msg[i:i+4000] for i in range(0, len(full_msg), 4000)]
-        for chunk in chunks:
-            telegram_send(chunk + "\n")   # newline garante que o Telegram trate como continuação
-    else:
-        telegram_send(full_msg)
+    return parts
 
-# ---------- Main ----------
-def main() -> None:
-    json_path = pathlib.Path("/home/vboxuser/agenda/agenda_events_by_date.json")
-    if not json_path.is_file():
-        sys.stderr.write("agenda_events_by_date.json não encontrado – nada a enviar.\n")
+
+def main():
+    if not TELEGRAM_BOT_TOKEN or not TELEGRAM_CHAT_ID:
+        log("ERRO: credenciais Telegram não definidas.")
         sys.exit(1)
 
-    try:
-        data = json.loads(json_path.read_text(encoding="utf-8"))
-    except json.JSONDecodeError as e:
-        sys.stderr.write(f"Falha ao ler agenda_events_by_date.json: {e}\n")
+    if not os.path.exists("agenda_events_by_date.json"):
+        log("ERRO: agenda_events_by_date.json não encontrado.")
         sys.exit(1)
 
-    # O JSON gerado tem a estrutura:
-    # [
-    #   {"date": "23/03/2026", "events": [{...}, {...}, ...]},
-    #   {"date": "24/03/2026", "events": [...]},
-    #   ...
-    # ]
-    for entry in data:
-        date   = entry.get("date", "Data desconhecida")
-        events = entry.get("events", [])
-        if not events:
-            continue          # ignora dias sem eventos
-        message = build_daily_message(date, events)
-        telegram_send(message)
+    with open("agenda_events_by_date.json", "r", encoding="utf-8") as f:
+        agenda = json.load(f)
+
+    if not agenda:
+        log("Agenda vazia. Nada a enviar.")
+        return
+
+    total_days = len(agenda)
+    sent_days = 0
+    total_msgs = 0
+
+    for date_str in sorted(agenda.keys()):
+        events = agenda[date_str]
+        header, ev_list = format_day(date_str, events)
+
+        # Envia cabeçalho do dia
+        send_message(header)
+
+        # Envia cada evento como mensagem separada (melhor para botões inline)
+        for ev in ev_list:
+            ev_text, markup = format_event(ev, 0)
+            result = send_message(ev_text, reply_markup=markup)
+            if result.get("ok"):
+                total_msgs += 1
+            else:
+                log(f"Falha ao enviar evento {ev['id']}")
+
+        sent_days += 1
+
+    log(f"Concluído. {sent_days}/{total_days} dias, {total_msgs} mensagens enviadas.")
+
 
 if __name__ == "__main__":
     main()
