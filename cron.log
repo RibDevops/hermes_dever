@@ -1,0 +1,521 @@
+2026-08-28 22:42:13 – agenda gerada
+2026-08-28 23:09:20 – agenda gerada
+2026-08-28 23:11:06 – agenda gerada
+=== $(date '+%Y-%m-%d %H:%M:%S') - Starting agenda extraction ===
+=== $(date '+%Y-%m-%d %H:%M:%S') - Extraction completed successfully ===
+=== $(date '+%Y-%m-%d %H:%M:%S') - End of run ===
+=== $(date '+%Y-%m-%d %H:%M:%S') - Starting agenda extraction ===
+=== $(date '+%Y-%m-%d %H:%M:%S') - Extraction completed successfully ===
+=== $(date '+%Y-%m-%d %H:%M:%S') - End of run ===
+=== $(date '+%Y-%m-%d %H:%M:%S') - Starting agenda extraction ===
+=== $(date '+%Y-%m-%d %H:%M:%S') - Extraction completed successfully ===
+=== $(date '+%Y-%m-%d %H:%M:%S') - End of run ===
+=== $(date '+%Y-%m-%d %H:%M:%S') - Starting agenda extraction ===
+=== $(date '+%Y-%m-%d %H:%M:%S') - Extraction FAILED with exit code $? ===
+=== $(date '+%Y-%m-%d %H:%M:%S') - End of run ===
+=== $(date '+%Y-%m-%d %H:%M:%S') - Starting agenda extraction ===
+🚀 Iniciando Hermes Agenda
+🔐 Abrindo login...
+✏️ Preenchendo login...
+➡️ Entrando...
+➡️ AVANÇAR clicado.
+🔎 Procurando área de comunicação...
+❌ Ícone de comunicação não encontrado.
+=== $(date '+%Y-%m-%d %H:%M:%S') - Extraction completed successfully ===
+=== $(date '+%Y-%m-%d %H:%M:%S') - End of run ===
+=== $(date '+%Y-%m-%d %H:%M:%S') - Starting agenda extraction ===
+🚀 Iniciando Hermes Agenda
+🔐 Abrindo login...
+✏️ Preenchendo login...
+➡️ Entrando...
+➡️ AVANÇAR clicado.
+📅 Abrindo calendário...
+📄 Página: Meu Bernoulli
+🔎 Procurando .NewCalendar...
+❌ .NewCalendar não encontrado.
+🔍 Classes contendo 'Calendar':
+📸 Screenshot salvo:
+/home/vboxuser/agenda/debug_newcalendar.png
+=== $(date '+%Y-%m-%d %H:%M:%S') - Extraction completed successfully ===
+=== $(date '+%Y-%m-%d %H:%M:%S') - End of run ===
+=== $(date '+%Y-%m-%d %H:%M:%S') - Starting agenda extraction ===
+🚀 Iniciando Hermes Agenda
+🔐 Abrindo login...
+✏️ Preenchendo login...
+➡️ Entrando...
+➡️ AVANÇAR clicado.
+=== $(date '+%Y-%m-%d %H:%M:%S') - Extraction FAILED with exit code $? ===
+=== $(date '+%Y-%m-%d %H:%M:%S') - End of run ===
+=== $(date '+%Y-%m-%d %H:%M:%S') - Starting agenda extraction ===
+🚀 Iniciando Hermes Agenda
+🔐 Abrindo login...
+✏️ Preenchendo login...
+➡️ Entrando...
+➡️ AVANÇAR clicado.
+🎓 Tutorial inicial encontrado.
+❌ Tutorial inicial fechado.
+📅 Abrindo calendário...
+📄 Página: Meu Bernoulli
+🔎 Procurando .NewCalendar...
+✅ .NewCalendar encontrado.
+🖱️ .NewCalendar clicado.
+🔎 Aguardando .ModalContent...
+❌ .ModalContent não apareceu.
+=== $(date '+%Y-%m-%d %H:%M:%S') - Extraction completed successfully ===
+=== $(date '+%Y-%m-%d %H:%M:%S') - End of run ===
+=== 2026-08-28 23:29:39 - ================================================
+=== 2026-08-28 23:29:39 - INÍCIO DA EXTRAÇÃO DA AGENDA
+=== 2026-08-28 23:29:39 - Intervalo: 2026-06-20 até 2026-10-05
+=== 2026-08-28 23:29:39 - PAGE_SIZE=100, MAX_PAGES=50, MAX_RETRIES=3
+=== 2026-08-28 23:29:39 - ERRO: TOKEN não configurado.
+=== 2026-08-28 23:36:02 - ================================================
+=== 2026-08-28 23:36:02 - INÍCIO DA EXTRAÇÃO DA AGENDA
+=== 2026-08-28 23:36:02 - Intervalo: 2026-06-20 até 2026-10-05
+=== 2026-08-28 23:36:02 - PAGE_SIZE=100, MAX_PAGES=50, MAX_RETRIES=3
+=== 2026-08-28 23:36:02 - Total de dias a consultar: 108
+=== 2026-08-28 23:36:02 - Consultando página 1 (2026-06-20 até 2026-06-20) - tentativa 1/3
+=== 2026-08-28 23:36:04 - 2026-06-20 - página 1: 68 eventos.
+=== 2026-08-28 23:36:04 - 2026-06-20 - página 1: 68 eventos novos.
+=== 2026-08-28 23:36:04 - 2026-06-20: 68 eventos encontrados.
+=== 2026-08-28 23:36:04 - Consultando página 1 (2026-06-21 até 2026-06-21) - tentativa 1/3
+=== 2026-08-28 23:36:05 - 2026-06-21 - página 1: 68 eventos.
+=== 2026-08-28 23:36:05 - 2026-06-21 - página 1: 68 eventos novos.
+=== 2026-08-28 23:36:05 - 2026-06-21: 68 eventos encontrados.
+=== 2026-08-28 23:36:05 - Consultando página 1 (2026-06-22 até 2026-06-22) - tentativa 1/3
+=== 2026-08-28 23:36:07 - 2026-06-22 - página 1: 71 eventos.
+=== 2026-08-28 23:36:07 - 2026-06-22 - página 1: 71 eventos novos.
+=== 2026-08-28 23:36:07 - 2026-06-22: 71 eventos encontrados.
+=== 2026-08-28 23:36:07 - Consultando página 1 (2026-06-23 até 2026-06-23) - tentativa 1/3
+=== 2026-08-28 23:36:08 - 2026-06-23 - página 1: 73 eventos.
+=== 2026-08-28 23:36:08 - 2026-06-23 - página 1: 73 eventos novos.
+=== 2026-08-28 23:36:08 - 2026-06-23: 73 eventos encontrados.
+=== 2026-08-28 23:36:08 - Consultando página 1 (2026-06-24 até 2026-06-24) - tentativa 1/3
+=== 2026-08-28 23:36:09 - 2026-06-24 - página 1: 73 eventos.
+=== 2026-08-28 23:36:09 - 2026-06-24 - página 1: 73 eventos novos.
+=== 2026-08-28 23:36:09 - 2026-06-24: 73 eventos encontrados.
+=== 2026-08-28 23:36:09 - Consultando página 1 (2026-06-25 até 2026-06-25) - tentativa 1/3
+=== 2026-08-28 23:36:11 - 2026-06-25 - página 1: 73 eventos.
+=== 2026-08-28 23:36:11 - 2026-06-25 - página 1: 73 eventos novos.
+=== 2026-08-28 23:36:11 - 2026-06-25: 73 eventos encontrados.
+=== 2026-08-28 23:36:11 - Consultando página 1 (2026-06-26 até 2026-06-26) - tentativa 1/3
+=== 2026-08-28 23:36:12 - 2026-06-26 - página 1: 73 eventos.
+=== 2026-08-28 23:36:12 - 2026-06-26 - página 1: 73 eventos novos.
+=== 2026-08-28 23:36:12 - 2026-06-26: 73 eventos encontrados.
+=== 2026-08-28 23:36:12 - Consultando página 1 (2026-06-27 até 2026-06-27) - tentativa 1/3
+=== 2026-08-28 23:36:13 - 2026-06-27 - página 1: 73 eventos.
+=== 2026-08-28 23:36:13 - 2026-06-27 - página 1: 73 eventos novos.
+=== 2026-08-28 23:36:13 - 2026-06-27: 73 eventos encontrados.
+=== 2026-08-28 23:36:13 - Consultando página 1 (2026-06-28 até 2026-06-28) - tentativa 1/3
+=== 2026-08-28 23:36:15 - 2026-06-28 - página 1: 73 eventos.
+=== 2026-08-28 23:36:15 - 2026-06-28 - página 1: 73 eventos novos.
+=== 2026-08-28 23:36:15 - 2026-06-28: 73 eventos encontrados.
+=== 2026-08-28 23:36:15 - Consultando página 1 (2026-06-29 até 2026-06-29) - tentativa 1/3
+=== 2026-08-28 23:36:16 - 2026-06-29 - página 1: 74 eventos.
+=== 2026-08-28 23:36:16 - 2026-06-29 - página 1: 74 eventos novos.
+=== 2026-08-28 23:36:16 - 2026-06-29: 74 eventos encontrados.
+=== 2026-08-28 23:36:16 - Consultando página 1 (2026-06-30 até 2026-06-30) - tentativa 1/3
+=== 2026-08-28 23:36:18 - 2026-06-30 - página 1: 74 eventos.
+=== 2026-08-28 23:36:18 - 2026-06-30 - página 1: 74 eventos novos.
+=== 2026-08-28 23:36:18 - 2026-06-30: 74 eventos encontrados.
+=== 2026-08-28 23:36:18 - Consultando página 1 (2026-07-01 até 2026-07-01) - tentativa 1/3
+=== 2026-08-28 23:36:19 - 2026-07-01 - página 1: 74 eventos.
+=== 2026-08-28 23:36:19 - 2026-07-01 - página 1: 74 eventos novos.
+=== 2026-08-28 23:36:19 - 2026-07-01: 74 eventos encontrados.
+=== 2026-08-28 23:36:19 - Consultando página 1 (2026-07-02 até 2026-07-02) - tentativa 1/3
+=== 2026-08-28 23:36:21 - 2026-07-02 - página 1: 74 eventos.
+=== 2026-08-28 23:36:21 - 2026-07-02 - página 1: 74 eventos novos.
+=== 2026-08-28 23:36:21 - 2026-07-02: 74 eventos encontrados.
+=== 2026-08-28 23:36:21 - Consultando página 1 (2026-07-03 até 2026-07-03) - tentativa 1/3
+=== 2026-08-28 23:36:22 - 2026-07-03 - página 1: 74 eventos.
+=== 2026-08-28 23:36:22 - 2026-07-03 - página 1: 74 eventos novos.
+=== 2026-08-28 23:36:22 - 2026-07-03: 74 eventos encontrados.
+=== 2026-08-28 23:36:22 - Consultando página 1 (2026-07-04 até 2026-07-04) - tentativa 1/3
+=== 2026-08-28 23:36:24 - 2026-07-04 - página 1: 74 eventos.
+=== 2026-08-28 23:36:24 - 2026-07-04 - página 1: 74 eventos novos.
+=== 2026-08-28 23:36:24 - 2026-07-04: 74 eventos encontrados.
+=== 2026-08-28 23:36:24 - Consultando página 1 (2026-07-05 até 2026-07-05) - tentativa 1/3
+=== 2026-08-28 23:36:25 - 2026-07-05 - página 1: 74 eventos.
+=== 2026-08-28 23:36:25 - 2026-07-05 - página 1: 74 eventos novos.
+=== 2026-08-28 23:36:25 - 2026-07-05: 74 eventos encontrados.
+=== 2026-08-28 23:36:25 - Consultando página 1 (2026-07-06 até 2026-07-06) - tentativa 1/3
+=== 2026-08-28 23:36:26 - 2026-07-06 - página 1: 74 eventos.
+=== 2026-08-28 23:36:26 - 2026-07-06 - página 1: 74 eventos novos.
+=== 2026-08-28 23:36:26 - 2026-07-06: 74 eventos encontrados.
+=== 2026-08-28 23:36:26 - Consultando página 1 (2026-07-07 até 2026-07-07) - tentativa 1/3
+=== 2026-08-28 23:36:28 - 2026-07-07 - página 1: 74 eventos.
+=== 2026-08-28 23:36:28 - 2026-07-07 - página 1: 74 eventos novos.
+=== 2026-08-28 23:36:28 - 2026-07-07: 74 eventos encontrados.
+=== 2026-08-28 23:36:28 - Consultando página 1 (2026-07-08 até 2026-07-08) - tentativa 1/3
+=== 2026-08-28 23:36:29 - 2026-07-08 - página 1: 74 eventos.
+=== 2026-08-28 23:36:29 - 2026-07-08 - página 1: 74 eventos novos.
+=== 2026-08-28 23:36:29 - 2026-07-08: 74 eventos encontrados.
+=== 2026-08-28 23:36:29 - Consultando página 1 (2026-07-09 até 2026-07-09) - tentativa 1/3
+=== 2026-08-28 23:36:31 - 2026-07-09 - página 1: 74 eventos.
+=== 2026-08-28 23:36:31 - 2026-07-09 - página 1: 74 eventos novos.
+=== 2026-08-28 23:36:31 - 2026-07-09: 74 eventos encontrados.
+=== 2026-08-28 23:36:31 - Consultando página 1 (2026-07-10 até 2026-07-10) - tentativa 1/3
+=== 2026-08-28 23:36:32 - 2026-07-10 - página 1: 74 eventos.
+=== 2026-08-28 23:36:32 - 2026-07-10 - página 1: 74 eventos novos.
+=== 2026-08-28 23:36:32 - 2026-07-10: 74 eventos encontrados.
+=== 2026-08-28 23:36:32 - Consultando página 1 (2026-07-11 até 2026-07-11) - tentativa 1/3
+=== 2026-08-28 23:36:33 - 2026-07-11 - página 1: 74 eventos.
+=== 2026-08-28 23:36:33 - 2026-07-11 - página 1: 74 eventos novos.
+=== 2026-08-28 23:36:33 - 2026-07-11: 74 eventos encontrados.
+=== 2026-08-28 23:36:33 - Consultando página 1 (2026-07-12 até 2026-07-12) - tentativa 1/3
+=== 2026-08-28 23:36:35 - 2026-07-12 - página 1: 74 eventos.
+=== 2026-08-28 23:36:35 - 2026-07-12 - página 1: 74 eventos novos.
+=== 2026-08-28 23:36:35 - 2026-07-12: 74 eventos encontrados.
+=== 2026-08-28 23:36:35 - Consultando página 1 (2026-07-13 até 2026-07-13) - tentativa 1/3
+=== 2026-08-28 23:36:36 - 2026-07-13 - página 1: 74 eventos.
+=== 2026-08-28 23:36:36 - 2026-07-13 - página 1: 74 eventos novos.
+=== 2026-08-28 23:36:36 - 2026-07-13: 74 eventos encontrados.
+=== 2026-08-28 23:36:36 - Consultando página 1 (2026-07-14 até 2026-07-14) - tentativa 1/3
+=== 2026-08-28 23:36:37 - 2026-07-14 - página 1: 74 eventos.
+=== 2026-08-28 23:36:37 - 2026-07-14 - página 1: 74 eventos novos.
+=== 2026-08-28 23:36:37 - 2026-07-14: 74 eventos encontrados.
+=== 2026-08-28 23:36:37 - Consultando página 1 (2026-07-15 até 2026-07-15) - tentativa 1/3
+=== 2026-08-28 23:36:39 - 2026-07-15 - página 1: 74 eventos.
+=== 2026-08-28 23:36:39 - 2026-07-15 - página 1: 74 eventos novos.
+=== 2026-08-28 23:36:39 - 2026-07-15: 74 eventos encontrados.
+=== 2026-08-28 23:36:39 - Consultando página 1 (2026-07-16 até 2026-07-16) - tentativa 1/3
+=== 2026-08-28 23:36:41 - 2026-07-16 - página 1: 74 eventos.
+=== 2026-08-28 23:36:41 - 2026-07-16 - página 1: 74 eventos novos.
+=== 2026-08-28 23:36:41 - 2026-07-16: 74 eventos encontrados.
+=== 2026-08-28 23:36:41 - Consultando página 1 (2026-07-17 até 2026-07-17) - tentativa 1/3
+=== 2026-08-28 23:36:42 - 2026-07-17 - página 1: 74 eventos.
+=== 2026-08-28 23:36:42 - 2026-07-17 - página 1: 74 eventos novos.
+=== 2026-08-28 23:36:42 - 2026-07-17: 74 eventos encontrados.
+=== 2026-08-28 23:36:42 - Consultando página 1 (2026-07-18 até 2026-07-18) - tentativa 1/3
+=== 2026-08-28 23:36:43 - 2026-07-18 - página 1: 74 eventos.
+=== 2026-08-28 23:36:43 - 2026-07-18 - página 1: 74 eventos novos.
+=== 2026-08-28 23:36:43 - 2026-07-18: 74 eventos encontrados.
+=== 2026-08-28 23:36:43 - Consultando página 1 (2026-07-19 até 2026-07-19) - tentativa 1/3
+=== 2026-08-28 23:36:45 - 2026-07-19 - página 1: 74 eventos.
+=== 2026-08-28 23:36:45 - 2026-07-19 - página 1: 74 eventos novos.
+=== 2026-08-28 23:36:45 - 2026-07-19: 74 eventos encontrados.
+=== 2026-08-28 23:36:45 - Consultando página 1 (2026-07-20 até 2026-07-20) - tentativa 1/3
+=== 2026-08-28 23:36:46 - 2026-07-20 - página 1: 74 eventos.
+=== 2026-08-28 23:36:46 - 2026-07-20 - página 1: 74 eventos novos.
+=== 2026-08-28 23:36:46 - 2026-07-20: 74 eventos encontrados.
+=== 2026-08-28 23:36:46 - Consultando página 1 (2026-07-21 até 2026-07-21) - tentativa 1/3
+=== 2026-08-28 23:36:47 - 2026-07-21 - página 1: 74 eventos.
+=== 2026-08-28 23:36:47 - 2026-07-21 - página 1: 74 eventos novos.
+=== 2026-08-28 23:36:47 - 2026-07-21: 74 eventos encontrados.
+=== 2026-08-28 23:36:47 - Consultando página 1 (2026-07-22 até 2026-07-22) - tentativa 1/3
+=== 2026-08-28 23:36:49 - 2026-07-22 - página 1: 74 eventos.
+=== 2026-08-28 23:36:49 - 2026-07-22 - página 1: 74 eventos novos.
+=== 2026-08-28 23:36:49 - 2026-07-22: 74 eventos encontrados.
+=== 2026-08-28 23:36:49 - Consultando página 1 (2026-07-23 até 2026-07-23) - tentativa 1/3
+=== 2026-08-28 23:36:50 - 2026-07-23 - página 1: 75 eventos.
+=== 2026-08-28 23:36:50 - 2026-07-23 - página 1: 75 eventos novos.
+=== 2026-08-28 23:36:50 - 2026-07-23: 75 eventos encontrados.
+=== 2026-08-28 23:36:50 - Consultando página 1 (2026-07-24 até 2026-07-24) - tentativa 1/3
+=== 2026-08-28 23:36:51 - 2026-07-24 - página 1: 75 eventos.
+=== 2026-08-28 23:36:51 - 2026-07-24 - página 1: 75 eventos novos.
+=== 2026-08-28 23:36:51 - 2026-07-24: 75 eventos encontrados.
+=== 2026-08-28 23:36:51 - Consultando página 1 (2026-07-25 até 2026-07-25) - tentativa 1/3
+=== 2026-08-28 23:36:53 - 2026-07-25 - página 1: 75 eventos.
+=== 2026-08-28 23:36:53 - 2026-07-25 - página 1: 75 eventos novos.
+=== 2026-08-28 23:36:53 - 2026-07-25: 75 eventos encontrados.
+=== 2026-08-28 23:36:53 - Consultando página 1 (2026-07-26 até 2026-07-26) - tentativa 1/3
+=== 2026-08-28 23:36:54 - 2026-07-26 - página 1: 75 eventos.
+=== 2026-08-28 23:36:54 - 2026-07-26 - página 1: 75 eventos novos.
+=== 2026-08-28 23:36:54 - 2026-07-26: 75 eventos encontrados.
+=== 2026-08-28 23:36:54 - Consultando página 1 (2026-07-27 até 2026-07-27) - tentativa 1/3
+=== 2026-08-28 23:36:56 - 2026-07-27 - página 1: 76 eventos.
+=== 2026-08-28 23:36:56 - 2026-07-27 - página 1: 76 eventos novos.
+=== 2026-08-28 23:36:56 - 2026-07-27: 76 eventos encontrados.
+=== 2026-08-28 23:36:56 - Consultando página 1 (2026-07-28 até 2026-07-28) - tentativa 1/3
+=== 2026-08-28 23:36:57 - 2026-07-28 - página 1: 77 eventos.
+=== 2026-08-28 23:36:57 - 2026-07-28 - página 1: 77 eventos novos.
+=== 2026-08-28 23:36:57 - 2026-07-28: 77 eventos encontrados.
+=== 2026-08-28 23:36:57 - Consultando página 1 (2026-07-29 até 2026-07-29) - tentativa 1/3
+=== 2026-08-28 23:36:59 - 2026-07-29 - página 1: 79 eventos.
+=== 2026-08-28 23:36:59 - 2026-07-29 - página 1: 79 eventos novos.
+=== 2026-08-28 23:36:59 - 2026-07-29: 79 eventos encontrados.
+=== 2026-08-28 23:36:59 - Consultando página 1 (2026-07-30 até 2026-07-30) - tentativa 1/3
+=== 2026-08-28 23:37:00 - 2026-07-30 - página 1: 79 eventos.
+=== 2026-08-28 23:37:00 - 2026-07-30 - página 1: 79 eventos novos.
+=== 2026-08-28 23:37:00 - 2026-07-30: 79 eventos encontrados.
+=== 2026-08-28 23:37:00 - Consultando página 1 (2026-07-31 até 2026-07-31) - tentativa 1/3
+=== 2026-08-28 23:37:02 - 2026-07-31 - página 1: 79 eventos.
+=== 2026-08-28 23:37:02 - 2026-07-31 - página 1: 79 eventos novos.
+=== 2026-08-28 23:37:02 - 2026-07-31: 79 eventos encontrados.
+=== 2026-08-28 23:37:02 - Consultando página 1 (2026-08-01 até 2026-08-01) - tentativa 1/3
+=== 2026-08-28 23:37:03 - 2026-08-01 - página 1: 79 eventos.
+=== 2026-08-28 23:37:03 - 2026-08-01 - página 1: 79 eventos novos.
+=== 2026-08-28 23:37:03 - 2026-08-01: 79 eventos encontrados.
+=== 2026-08-28 23:37:03 - Consultando página 1 (2026-08-02 até 2026-08-02) - tentativa 1/3
+=== 2026-08-28 23:37:05 - 2026-08-02 - página 1: 79 eventos.
+=== 2026-08-28 23:37:05 - 2026-08-02 - página 1: 79 eventos novos.
+=== 2026-08-28 23:37:05 - 2026-08-02: 79 eventos encontrados.
+=== 2026-08-28 23:37:05 - Consultando página 1 (2026-08-03 até 2026-08-03) - tentativa 1/3
+=== 2026-08-28 23:37:06 - 2026-08-03 - página 1: 79 eventos.
+=== 2026-08-28 23:37:06 - 2026-08-03 - página 1: 79 eventos novos.
+=== 2026-08-28 23:37:06 - 2026-08-03: 79 eventos encontrados.
+=== 2026-08-28 23:37:06 - Consultando página 1 (2026-08-04 até 2026-08-04) - tentativa 1/3
+=== 2026-08-28 23:37:07 - 2026-08-04 - página 1: 81 eventos.
+=== 2026-08-28 23:37:07 - 2026-08-04 - página 1: 81 eventos novos.
+=== 2026-08-28 23:37:07 - 2026-08-04: 81 eventos encontrados.
+=== 2026-08-28 23:37:07 - Consultando página 1 (2026-08-05 até 2026-08-05) - tentativa 1/3
+=== 2026-08-28 23:37:09 - 2026-08-05 - página 1: 83 eventos.
+=== 2026-08-28 23:37:09 - 2026-08-05 - página 1: 83 eventos novos.
+=== 2026-08-28 23:37:09 - 2026-08-05: 83 eventos encontrados.
+=== 2026-08-28 23:37:09 - Consultando página 1 (2026-08-06 até 2026-08-06) - tentativa 1/3
+=== 2026-08-28 23:37:11 - 2026-08-06 - página 1: 84 eventos.
+=== 2026-08-28 23:37:11 - 2026-08-06 - página 1: 84 eventos novos.
+=== 2026-08-28 23:37:11 - 2026-08-06: 84 eventos encontrados.
+=== 2026-08-28 23:37:11 - Consultando página 1 (2026-08-07 até 2026-08-07) - tentativa 1/3
+=== 2026-08-28 23:37:12 - 2026-08-07 - página 1: 84 eventos.
+=== 2026-08-28 23:37:12 - 2026-08-07 - página 1: 84 eventos novos.
+=== 2026-08-28 23:37:12 - 2026-08-07: 84 eventos encontrados.
+=== 2026-08-28 23:37:12 - Consultando página 1 (2026-08-08 até 2026-08-08) - tentativa 1/3
+=== 2026-08-28 23:37:13 - 2026-08-08 - página 1: 82 eventos.
+=== 2026-08-28 23:37:13 - 2026-08-08 - página 1: 82 eventos novos.
+=== 2026-08-28 23:37:13 - 2026-08-08: 82 eventos encontrados.
+=== 2026-08-28 23:37:13 - Consultando página 1 (2026-08-09 até 2026-08-09) - tentativa 1/3
+=== 2026-08-28 23:37:15 - 2026-08-09 - página 1: 82 eventos.
+=== 2026-08-28 23:37:15 - 2026-08-09 - página 1: 82 eventos novos.
+=== 2026-08-28 23:37:15 - 2026-08-09: 82 eventos encontrados.
+=== 2026-08-28 23:37:15 - Consultando página 1 (2026-08-10 até 2026-08-10) - tentativa 1/3
+=== 2026-08-28 23:37:16 - 2026-08-10 - página 1: 83 eventos.
+=== 2026-08-28 23:37:16 - 2026-08-10 - página 1: 83 eventos novos.
+=== 2026-08-28 23:37:16 - 2026-08-10: 83 eventos encontrados.
+=== 2026-08-28 23:37:16 - Consultando página 1 (2026-08-11 até 2026-08-11) - tentativa 1/3
+=== 2026-08-28 23:37:18 - 2026-08-11 - página 1: 83 eventos.
+=== 2026-08-28 23:37:18 - 2026-08-11 - página 1: 83 eventos novos.
+=== 2026-08-28 23:37:18 - 2026-08-11: 83 eventos encontrados.
+=== 2026-08-28 23:37:18 - Consultando página 1 (2026-08-12 até 2026-08-12) - tentativa 1/3
+=== 2026-08-28 23:37:19 - 2026-08-12 - página 1: 83 eventos.
+=== 2026-08-28 23:37:19 - 2026-08-12 - página 1: 83 eventos novos.
+=== 2026-08-28 23:37:19 - 2026-08-12: 83 eventos encontrados.
+=== 2026-08-28 23:37:19 - Consultando página 1 (2026-08-13 até 2026-08-13) - tentativa 1/3
+=== 2026-08-28 23:37:21 - 2026-08-13 - página 1: 83 eventos.
+=== 2026-08-28 23:37:21 - 2026-08-13 - página 1: 83 eventos novos.
+=== 2026-08-28 23:37:21 - 2026-08-13: 83 eventos encontrados.
+=== 2026-08-28 23:37:21 - Consultando página 1 (2026-08-14 até 2026-08-14) - tentativa 1/3
+=== 2026-08-28 23:37:22 - 2026-08-14 - página 1: 83 eventos.
+=== 2026-08-28 23:37:22 - 2026-08-14 - página 1: 83 eventos novos.
+=== 2026-08-28 23:37:22 - 2026-08-14: 83 eventos encontrados.
+=== 2026-08-28 23:37:22 - Consultando página 1 (2026-08-15 até 2026-08-15) - tentativa 1/3
+=== 2026-08-28 23:37:24 - 2026-08-15 - página 1: 83 eventos.
+=== 2026-08-28 23:37:24 - 2026-08-15 - página 1: 83 eventos novos.
+=== 2026-08-28 23:37:24 - 2026-08-15: 83 eventos encontrados.
+=== 2026-08-28 23:37:24 - Consultando página 1 (2026-08-16 até 2026-08-16) - tentativa 1/3
+=== 2026-08-28 23:37:25 - 2026-08-16 - página 1: 83 eventos.
+=== 2026-08-28 23:37:25 - 2026-08-16 - página 1: 83 eventos novos.
+=== 2026-08-28 23:37:25 - 2026-08-16: 83 eventos encontrados.
+=== 2026-08-28 23:37:25 - Consultando página 1 (2026-08-17 até 2026-08-17) - tentativa 1/3
+=== 2026-08-28 23:37:26 - 2026-08-17 - página 1: 84 eventos.
+=== 2026-08-28 23:37:26 - 2026-08-17 - página 1: 84 eventos novos.
+=== 2026-08-28 23:37:26 - 2026-08-17: 84 eventos encontrados.
+=== 2026-08-28 23:37:26 - Consultando página 1 (2026-08-18 até 2026-08-18) - tentativa 1/3
+=== 2026-08-28 23:37:28 - 2026-08-18 - página 1: 84 eventos.
+=== 2026-08-28 23:37:28 - 2026-08-18 - página 1: 84 eventos novos.
+=== 2026-08-28 23:37:28 - 2026-08-18: 84 eventos encontrados.
+=== 2026-08-28 23:37:28 - Consultando página 1 (2026-08-19 até 2026-08-19) - tentativa 1/3
+=== 2026-08-28 23:37:29 - 2026-08-19 - página 1: 84 eventos.
+=== 2026-08-28 23:37:29 - 2026-08-19 - página 1: 84 eventos novos.
+=== 2026-08-28 23:37:29 - 2026-08-19: 84 eventos encontrados.
+=== 2026-08-28 23:37:29 - Consultando página 1 (2026-08-20 até 2026-08-20) - tentativa 1/3
+=== 2026-08-28 23:37:30 - 2026-08-20 - página 1: 84 eventos.
+=== 2026-08-28 23:37:30 - 2026-08-20 - página 1: 84 eventos novos.
+=== 2026-08-28 23:37:30 - 2026-08-20: 84 eventos encontrados.
+=== 2026-08-28 23:37:30 - Consultando página 1 (2026-08-21 até 2026-08-21) - tentativa 1/3
+=== 2026-08-28 23:37:32 - 2026-08-21 - página 1: 84 eventos.
+=== 2026-08-28 23:37:32 - 2026-08-21 - página 1: 84 eventos novos.
+=== 2026-08-28 23:37:32 - 2026-08-21: 84 eventos encontrados.
+=== 2026-08-28 23:37:32 - Consultando página 1 (2026-08-22 até 2026-08-22) - tentativa 1/3
+=== 2026-08-28 23:37:34 - 2026-08-22 - página 1: 84 eventos.
+=== 2026-08-28 23:37:34 - 2026-08-22 - página 1: 84 eventos novos.
+=== 2026-08-28 23:37:34 - 2026-08-22: 84 eventos encontrados.
+=== 2026-08-28 23:37:34 - Consultando página 1 (2026-08-23 até 2026-08-23) - tentativa 1/3
+=== 2026-08-28 23:37:35 - 2026-08-23 - página 1: 84 eventos.
+=== 2026-08-28 23:37:35 - 2026-08-23 - página 1: 84 eventos novos.
+=== 2026-08-28 23:37:35 - 2026-08-23: 84 eventos encontrados.
+=== 2026-08-28 23:37:35 - Consultando página 1 (2026-08-24 até 2026-08-24) - tentativa 1/3
+=== 2026-08-28 23:37:37 - 2026-08-24 - página 1: 84 eventos.
+=== 2026-08-28 23:37:37 - 2026-08-24 - página 1: 84 eventos novos.
+=== 2026-08-28 23:37:37 - 2026-08-24: 84 eventos encontrados.
+=== 2026-08-28 23:37:37 - Consultando página 1 (2026-08-25 até 2026-08-25) - tentativa 1/3
+=== 2026-08-28 23:37:39 - 2026-08-25 - página 1: 84 eventos.
+=== 2026-08-28 23:37:39 - 2026-08-25 - página 1: 84 eventos novos.
+=== 2026-08-28 23:37:39 - 2026-08-25: 84 eventos encontrados.
+=== 2026-08-28 23:37:39 - Consultando página 1 (2026-08-26 até 2026-08-26) - tentativa 1/3
+=== 2026-08-28 23:37:40 - 2026-08-26 - página 1: 84 eventos.
+=== 2026-08-28 23:37:40 - 2026-08-26 - página 1: 84 eventos novos.
+=== 2026-08-28 23:37:40 - 2026-08-26: 84 eventos encontrados.
+=== 2026-08-28 23:37:40 - Consultando página 1 (2026-08-27 até 2026-08-27) - tentativa 1/3
+=== 2026-08-28 23:37:42 - 2026-08-27 - página 1: 84 eventos.
+=== 2026-08-28 23:37:42 - 2026-08-27 - página 1: 84 eventos novos.
+=== 2026-08-28 23:37:42 - 2026-08-27: 84 eventos encontrados.
+=== 2026-08-28 23:37:42 - Consultando página 1 (2026-08-28 até 2026-08-28) - tentativa 1/3
+=== 2026-08-28 23:37:43 - 2026-08-28 - página 1: 84 eventos.
+=== 2026-08-28 23:37:43 - 2026-08-28 - página 1: 84 eventos novos.
+=== 2026-08-28 23:37:43 - 2026-08-28: 84 eventos encontrados.
+=== 2026-08-28 23:37:43 - Consultando página 1 (2026-08-29 até 2026-08-29) - tentativa 1/3
+=== 2026-08-28 23:37:44 - 2026-08-29 - página 1: 84 eventos.
+=== 2026-08-28 23:37:44 - 2026-08-29 - página 1: 84 eventos novos.
+=== 2026-08-28 23:37:44 - 2026-08-29: 84 eventos encontrados.
+=== 2026-08-28 23:37:44 - Consultando página 1 (2026-08-30 até 2026-08-30) - tentativa 1/3
+=== 2026-08-28 23:37:46 - 2026-08-30 - página 1: 84 eventos.
+=== 2026-08-28 23:37:46 - 2026-08-30 - página 1: 84 eventos novos.
+=== 2026-08-28 23:37:46 - 2026-08-30: 84 eventos encontrados.
+=== 2026-08-28 23:37:46 - Consultando página 1 (2026-08-31 até 2026-08-31) - tentativa 1/3
+=== 2026-08-28 23:37:47 - 2026-08-31 - página 1: 84 eventos.
+=== 2026-08-28 23:37:47 - 2026-08-31 - página 1: 84 eventos novos.
+=== 2026-08-28 23:37:47 - 2026-08-31: 84 eventos encontrados.
+=== 2026-08-28 23:37:47 - Consultando página 1 (2026-09-01 até 2026-09-01) - tentativa 1/3
+=== 2026-08-28 23:37:48 - 2026-09-01 - página 1: 84 eventos.
+=== 2026-08-28 23:37:48 - 2026-09-01 - página 1: 84 eventos novos.
+=== 2026-08-28 23:37:48 - 2026-09-01: 84 eventos encontrados.
+=== 2026-08-28 23:37:48 - Consultando página 1 (2026-09-02 até 2026-09-02) - tentativa 1/3
+=== 2026-08-28 23:37:50 - 2026-09-02 - página 1: 84 eventos.
+=== 2026-08-28 23:37:50 - 2026-09-02 - página 1: 84 eventos novos.
+=== 2026-08-28 23:37:50 - 2026-09-02: 84 eventos encontrados.
+=== 2026-08-28 23:37:50 - Consultando página 1 (2026-09-03 até 2026-09-03) - tentativa 1/3
+=== 2026-08-28 23:37:51 - 2026-09-03 - página 1: 84 eventos.
+=== 2026-08-28 23:37:51 - 2026-09-03 - página 1: 84 eventos novos.
+=== 2026-08-28 23:37:51 - 2026-09-03: 84 eventos encontrados.
+=== 2026-08-28 23:37:51 - Consultando página 1 (2026-09-04 até 2026-09-04) - tentativa 1/3
+=== 2026-08-28 23:37:53 - 2026-09-04 - página 1: 84 eventos.
+=== 2026-08-28 23:37:53 - 2026-09-04 - página 1: 84 eventos novos.
+=== 2026-08-28 23:37:53 - 2026-09-04: 84 eventos encontrados.
+=== 2026-08-28 23:37:53 - Consultando página 1 (2026-09-05 até 2026-09-05) - tentativa 1/3
+=== 2026-08-28 23:37:54 - 2026-09-05 - página 1: 84 eventos.
+=== 2026-08-28 23:37:54 - 2026-09-05 - página 1: 84 eventos novos.
+=== 2026-08-28 23:37:54 - 2026-09-05: 84 eventos encontrados.
+=== 2026-08-28 23:37:54 - Consultando página 1 (2026-09-06 até 2026-09-06) - tentativa 1/3
+=== 2026-08-28 23:37:56 - 2026-09-06 - página 1: 84 eventos.
+=== 2026-08-28 23:37:56 - 2026-09-06 - página 1: 84 eventos novos.
+=== 2026-08-28 23:37:56 - 2026-09-06: 84 eventos encontrados.
+=== 2026-08-28 23:37:56 - Consultando página 1 (2026-09-07 até 2026-09-07) - tentativa 1/3
+=== 2026-08-28 23:37:57 - 2026-09-07 - página 1: 84 eventos.
+=== 2026-08-28 23:37:57 - 2026-09-07 - página 1: 84 eventos novos.
+=== 2026-08-28 23:37:57 - 2026-09-07: 84 eventos encontrados.
+=== 2026-08-28 23:37:57 - Consultando página 1 (2026-09-08 até 2026-09-08) - tentativa 1/3
+=== 2026-08-28 23:37:59 - 2026-09-08 - página 1: 84 eventos.
+=== 2026-08-28 23:37:59 - 2026-09-08 - página 1: 84 eventos novos.
+=== 2026-08-28 23:37:59 - 2026-09-08: 84 eventos encontrados.
+=== 2026-08-28 23:37:59 - Consultando página 1 (2026-09-09 até 2026-09-09) - tentativa 1/3
+=== 2026-08-28 23:38:00 - 2026-09-09 - página 1: 84 eventos.
+=== 2026-08-28 23:38:00 - 2026-09-09 - página 1: 84 eventos novos.
+=== 2026-08-28 23:38:00 - 2026-09-09: 84 eventos encontrados.
+=== 2026-08-28 23:38:00 - Consultando página 1 (2026-09-10 até 2026-09-10) - tentativa 1/3
+=== 2026-08-28 23:38:02 - 2026-09-10 - página 1: 84 eventos.
+=== 2026-08-28 23:38:02 - 2026-09-10 - página 1: 84 eventos novos.
+=== 2026-08-28 23:38:02 - 2026-09-10: 84 eventos encontrados.
+=== 2026-08-28 23:38:02 - Consultando página 1 (2026-09-11 até 2026-09-11) - tentativa 1/3
+=== 2026-08-28 23:38:03 - 2026-09-11 - página 1: 84 eventos.
+=== 2026-08-28 23:38:03 - 2026-09-11 - página 1: 84 eventos novos.
+=== 2026-08-28 23:38:03 - 2026-09-11: 84 eventos encontrados.
+=== 2026-08-28 23:38:03 - Consultando página 1 (2026-09-12 até 2026-09-12) - tentativa 1/3
+=== 2026-08-28 23:38:05 - 2026-09-12 - página 1: 84 eventos.
+=== 2026-08-28 23:38:05 - 2026-09-12 - página 1: 84 eventos novos.
+=== 2026-08-28 23:38:05 - 2026-09-12: 84 eventos encontrados.
+=== 2026-08-28 23:38:05 - Consultando página 1 (2026-09-13 até 2026-09-13) - tentativa 1/3
+=== 2026-08-28 23:38:07 - 2026-09-13 - página 1: 84 eventos.
+=== 2026-08-28 23:38:07 - 2026-09-13 - página 1: 84 eventos novos.
+=== 2026-08-28 23:38:07 - 2026-09-13: 84 eventos encontrados.
+=== 2026-08-28 23:38:07 - Consultando página 1 (2026-09-14 até 2026-09-14) - tentativa 1/3
+=== 2026-08-28 23:38:09 - 2026-09-14 - página 1: 84 eventos.
+=== 2026-08-28 23:38:09 - 2026-09-14 - página 1: 84 eventos novos.
+=== 2026-08-28 23:38:09 - 2026-09-14: 84 eventos encontrados.
+=== 2026-08-28 23:38:09 - Consultando página 1 (2026-09-15 até 2026-09-15) - tentativa 1/3
+=== 2026-08-28 23:38:10 - 2026-09-15 - página 1: 84 eventos.
+=== 2026-08-28 23:38:10 - 2026-09-15 - página 1: 84 eventos novos.
+=== 2026-08-28 23:38:10 - 2026-09-15: 84 eventos encontrados.
+=== 2026-08-28 23:38:10 - Consultando página 1 (2026-09-16 até 2026-09-16) - tentativa 1/3
+=== 2026-08-28 23:38:12 - 2026-09-16 - página 1: 84 eventos.
+=== 2026-08-28 23:38:12 - 2026-09-16 - página 1: 84 eventos novos.
+=== 2026-08-28 23:38:12 - 2026-09-16: 84 eventos encontrados.
+=== 2026-08-28 23:38:12 - Consultando página 1 (2026-09-17 até 2026-09-17) - tentativa 1/3
+=== 2026-08-28 23:38:13 - 2026-09-17 - página 1: 84 eventos.
+=== 2026-08-28 23:38:13 - 2026-09-17 - página 1: 84 eventos novos.
+=== 2026-08-28 23:38:13 - 2026-09-17: 84 eventos encontrados.
+=== 2026-08-28 23:38:13 - Consultando página 1 (2026-09-18 até 2026-09-18) - tentativa 1/3
+=== 2026-08-28 23:38:14 - 2026-09-18 - página 1: 84 eventos.
+=== 2026-08-28 23:38:14 - 2026-09-18 - página 1: 84 eventos novos.
+=== 2026-08-28 23:38:14 - 2026-09-18: 84 eventos encontrados.
+=== 2026-08-28 23:38:14 - Consultando página 1 (2026-09-19 até 2026-09-19) - tentativa 1/3
+=== 2026-08-28 23:38:16 - 2026-09-19 - página 1: 84 eventos.
+=== 2026-08-28 23:38:16 - 2026-09-19 - página 1: 84 eventos novos.
+=== 2026-08-28 23:38:16 - 2026-09-19: 84 eventos encontrados.
+=== 2026-08-28 23:38:16 - Consultando página 1 (2026-09-20 até 2026-09-20) - tentativa 1/3
+=== 2026-08-28 23:38:17 - 2026-09-20 - página 1: 84 eventos.
+=== 2026-08-28 23:38:17 - 2026-09-20 - página 1: 84 eventos novos.
+=== 2026-08-28 23:38:17 - 2026-09-20: 84 eventos encontrados.
+=== 2026-08-28 23:38:17 - Consultando página 1 (2026-09-21 até 2026-09-21) - tentativa 1/3
+=== 2026-08-28 23:38:18 - 2026-09-21 - página 1: 84 eventos.
+=== 2026-08-28 23:38:18 - 2026-09-21 - página 1: 84 eventos novos.
+=== 2026-08-28 23:38:18 - 2026-09-21: 84 eventos encontrados.
+=== 2026-08-28 23:38:18 - Consultando página 1 (2026-09-22 até 2026-09-22) - tentativa 1/3
+=== 2026-08-28 23:38:20 - 2026-09-22 - página 1: 84 eventos.
+=== 2026-08-28 23:38:20 - 2026-09-22 - página 1: 84 eventos novos.
+=== 2026-08-28 23:38:20 - 2026-09-22: 84 eventos encontrados.
+=== 2026-08-28 23:38:20 - Consultando página 1 (2026-09-23 até 2026-09-23) - tentativa 1/3
+=== 2026-08-28 23:38:21 - 2026-09-23 - página 1: 84 eventos.
+=== 2026-08-28 23:38:21 - 2026-09-23 - página 1: 84 eventos novos.
+=== 2026-08-28 23:38:21 - 2026-09-23: 84 eventos encontrados.
+=== 2026-08-28 23:38:21 - Consultando página 1 (2026-09-24 até 2026-09-24) - tentativa 1/3
+=== 2026-08-28 23:38:22 - 2026-09-24 - página 1: 84 eventos.
+=== 2026-08-28 23:38:22 - 2026-09-24 - página 1: 84 eventos novos.
+=== 2026-08-28 23:38:22 - 2026-09-24: 84 eventos encontrados.
+=== 2026-08-28 23:38:22 - Consultando página 1 (2026-09-25 até 2026-09-25) - tentativa 1/3
+=== 2026-08-28 23:38:24 - 2026-09-25 - página 1: 84 eventos.
+=== 2026-08-28 23:38:24 - 2026-09-25 - página 1: 84 eventos novos.
+=== 2026-08-28 23:38:24 - 2026-09-25: 84 eventos encontrados.
+=== 2026-08-28 23:38:24 - Consultando página 1 (2026-09-26 até 2026-09-26) - tentativa 1/3
+=== 2026-08-28 23:38:25 - 2026-09-26 - página 1: 84 eventos.
+=== 2026-08-28 23:38:25 - 2026-09-26 - página 1: 84 eventos novos.
+=== 2026-08-28 23:38:25 - 2026-09-26: 84 eventos encontrados.
+=== 2026-08-28 23:38:25 - Consultando página 1 (2026-09-27 até 2026-09-27) - tentativa 1/3
+=== 2026-08-28 23:38:27 - 2026-09-27 - página 1: 84 eventos.
+=== 2026-08-28 23:38:27 - 2026-09-27 - página 1: 84 eventos novos.
+=== 2026-08-28 23:38:27 - 2026-09-27: 84 eventos encontrados.
+=== 2026-08-28 23:38:27 - Consultando página 1 (2026-09-28 até 2026-09-28) - tentativa 1/3
+=== 2026-08-28 23:38:28 - 2026-09-28 - página 1: 84 eventos.
+=== 2026-08-28 23:38:28 - 2026-09-28 - página 1: 84 eventos novos.
+=== 2026-08-28 23:38:28 - 2026-09-28: 84 eventos encontrados.
+=== 2026-08-28 23:38:28 - Consultando página 1 (2026-09-29 até 2026-09-29) - tentativa 1/3
+=== 2026-08-28 23:38:29 - 2026-09-29 - página 1: 84 eventos.
+=== 2026-08-28 23:38:29 - 2026-09-29 - página 1: 84 eventos novos.
+=== 2026-08-28 23:38:29 - 2026-09-29: 84 eventos encontrados.
+=== 2026-08-28 23:38:29 - Consultando página 1 (2026-09-30 até 2026-09-30) - tentativa 1/3
+=== 2026-08-28 23:38:31 - 2026-09-30 - página 1: 84 eventos.
+=== 2026-08-28 23:38:31 - 2026-09-30 - página 1: 84 eventos novos.
+=== 2026-08-28 23:38:31 - 2026-09-30: 84 eventos encontrados.
+=== 2026-08-28 23:38:31 - Consultando página 1 (2026-10-01 até 2026-10-01) - tentativa 1/3
+=== 2026-08-28 23:38:32 - 2026-10-01 - página 1: 84 eventos.
+=== 2026-08-28 23:38:32 - 2026-10-01 - página 1: 84 eventos novos.
+=== 2026-08-28 23:38:32 - 2026-10-01: 84 eventos encontrados.
+=== 2026-08-28 23:38:32 - Consultando página 1 (2026-10-02 até 2026-10-02) - tentativa 1/3
+=== 2026-08-28 23:38:34 - 2026-10-02 - página 1: 84 eventos.
+=== 2026-08-28 23:38:34 - 2026-10-02 - página 1: 84 eventos novos.
+=== 2026-08-28 23:38:34 - 2026-10-02: 84 eventos encontrados.
+=== 2026-08-28 23:38:34 - Consultando página 1 (2026-10-03 até 2026-10-03) - tentativa 1/3
+=== 2026-08-28 23:38:35 - 2026-10-03 - página 1: 84 eventos.
+=== 2026-08-28 23:38:35 - 2026-10-03 - página 1: 84 eventos novos.
+=== 2026-08-28 23:38:35 - 2026-10-03: 84 eventos encontrados.
+=== 2026-08-28 23:38:35 - Consultando página 1 (2026-10-04 até 2026-10-04) - tentativa 1/3
+=== 2026-08-28 23:38:36 - 2026-10-04 - página 1: 84 eventos.
+=== 2026-08-28 23:38:36 - 2026-10-04 - página 1: 84 eventos novos.
+=== 2026-08-28 23:38:36 - 2026-10-04: 84 eventos encontrados.
+=== 2026-08-28 23:38:36 - Consultando página 1 (2026-10-05 até 2026-10-05) - tentativa 1/3
+=== 2026-08-28 23:38:38 - 2026-10-05 - página 1: 84 eventos.
+=== 2026-08-28 23:38:38 - 2026-10-05 - página 1: 84 eventos novos.
+=== 2026-08-28 23:38:38 - 2026-10-05: 84 eventos encontrados.
+=== 2026-08-28 23:38:38 - JSON salvo com sucesso: /home/vboxuser/agenda/agenda_events_by_date.json
+=== 2026-08-28 23:38:38 - Dias com eventos: 108
+=== 2026-08-28 23:38:38 - Total de eventos: 8625
+=== 2026-08-28 23:38:38 - Dias com falha: 0
+=== 2026-08-28 23:38:38 - Tempo total: 0:02:36.067063
+=== 2026-08-28 23:38:38 - Erro ao marcar TODO como concluído: Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+    import json, sys; payload=json.load(sys.stdin); from hermes_tools import todo; todo(**payload)
+                                                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ModuleNotFoundError: No module named 'hermes_tools'
+
+=== 2026-08-28 23:38:38 - Notificação Telegram executada.
+=== 2026-08-28 23:38:38 - FIM DA EXECUÇÃO
+=== 2026-08-28 23:38:38 - ================================================

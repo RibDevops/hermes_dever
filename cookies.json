@@ -1,0 +1,304 @@
+[
+  {
+    "name": "__Secure-YNID",
+    "value": "21.YT=QdDEbWoyz3Jed8AWrtpuduMnIv36nJkEs1_adVZ_HfRIevDI-qX6dhvgaU1pX39JBrsF0vGGFhrCxfV3a1uej3CaS9_WB_n7Mp8LI26RaVKZ8NAZotm3AHxcAOPuwlLenZCJJfdpzsHgCxV8xp2D3L0-JCTGFy1qM3pwQUfY1XzCMoguSGyRjww_kctYVuk9tuptMFaJRY0H_yAhpMM2Pg7mYl77h6l5ARUXcXtmRNzkCJoLN27-bOy4w1RAZq9sU1DQNj0Z1PqERJtX7IplMUNmAyHwKR3PIUppLzj2AID-dah57VUI7uBv4L65_PPG4z_WFv5XDdKeBCAJCI8yGA",
+    "domain": ".youtube.com",
+    "path": "/",
+    "expires": 1803508756.420934,
+    "httpOnly": true,
+    "secure": true,
+    "sameSite": "None",
+    "partitionKey": "https://bernoulli.com.br",
+    "_crHasCrossSiteAncestor": true
+  },
+  {
+    "name": "YSC",
+    "value": "P4xYOUMGFAI",
+    "domain": ".youtube.com",
+    "path": "/",
+    "expires": -1,
+    "httpOnly": true,
+    "secure": true,
+    "sameSite": "None",
+    "partitionKey": "https://bernoulli.com.br",
+    "_crHasCrossSiteAncestor": true
+  },
+  {
+    "name": "__Secure-ROLLOUT_TOKEN",
+    "value": "CM217p_TmJDI_gEQtM3Z-rHElgMYtM3Z-rHElgM%3D",
+    "domain": ".youtube.com",
+    "path": "/",
+    "expires": 1803508756.421196,
+    "httpOnly": true,
+    "secure": true,
+    "sameSite": "None",
+    "partitionKey": "https://bernoulli.com.br",
+    "_crHasCrossSiteAncestor": true
+  },
+  {
+    "name": "VISITOR_INFO1_LIVE",
+    "value": "E_0Py89AljA",
+    "domain": ".youtube.com",
+    "path": "/",
+    "expires": 1803508756.421229,
+    "httpOnly": true,
+    "secure": true,
+    "sameSite": "None",
+    "partitionKey": "https://bernoulli.com.br",
+    "_crHasCrossSiteAncestor": true
+  },
+  {
+    "name": "VISITOR_PRIVACY_METADATA",
+    "value": "CgJCUhIEGgAgKg%3D%3D",
+    "domain": ".youtube.com",
+    "path": "/",
+    "expires": 1803508756.421239,
+    "httpOnly": true,
+    "secure": true,
+    "sameSite": "None",
+    "partitionKey": "https://bernoulli.com.br",
+    "_crHasCrossSiteAncestor": true
+  },
+  {
+    "name": "cf_clearance",
+    "value": "U49TB_9HRUFVtd2PZIVkWHTW32dnz8isHpRJEiCYiGU-1787956757-1.2.1.1-HMLEtsQb5iWreGuHzyTBYZpRRAvxNMHFS546p7Bdxb7c8FWsIq6bBnO9jBgENfNV6GfDg1pfSZQuU3UTOHjkGCQlQ_bsmLiKpqJ1W.YhA9.Ro6KD_fAcELsWi9rOXf2yjnLBeVATfsrJ2rk_opI38L7Ygh.GhlFoMNk_5oagbWUi86JF9afNoZbrZdsSPIaKYEHTbNPzKYNKtbgEBsywWFL1sIYs0vzRm84E_6wJudRD7RDpWRuqVkPgoR0QvCoLCka0Rh6dDT25D7fmf1S4H7g5u2SniF_z9Fe93v.FL.ROPEfnU.t0HdzmT2Ojv8mtobn3aOkb_9tGb56hZn2AjbfOg.2nnqUhNRNdmKOW4LiCM_4o7KqLYWR50LX7ffgKSFrOIvyBuwqtKmE0D_p4sg",
+    "domain": ".bernoulli.com.br",
+    "path": "/",
+    "expires": 1819492757.34518,
+    "httpOnly": true,
+    "secure": true,
+    "sameSite": "None",
+    "partitionKey": "https://bernoulli.com.br",
+    "_crHasCrossSiteAncestor": false
+  },
+  {
+    "name": "mb4_auth_token",
+    "value": "%22eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vYXBpLmJlcm5vdWxsaS5jb20uYnIvYXBpL2F1dGVudGljYWRvL3BhcmFtZXRyb3MiLCJpYXQiOjE3ODc5NTY3NzMsImV4cCI6MTc4OTE2NjM3MywibmJmIjoxNzg3OTU2NzczLCJqdGkiOiJ2TEFGbmpPYjdsMGhzVVNrIiwic3ViIjoiMTEzNjgwOSIsInBydiI6IjMxYTM3N2ExNjA1NmE4YjZiMDRhMWNmYmYzZmY2OTE2ZmJlY2I0MmEifQ.5LantFiSpucwpOiiMxhim0dJMt0bl_KYjWTmYpmXmLM%22",
+    "domain": "mb4.bernoulli.com.br",
+    "path": "/",
+    "expires": 1790548773.824088,
+    "httpOnly": false,
+    "secure": true,
+    "sameSite": "Lax"
+  },
+  {
+    "name": "_ga",
+    "value": "GA1.1.1435419294.1787956774",
+    "domain": ".bernoulli.com.br",
+    "path": "/",
+    "expires": 1822516774.48849,
+    "httpOnly": false,
+    "secure": false,
+    "sameSite": "Lax"
+  },
+  {
+    "name": "CLID",
+    "value": "126f2a805096432ea94b9073780b4c39.20260828.20270828",
+    "domain": "www.clarity.ms",
+    "path": "/",
+    "expires": 1819492774.581944,
+    "httpOnly": true,
+    "secure": true,
+    "sameSite": "None"
+  },
+  {
+    "name": "_clck",
+    "value": "1wcfli0%5E2%5Eg8z%5E0%5E2431",
+    "domain": ".bernoulli.com.br",
+    "path": "/",
+    "expires": 1819492774,
+    "httpOnly": false,
+    "secure": false,
+    "sameSite": "Lax"
+  },
+  {
+    "name": "_hjSessionUser_3312664",
+    "value": "eyJpZCI6IjhkNzU4MDg5LWNhMDktNTVlZC04NWNmLWFkNzVmODA5MzNjMCIsImNyZWF0ZWQiOjE3ODc5NTY3NzQ5ODUsImV4aXN0aW5nIjpmYWxzZX0=",
+    "domain": ".bernoulli.com.br",
+    "path": "/",
+    "expires": 1819492774,
+    "httpOnly": false,
+    "secure": true,
+    "sameSite": "None"
+  },
+  {
+    "name": "_hjSession_3312664",
+    "value": "eyJpZCI6IjQ3M2M1Mjg1LTBjOGUtNGZmYy1iNDczLTVmMGUzZDU3NjEzMSIsImMiOjE3ODc5NTY3NzQ5ODcsInMiOjAsInIiOjAsInNiIjowLCJzciI6MCwic2UiOjAsImZzIjoxLCJzcCI6MX0=",
+    "domain": ".bernoulli.com.br",
+    "path": "/",
+    "expires": 1787958574,
+    "httpOnly": false,
+    "secure": true,
+    "sameSite": "None"
+  },
+  {
+    "name": "ARRAffinitySameSite",
+    "value": "c4e3982dbcf587f46f3c4d00431e83c3bc31bbcf102ae29a373a4b29ac364bd0",
+    "domain": ".bernoulli-educacao.chat.blip.ai",
+    "path": "/",
+    "expires": -1,
+    "httpOnly": true,
+    "secure": true,
+    "sameSite": "None"
+  },
+  {
+    "name": "__cf_bm",
+    "value": "GFoTAIByJk3XBv.LSfD8PKfCgFMvLngNGUe7RiHaPKg-1787956775.002869-1.0.1.1-qY17xuVjsxxTLWpxgq2VeP7v_1MLnLnPnW4CHUxBQGSYzxXXLBBCBnLl7V0XMVkDjOAeqPghdK7gP.n6XXfIuNxPesZbUxvdHEtp73qK7Qt.hPflneA4MW.kkxfz4Aem",
+    "domain": ".blip.ai",
+    "path": "/",
+    "expires": 1787958575.050816,
+    "httpOnly": true,
+    "secure": true,
+    "sameSite": "None"
+  },
+  {
+    "name": "MUID",
+    "value": "02EFC23CD49066C8133DD5FFD5FB6763",
+    "domain": ".bing.com",
+    "path": "/",
+    "expires": 1821652775.074518,
+    "httpOnly": false,
+    "secure": true,
+    "sameSite": "None"
+  },
+  {
+    "name": "MR",
+    "value": "0",
+    "domain": ".c.bing.com",
+    "path": "/",
+    "expires": 1788561575.075219,
+    "httpOnly": false,
+    "secure": true,
+    "sameSite": "None"
+  },
+  {
+    "name": "SRM_B",
+    "value": "02EFC23CD49066C8133DD5FFD5FB6763",
+    "domain": ".c.bing.com",
+    "path": "/",
+    "expires": 1821652775.075248,
+    "httpOnly": false,
+    "secure": true,
+    "sameSite": "None"
+  },
+  {
+    "name": "SM",
+    "value": "C",
+    "domain": ".c.clarity.ms",
+    "path": "/",
+    "expires": -1,
+    "httpOnly": false,
+    "secure": true,
+    "sameSite": "None"
+  },
+  {
+    "name": "MUID",
+    "value": "02EFC23CD49066C8133DD5FFD5FB6763",
+    "domain": ".clarity.ms",
+    "path": "/",
+    "expires": 1821652775.222014,
+    "httpOnly": false,
+    "secure": true,
+    "sameSite": "None"
+  },
+  {
+    "name": "MR",
+    "value": "0",
+    "domain": ".c.clarity.ms",
+    "path": "/",
+    "expires": 1788561575.222037,
+    "httpOnly": false,
+    "secure": true,
+    "sameSite": "None"
+  },
+  {
+    "name": "ANONCHK",
+    "value": "0",
+    "domain": ".c.clarity.ms",
+    "path": "/",
+    "expires": 1787957375.22205,
+    "httpOnly": false,
+    "secure": true,
+    "sameSite": "None"
+  },
+  {
+    "name": "__cf_bm",
+    "value": "9lwiDAY8HEqNtqrN5ZTOeUsrA62g__M6fl1L2Xgjigs-1787956775.4375343-1.0.1.1-r6aDahrxzXDSVDzFIPdL6136425teuv_AKdX0WPZ821zlELDJy53y7UjN3IWVzan8a25InJagIcDEhTDppGD9zSHIfCX.bHo2Z7ZclYyUkr11yje1yXJMIDbuFDF.Jvk",
+    "domain": ".vimeo.com",
+    "path": "/",
+    "expires": 1787958575.462911,
+    "httpOnly": true,
+    "secure": true,
+    "sameSite": "None"
+  },
+  {
+    "name": "ai_user",
+    "value": "lZaG6|2026-08-28T22:39:35.704Z",
+    "domain": "bernoulli-educacao.chat.blip.ai",
+    "path": "/",
+    "expires": 1819492775,
+    "httpOnly": false,
+    "secure": true,
+    "sameSite": "None"
+  },
+  {
+    "name": "_ga_LT5Z8CKXWD",
+    "value": "GS2.1.s1787956757$o1$g1$t1787956779$j38$l0$h0",
+    "domain": ".bernoulli.com.br",
+    "path": "/",
+    "expires": 1822516779.866781,
+    "httpOnly": false,
+    "secure": false,
+    "sameSite": "Lax"
+  },
+  {
+    "name": "smcx_440546702_last_shown_at",
+    "value": "1787956780350",
+    "domain": "mb4.bernoulli.com.br",
+    "path": "/",
+    "expires": -1,
+    "httpOnly": false,
+    "secure": true,
+    "sameSite": "Lax"
+  },
+  {
+    "name": "_clsk",
+    "value": "1mnmxls%5E1787956780498%5E3%5E1%5Eu.clarity.ms%2Fcollect",
+    "domain": ".bernoulli.com.br",
+    "path": "/",
+    "expires": 1788043180,
+    "httpOnly": false,
+    "secure": false,
+    "sameSite": "Lax"
+  },
+  {
+    "name": "ep201",
+    "value": "\"/Jp0/BSViQE7yb9Bo8CeHFEudFk=\"",
+    "domain": ".surveymonkey.com",
+    "path": "/",
+    "expires": 1787958582.662777,
+    "httpOnly": false,
+    "secure": true,
+    "sameSite": "None"
+  },
+  {
+    "name": "ep203",
+    "value": "\"LkT41IMtxhwdxrzE164lvfcjT00=\"",
+    "domain": ".surveymonkey.com",
+    "path": "/",
+    "expires": 1795732782.662852,
+    "httpOnly": true,
+    "secure": true,
+    "sameSite": "None"
+  },
+  {
+    "name": "_splunk_rum_sid",
+    "value": "%7B%22expiresAt%22%3A1787957682010%2C%22id%22%3A%2215b1d3efb5b7b74a8111a1ba8e9ea3cc%22%2C%22startTime%22%3A1787956782010%7D",
+    "domain": "www.surveymonkey.com",
+    "path": "/",
+    "expires": 1787957682.010443,
+    "httpOnly": false,
+    "secure": true,
+    "sameSite": "None"
+  }
+]

@@ -1,0 +1,36 @@
+
+import re
+from playwright.sync_api import Playwright, sync_playwright, expect
+
+
+def run(playwright: Playwright) -> None:
+    browser = playwright.chromium.launch(headless=False)
+    context = browser.new_context()
+    page = context.new_page()
+    page.goto("https://mb4.bernoulli.com.br/login")
+    page.get_by_role("textbox", name="Login").click()
+    page.get_by_role("textbox", name="Login").fill("cecilia.amaro@soulasalle.com.br")
+    page.get_by_role("textbox", name="Senha").click()
+    page.get_by_role("textbox", name="Senha").fill("Lasalle@2026")
+    page.get_by_role("button", name="ENTRAR").click()
+    page.get_by_role("button", name="AVANÇAR").click()
+    page.locator("div").filter(has_text="Que bom ter você aqui no Meu").nth(1).click()
+    page.get_by_role("button").nth(2).click()
+    page.locator(".PhosphorIcons.ph-chats-circle").first.click()
+    page.get_by_role("button", name="Novo  Calendário").click()
+    page.get_by_role("button", name="Estudo Dirigido - 2º Trimestre Estudo Dirigido - 2º Trimestre 00:00:").click()
+    page.get_by_text("Estudo Dirigido - 2º TrimestreAvaliaçãohttps://forms.gle/qk8gCBfHF4Y82E288Data").click()
+    page.get_by_role("button").filter(has_text=re.compile(r"^$")).nth(3).click()
+    page.get_by_role("button", name="Gabarito - AV1 - Geografia Gabarito - AV1 - Geografia 00:00:").click()
+    with page.expect_popup() as page1_info:
+        page.get_by_role("link", name="EFAF_GEOGR...LEXSON.pdf ").click()
+    page1 = page1_info.value
+    page.get_by_text("Gabarito - AV1 - GeografiaEventoGabarito - AV1 - GeografiaData inicial23/03/").click()
+
+    # ---------------------
+    context.close()
+    browser.close()
+
+
+with sync_playwright() as playwright:
+    run(playwright)
