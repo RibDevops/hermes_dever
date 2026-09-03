@@ -564,3 +564,1379 @@ ModuleNotFoundError: No module named 'database'
 [2026-08-29T02:04:05.407343] Buscando página 1 (2026-08-22 → 2026-10-28) …
 [2026-08-29T02:04:06.026430] ERRO na requisição: 404 Client Error: Not Found for url: https://mb4.bernoulli.com.br/api/calendario/events?range=week&status=published&grade=12&class=109576&profile=13&school=1846&ignoreAudience=false&sortBy=startDate&sortOrder=asc&startDate=2026-08-22&endDate=2026-10-28&page=1&limit=100
 [2026-08-29 02:04:05] ERRO na extração. Abortando.
+[2026-08-29 02:15:20] Iniciando pipeline…
+[2026-08-29 02:15:20] Executando extract_details.py…
+[2026-08-29T02:15:20.240815] Iniciando extração: 2026-08-22 → 2026-10-28
+[2026-08-29T02:15:20.240885] Buscando página 1 (2026-08-22 → 2026-10-28) …
+[2026-08-29T02:15:45.208267]   → 84 eventos recebidos (total 84, páginas 1)
+[2026-08-29T02:15:45.209426] Total único de eventos: 84
+[2026-08-29T02:15:45.239227] Eventos filtrados (já concluídos): 0
+[2026-08-29T02:15:45.241308] Agenda salva em 'agenda_events_by_date.json': 51 dias, 84 eventos pendentes.
+[2026-08-29 02:15:20] Extração OK.
+[2026-08-29 02:15:20] Executando notify_telegram.py…
+/home/vboxuser/agenda/notify_telegram.py:50: SyntaxWarning: "\|" is an invalid escape sequence. Such sequences will not work in the future. Did you mean "\\|"? A raw string is also an option.
+  f"*🕐 {time_}*  \|  _{ev_type}_",
+[2026-08-29T02:16:13.274576] Falha ao enviar: 429 Client Error: Too Many Requests for url: https://api.telegram.org/bot8982897650:AAGaTtKqDQb-3AGzE2Ejrj82hGFGf5y64l0/sendMessage
+[2026-08-29T02:16:14.244790] Falha ao enviar: 429 Client Error: Too Many Requests for url: https://api.telegram.org/bot8982897650:AAGaTtKqDQb-3AGzE2Ejrj82hGFGf5y64l0/sendMessage
+[2026-08-29T02:16:14.247110] Falha ao enviar evento 3c246ab7-c149-4477-b5be-1034467af49c
+[2026-08-29T02:16:15.023815] Falha ao enviar: 429 Client Error: Too Many Requests for url: https://api.telegram.org/bot8982897650:AAGaTtKqDQb-3AGzE2Ejrj82hGFGf5y64l0/sendMessage
+[2026-08-29T02:16:15.027195] Falha ao enviar evento 73432599-8ded-42b3-ae7e-a014d253e075
+[2026-08-29T02:16:15.813251] Falha ao enviar: 429 Client Error: Too Many Requests for url: https://api.telegram.org/bot8982897650:AAGaTtKqDQb-3AGzE2Ejrj82hGFGf5y64l0/sendMessage
+[2026-08-29T02:16:15.815456] Falha ao enviar evento 8d1cbe1c-14c6-4549-9b17-2718fd303f73
+[2026-08-29T02:16:16.579458] Falha ao enviar: 429 Client Error: Too Many Requests for url: https://api.telegram.org/bot8982897650:AAGaTtKqDQb-3AGzE2Ejrj82hGFGf5y64l0/sendMessage
+[2026-08-29T02:16:16.581386] Falha ao enviar evento 62911f25-4a18-4d32-932a-12970f3f3362
+[2026-08-29T02:16:17.551346] Falha ao enviar: 429 Client Error: Too Many Requests for url: https://api.telegram.org/bot8982897650:AAGaTtKqDQb-3AGzE2Ejrj82hGFGf5y64l0/sendMessage
+[2026-08-29T02:16:18.319388] Falha ao enviar: 429 Client Error: Too Many Requests for url: https://api.telegram.org/bot8982897650:AAGaTtKqDQb-3AGzE2Ejrj82hGFGf5y64l0/sendMessage
+[2026-08-29T02:16:18.320125] Falha ao enviar evento 35ff7640-f391-4449-a1c4-14898df28022
+[2026-08-29T02:16:19.296959] Falha ao enviar: 429 Client Error: Too Many Requests for url: https://api.telegram.org/bot8982897650:AAGaTtKqDQb-3AGzE2Ejrj82hGFGf5y64l0/sendMessage
+[2026-08-29T02:16:19.297893] Falha ao enviar evento 40d72ae3-911e-4828-8609-6ece694d56b7
+[2026-08-29T02:16:20.293851] Falha ao enviar: 429 Client Error: Too Many Requests for url: https://api.telegram.org/bot8982897650:AAGaTtKqDQb-3AGzE2Ejrj82hGFGf5y64l0/sendMessage
+[2026-08-29T02:16:21.077627] Falha ao enviar: 429 Client Error: Too Many Requests for url: https://api.telegram.org/bot8982897650:AAGaTtKqDQb-3AGzE2Ejrj82hGFGf5y64l0/sendMessage
+[2026-08-29T02:16:21.078437] Falha ao enviar evento ac560f0f-b38d-4495-ba45-8f2b6f072b0b
+[2026-08-29T02:16:21.863750] Falha ao enviar: 429 Client Error: Too Many Requests for url: https://api.telegram.org/bot8982897650:AAGaTtKqDQb-3AGzE2Ejrj82hGFGf5y64l0/sendMessage
+[2026-08-29T02:16:21.864612] Falha ao enviar evento 7f7cecab-7e10-4e6f-bdbc-79cd94358568
+[2026-08-29T02:16:22.632453] Falha ao enviar: 429 Client Error: Too Many Requests for url: https://api.telegram.org/bot8982897650:AAGaTtKqDQb-3AGzE2Ejrj82hGFGf5y64l0/sendMessage
+[2026-08-29T02:16:22.633511] Falha ao enviar evento e965bfb7-3321-4959-a6f6-5bb4865c6ad5
+[2026-08-29T02:16:23.440100] Falha ao enviar: 429 Client Error: Too Many Requests for url: https://api.telegram.org/bot8982897650:AAGaTtKqDQb-3AGzE2Ejrj82hGFGf5y64l0/sendMessage
+[2026-08-29T02:16:24.211609] Falha ao enviar: 429 Client Error: Too Many Requests for url: https://api.telegram.org/bot8982897650:AAGaTtKqDQb-3AGzE2Ejrj82hGFGf5y64l0/sendMessage
+[2026-08-29T02:16:24.213092] Falha ao enviar evento a89b0695-b8b7-4112-a6b9-298474c89edd
+[2026-08-29T02:16:24.966796] Falha ao enviar: 429 Client Error: Too Many Requests for url: https://api.telegram.org/bot8982897650:AAGaTtKqDQb-3AGzE2Ejrj82hGFGf5y64l0/sendMessage
+[2026-08-29T02:16:24.967599] Falha ao enviar evento 5aa022c8-40da-40e1-b487-962b55102dda
+[2026-08-29T02:16:25.737190] Falha ao enviar: 429 Client Error: Too Many Requests for url: https://api.telegram.org/bot8982897650:AAGaTtKqDQb-3AGzE2Ejrj82hGFGf5y64l0/sendMessage
+[2026-08-29T02:16:25.737850] Falha ao enviar evento eb847a11-a620-4e5d-a1d9-a8c259a88acc
+[2026-08-29T02:16:26.703828] Falha ao enviar: 429 Client Error: Too Many Requests for url: https://api.telegram.org/bot8982897650:AAGaTtKqDQb-3AGzE2Ejrj82hGFGf5y64l0/sendMessage
+[2026-08-29T02:16:27.475696] Falha ao enviar: 429 Client Error: Too Many Requests for url: https://api.telegram.org/bot8982897650:AAGaTtKqDQb-3AGzE2Ejrj82hGFGf5y64l0/sendMessage
+[2026-08-29T02:16:27.477207] Falha ao enviar evento 23643e3d-3573-4423-816f-7731399f76c7
+[2026-08-29T02:16:28.455704] Falha ao enviar: 429 Client Error: Too Many Requests for url: https://api.telegram.org/bot8982897650:AAGaTtKqDQb-3AGzE2Ejrj82hGFGf5y64l0/sendMessage
+[2026-08-29T02:16:29.316159] Falha ao enviar: 429 Client Error: Too Many Requests for url: https://api.telegram.org/bot8982897650:AAGaTtKqDQb-3AGzE2Ejrj82hGFGf5y64l0/sendMessage
+[2026-08-29T02:16:29.317018] Falha ao enviar evento cc6ae779-1636-4cbf-bfec-fadfe5338869
+[2026-08-29T02:16:30.300858] Falha ao enviar: 429 Client Error: Too Many Requests for url: https://api.telegram.org/bot8982897650:AAGaTtKqDQb-3AGzE2Ejrj82hGFGf5y64l0/sendMessage
+[2026-08-29T02:16:31.067001] Falha ao enviar: 429 Client Error: Too Many Requests for url: https://api.telegram.org/bot8982897650:AAGaTtKqDQb-3AGzE2Ejrj82hGFGf5y64l0/sendMessage
+[2026-08-29T02:16:31.068205] Falha ao enviar evento e67febf4-9479-4964-8584-432605a1d822
+[2026-08-29T02:16:32.051773] Falha ao enviar: 429 Client Error: Too Many Requests for url: https://api.telegram.org/bot8982897650:AAGaTtKqDQb-3AGzE2Ejrj82hGFGf5y64l0/sendMessage
+[2026-08-29T02:16:33.058589] Falha ao enviar: 429 Client Error: Too Many Requests for url: https://api.telegram.org/bot8982897650:AAGaTtKqDQb-3AGzE2Ejrj82hGFGf5y64l0/sendMessage
+[2026-08-29T02:16:33.059295] Falha ao enviar evento 55bf0642-2d19-4518-a9cd-e6806ea9c39f
+[2026-08-29T02:16:33.814947] Falha ao enviar: 429 Client Error: Too Many Requests for url: https://api.telegram.org/bot8982897650:AAGaTtKqDQb-3AGzE2Ejrj82hGFGf5y64l0/sendMessage
+[2026-08-29T02:16:33.815891] Falha ao enviar evento 130c88c6-0662-439b-9405-984615f5c025
+[2026-08-29T02:16:34.568082] Falha ao enviar: 429 Client Error: Too Many Requests for url: https://api.telegram.org/bot8982897650:AAGaTtKqDQb-3AGzE2Ejrj82hGFGf5y64l0/sendMessage
+[2026-08-29T02:16:34.569103] Falha ao enviar evento cf0f754e-d99f-44ae-a037-2415957bdc47
+[2026-08-29T02:16:35.336401] Falha ao enviar: 429 Client Error: Too Many Requests for url: https://api.telegram.org/bot8982897650:AAGaTtKqDQb-3AGzE2Ejrj82hGFGf5y64l0/sendMessage
+[2026-08-29T02:16:36.109405] Falha ao enviar: 429 Client Error: Too Many Requests for url: https://api.telegram.org/bot8982897650:AAGaTtKqDQb-3AGzE2Ejrj82hGFGf5y64l0/sendMessage
+[2026-08-29T02:16:36.110260] Falha ao enviar evento 68a26bd4-3f46-4290-9148-ddb9c7dae6e4
+[2026-08-29T02:16:37.087202] Falha ao enviar: 429 Client Error: Too Many Requests for url: https://api.telegram.org/bot8982897650:AAGaTtKqDQb-3AGzE2Ejrj82hGFGf5y64l0/sendMessage
+[2026-08-29T02:16:37.087968] Falha ao enviar evento 5994e667-f4cd-4e2e-af6b-207f799daf1f
+[2026-08-29T02:16:37.845098] Falha ao enviar: 429 Client Error: Too Many Requests for url: https://api.telegram.org/bot8982897650:AAGaTtKqDQb-3AGzE2Ejrj82hGFGf5y64l0/sendMessage
+[2026-08-29T02:17:10.398662] Falha ao enviar: 400 Client Error: Bad Request for url: https://api.telegram.org/bot8982897650:AAGaTtKqDQb-3AGzE2Ejrj82hGFGf5y64l0/sendMessage
+[2026-08-29T02:17:10.400120] Falha ao enviar evento a50a50a7-e8b1-4651-b489-e686f2f32d07
+[2026-08-29T02:17:14.418396] Falha ao enviar: 429 Client Error: Too Many Requests for url: https://api.telegram.org/bot8982897650:AAGaTtKqDQb-3AGzE2Ejrj82hGFGf5y64l0/sendMessage
+[2026-08-29T02:17:14.419217] Falha ao enviar evento 95639181-3ce2-4403-a7ac-f317ae850cf9
+[2026-08-29T02:17:15.188505] Falha ao enviar: 429 Client Error: Too Many Requests for url: https://api.telegram.org/bot8982897650:AAGaTtKqDQb-3AGzE2Ejrj82hGFGf5y64l0/sendMessage
+[2026-08-29T02:17:15.952634] Falha ao enviar: 429 Client Error: Too Many Requests for url: https://api.telegram.org/bot8982897650:AAGaTtKqDQb-3AGzE2Ejrj82hGFGf5y64l0/sendMessage
+[2026-08-29T02:17:15.953511] Falha ao enviar evento 02941270-97b0-4026-bfd0-6093e87b80b3
+[2026-08-29T02:17:16.927565] Falha ao enviar: 429 Client Error: Too Many Requests for url: https://api.telegram.org/bot8982897650:AAGaTtKqDQb-3AGzE2Ejrj82hGFGf5y64l0/sendMessage
+[2026-08-29T02:17:16.928466] Falha ao enviar evento c5718dd8-bc51-491e-b920-242c6a1a28de
+[2026-08-29T02:17:17.691898] Falha ao enviar: 429 Client Error: Too Many Requests for url: https://api.telegram.org/bot8982897650:AAGaTtKqDQb-3AGzE2Ejrj82hGFGf5y64l0/sendMessage
+[2026-08-29T02:17:18.652144] Falha ao enviar: 429 Client Error: Too Many Requests for url: https://api.telegram.org/bot8982897650:AAGaTtKqDQb-3AGzE2Ejrj82hGFGf5y64l0/sendMessage
+[2026-08-29T02:17:18.652814] Falha ao enviar evento ca9a6215-4477-47a0-b4c2-61f7f11a65c2
+[2026-08-29T02:17:19.414942] Falha ao enviar: 429 Client Error: Too Many Requests for url: https://api.telegram.org/bot8982897650:AAGaTtKqDQb-3AGzE2Ejrj82hGFGf5y64l0/sendMessage
+[2026-08-29T02:17:19.415856] Falha ao enviar evento 34a0eb87-760c-4017-81c8-3368f7bb86fd
+[2026-08-29T02:17:20.186833] Falha ao enviar: 429 Client Error: Too Many Requests for url: https://api.telegram.org/bot8982897650:AAGaTtKqDQb-3AGzE2Ejrj82hGFGf5y64l0/sendMessage
+[2026-08-29T02:17:20.939647] Falha ao enviar: 429 Client Error: Too Many Requests for url: https://api.telegram.org/bot8982897650:AAGaTtKqDQb-3AGzE2Ejrj82hGFGf5y64l0/sendMessage
+[2026-08-29T02:17:20.940353] Falha ao enviar evento e7f7add2-839a-417a-b7a0-8f25776df909
+[2026-08-29T02:17:21.693079] Falha ao enviar: 429 Client Error: Too Many Requests for url: https://api.telegram.org/bot8982897650:AAGaTtKqDQb-3AGzE2Ejrj82hGFGf5y64l0/sendMessage
+[2026-08-29T02:17:21.693966] Falha ao enviar evento 91318652-e1f8-4f4b-ae80-85ce4da9ec96
+[2026-08-29T02:17:22.457281] Falha ao enviar: 429 Client Error: Too Many Requests for url: https://api.telegram.org/bot8982897650:AAGaTtKqDQb-3AGzE2Ejrj82hGFGf5y64l0/sendMessage
+[2026-08-29T02:17:23.420221] Falha ao enviar: 429 Client Error: Too Many Requests for url: https://api.telegram.org/bot8982897650:AAGaTtKqDQb-3AGzE2Ejrj82hGFGf5y64l0/sendMessage
+[2026-08-29T02:17:23.420896] Falha ao enviar evento 86ef8543-c3b2-4da7-857a-05db47998675
+[2026-08-29T02:17:24.186367] Falha ao enviar: 429 Client Error: Too Many Requests for url: https://api.telegram.org/bot8982897650:AAGaTtKqDQb-3AGzE2Ejrj82hGFGf5y64l0/sendMessage
+[2026-08-29T02:17:24.187178] Falha ao enviar evento bc02281a-ce0a-4e01-a81b-df797ee0ab90
+[2026-08-29T02:17:25.039547] Falha ao enviar: 400 Client Error: Bad Request for url: https://api.telegram.org/bot8982897650:AAGaTtKqDQb-3AGzE2Ejrj82hGFGf5y64l0/sendMessage
+[2026-08-29T02:17:25.040378] Falha ao enviar evento 871db033-0a0b-47b2-8a56-8915eaa44cbe
+[2026-08-29T02:17:26.028233] Falha ao enviar: 429 Client Error: Too Many Requests for url: https://api.telegram.org/bot8982897650:AAGaTtKqDQb-3AGzE2Ejrj82hGFGf5y64l0/sendMessage
+[2026-08-29T02:17:26.029227] Falha ao enviar evento 520aa988-400f-4701-a182-3dd47062316e
+[2026-08-29T02:17:26.807502] Falha ao enviar: 429 Client Error: Too Many Requests for url: https://api.telegram.org/bot8982897650:AAGaTtKqDQb-3AGzE2Ejrj82hGFGf5y64l0/sendMessage
+[2026-08-29T02:17:26.808533] Falha ao enviar evento 58916529-c25b-466c-94ab-0a01624d40ea
+[2026-08-29T02:17:27.770856] Falha ao enviar: 429 Client Error: Too Many Requests for url: https://api.telegram.org/bot8982897650:AAGaTtKqDQb-3AGzE2Ejrj82hGFGf5y64l0/sendMessage
+[2026-08-29T02:17:28.523945] Falha ao enviar: 429 Client Error: Too Many Requests for url: https://api.telegram.org/bot8982897650:AAGaTtKqDQb-3AGzE2Ejrj82hGFGf5y64l0/sendMessage
+[2026-08-29T02:17:28.524945] Falha ao enviar evento 21473b75-346d-4c92-a86d-40ddc8b50d92
+[2026-08-29T02:17:29.503960] Falha ao enviar: 429 Client Error: Too Many Requests for url: https://api.telegram.org/bot8982897650:AAGaTtKqDQb-3AGzE2Ejrj82hGFGf5y64l0/sendMessage
+[2026-08-29T02:17:30.259043] Falha ao enviar: 429 Client Error: Too Many Requests for url: https://api.telegram.org/bot8982897650:AAGaTtKqDQb-3AGzE2Ejrj82hGFGf5y64l0/sendMessage
+[2026-08-29T02:17:30.260209] Falha ao enviar evento 917cf435-b87d-4785-ae41-7dd6f0fedba2
+[2026-08-29T02:17:31.023733] Falha ao enviar: 429 Client Error: Too Many Requests for url: https://api.telegram.org/bot8982897650:AAGaTtKqDQb-3AGzE2Ejrj82hGFGf5y64l0/sendMessage
+[2026-08-29T02:17:32.000578] Falha ao enviar: 429 Client Error: Too Many Requests for url: https://api.telegram.org/bot8982897650:AAGaTtKqDQb-3AGzE2Ejrj82hGFGf5y64l0/sendMessage
+[2026-08-29T02:17:32.001387] Falha ao enviar evento 485165ef-830d-42a6-a772-0d6579c63930
+[2026-08-29T02:17:32.762738] Falha ao enviar: 429 Client Error: Too Many Requests for url: https://api.telegram.org/bot8982897650:AAGaTtKqDQb-3AGzE2Ejrj82hGFGf5y64l0/sendMessage
+[2026-08-29T02:17:33.731645] Falha ao enviar: 429 Client Error: Too Many Requests for url: https://api.telegram.org/bot8982897650:AAGaTtKqDQb-3AGzE2Ejrj82hGFGf5y64l0/sendMessage
+[2026-08-29T02:17:33.732464] Falha ao enviar evento 757af5b3-1641-45f3-8f3a-b7509ca1fbf0
+[2026-08-29T02:17:34.708293] Falha ao enviar: 429 Client Error: Too Many Requests for url: https://api.telegram.org/bot8982897650:AAGaTtKqDQb-3AGzE2Ejrj82hGFGf5y64l0/sendMessage
+[2026-08-29T02:17:35.683889] Falha ao enviar: 429 Client Error: Too Many Requests for url: https://api.telegram.org/bot8982897650:AAGaTtKqDQb-3AGzE2Ejrj82hGFGf5y64l0/sendMessage
+[2026-08-29T02:17:35.684878] Falha ao enviar evento 6838fd39-f0f9-4d27-ab33-2053fff038ee
+[2026-08-29T02:17:36.450369] Falha ao enviar: 429 Client Error: Too Many Requests for url: https://api.telegram.org/bot8982897650:AAGaTtKqDQb-3AGzE2Ejrj82hGFGf5y64l0/sendMessage
+[2026-08-29T02:17:37.226652] Falha ao enviar: 429 Client Error: Too Many Requests for url: https://api.telegram.org/bot8982897650:AAGaTtKqDQb-3AGzE2Ejrj82hGFGf5y64l0/sendMessage
+[2026-08-29T02:17:37.227706] Falha ao enviar evento ec645892-0617-48c8-b0d8-1edf64e246c7
+[2026-08-29T02:17:46.327584] Falha ao enviar: 429 Client Error: Too Many Requests for url: https://api.telegram.org/bot8982897650:AAGaTtKqDQb-3AGzE2Ejrj82hGFGf5y64l0/sendMessage
+[2026-08-29T02:18:15.949659] Falha ao enviar: 429 Client Error: Too Many Requests for url: https://api.telegram.org/bot8982897650:AAGaTtKqDQb-3AGzE2Ejrj82hGFGf5y64l0/sendMessage
+[2026-08-29T02:18:15.951640] Falha ao enviar evento 4fc05299-a7f4-4b01-9447-c24a5671b3e9
+[2026-08-29T02:18:16.736457] Falha ao enviar: 429 Client Error: Too Many Requests for url: https://api.telegram.org/bot8982897650:AAGaTtKqDQb-3AGzE2Ejrj82hGFGf5y64l0/sendMessage
+[2026-08-29T02:18:17.731434] Falha ao enviar: 429 Client Error: Too Many Requests for url: https://api.telegram.org/bot8982897650:AAGaTtKqDQb-3AGzE2Ejrj82hGFGf5y64l0/sendMessage
+[2026-08-29T02:18:17.732458] Falha ao enviar evento 13410889-0d27-4e10-b335-6f3258315c24
+[2026-08-29T02:18:18.523464] Falha ao enviar: 429 Client Error: Too Many Requests for url: https://api.telegram.org/bot8982897650:AAGaTtKqDQb-3AGzE2Ejrj82hGFGf5y64l0/sendMessage
+[2026-08-29T02:18:18.524594] Falha ao enviar evento b4ef2983-f3c2-4ef4-9b0d-034732665c39
+[2026-08-29T02:18:19.532250] Falha ao enviar: 429 Client Error: Too Many Requests for url: https://api.telegram.org/bot8982897650:AAGaTtKqDQb-3AGzE2Ejrj82hGFGf5y64l0/sendMessage
+[2026-08-29T02:18:20.497495] Falha ao enviar: 429 Client Error: Too Many Requests for url: https://api.telegram.org/bot8982897650:AAGaTtKqDQb-3AGzE2Ejrj82hGFGf5y64l0/sendMessage
+[2026-08-29T02:18:20.498407] Falha ao enviar evento eaa3b306-ce9d-4d69-84cb-bc7a5ae7f9ae
+[2026-08-29T02:18:21.492364] Falha ao enviar: 429 Client Error: Too Many Requests for url: https://api.telegram.org/bot8982897650:AAGaTtKqDQb-3AGzE2Ejrj82hGFGf5y64l0/sendMessage
+[2026-08-29T02:18:22.271208] Falha ao enviar: 429 Client Error: Too Many Requests for url: https://api.telegram.org/bot8982897650:AAGaTtKqDQb-3AGzE2Ejrj82hGFGf5y64l0/sendMessage
+[2026-08-29T02:18:22.272140] Falha ao enviar evento 471cbf46-1e3d-4a45-b862-4395aa612edb
+[2026-08-29T02:18:23.240269] Falha ao enviar: 429 Client Error: Too Many Requests for url: https://api.telegram.org/bot8982897650:AAGaTtKqDQb-3AGzE2Ejrj82hGFGf5y64l0/sendMessage
+[2026-08-29T02:18:23.241196] Falha ao enviar evento 066a922c-b40a-446b-81da-a2dbccf646ea
+[2026-08-29T02:18:24.273552] Falha ao enviar: 429 Client Error: Too Many Requests for url: https://api.telegram.org/bot8982897650:AAGaTtKqDQb-3AGzE2Ejrj82hGFGf5y64l0/sendMessage
+[2026-08-29T02:18:25.060609] Falha ao enviar: 429 Client Error: Too Many Requests for url: https://api.telegram.org/bot8982897650:AAGaTtKqDQb-3AGzE2Ejrj82hGFGf5y64l0/sendMessage
+[2026-08-29T02:18:25.061478] Falha ao enviar evento aab39fb2-a1b5-41fa-ae51-9ac1a21ca7f2
+[2026-08-29T02:18:25.827722] Falha ao enviar: 429 Client Error: Too Many Requests for url: https://api.telegram.org/bot8982897650:AAGaTtKqDQb-3AGzE2Ejrj82hGFGf5y64l0/sendMessage
+[2026-08-29T02:18:26.617042] Falha ao enviar: 429 Client Error: Too Many Requests for url: https://api.telegram.org/bot8982897650:AAGaTtKqDQb-3AGzE2Ejrj82hGFGf5y64l0/sendMessage
+[2026-08-29T02:18:26.619382] Falha ao enviar evento b305609f-3063-4b9c-b983-90af2b19f045
+[2026-08-29T02:18:27.383518] Falha ao enviar: 429 Client Error: Too Many Requests for url: https://api.telegram.org/bot8982897650:AAGaTtKqDQb-3AGzE2Ejrj82hGFGf5y64l0/sendMessage
+[2026-08-29T02:18:28.370634] Falha ao enviar: 429 Client Error: Too Many Requests for url: https://api.telegram.org/bot8982897650:AAGaTtKqDQb-3AGzE2Ejrj82hGFGf5y64l0/sendMessage
+[2026-08-29T02:18:28.374341] Falha ao enviar evento 585fcb6a-d021-4fcd-9dab-78fe19ba4047
+[2026-08-29T02:18:28.374408] Concluído. 51/51 dias, 36 mensagens enviadas.
+[2026-08-29 02:15:20] Notificação OK.
+[2026-08-29 02:15:20] Pipeline concluído com sucesso.
+[2026-08-29 02:30:19] Iniciando pipeline…
+[2026-08-29 02:30:19] Executando extract_details.py…
+[2026-08-29T02:30:19.838840] Iniciando extração: 2026-08-22 → 2026-10-28
+[2026-08-29T02:30:19.838898] Buscando página 1 (2026-08-22 → 2026-10-28) …
+[2026-08-29T02:30:33.296452]   → 84 eventos recebidos (total 84, páginas 1)
+[2026-08-29T02:30:33.296635] Total único de eventos: 84
+[2026-08-29T02:30:33.310865] Eventos filtrados (já concluídos): 0
+[2026-08-29T02:30:33.313482] Agenda salva em 'agenda_events_by_date.json': 51 dias, 84 eventos pendentes.
+[2026-08-29 02:30:19] Extração OK.
+[2026-08-29 02:30:19] Executando notify_telegram.py…
+[2026-08-29T02:31:15.429245] Rate limit (429). Aguardando 19s… retry 1/5
+[2026-08-29T02:32:17.975808] Rate limit (429). Aguardando 18s… retry 1/5
+[2026-08-29T02:32:59.073747] Concluído. 51 mensagem(ns) enviada(s), 0 falha(s). 51 dia(s).
+[2026-08-29 02:30:19] Notificação OK.
+[2026-08-29 02:30:19] Pipeline concluído com sucesso.
+[2026-08-29 02:38:33] Iniciando pipeline…
+[2026-08-29 02:38:33] Executando extract_details.py…
+[2026-08-29T02:38:33.811508] Iniciando extração: 2026-08-22 → 2026-10-28
+[2026-08-29T02:38:33.811572] Buscando página 1 (2026-08-22 → 2026-10-28) …
+[2026-08-29T02:38:35.595893]   → 84 eventos (total 84, páginas 1)
+[2026-08-29T02:38:35.596067] Total único de eventos da API: 84
+[2026-08-29T02:38:35.630721] Eventos concluídos (filtrados): 0
+[2026-08-29T02:38:35.630776] Eventos expandidos em entradas de dia: 5796
+[2026-08-29T02:38:35.632532]   2026-08-22: 84 evento(s)
+[2026-08-29T02:38:35.632570]   2026-08-23: 84 evento(s)
+[2026-08-29T02:38:35.632576]   2026-08-24: 84 evento(s)
+[2026-08-29T02:38:35.632581]   2026-08-25: 84 evento(s)
+[2026-08-29T02:38:35.632590]   2026-08-26: 84 evento(s)
+[2026-08-29T02:38:35.632596]   2026-08-27: 84 evento(s)
+[2026-08-29T02:38:35.632605]   2026-08-28: 84 evento(s)
+[2026-08-29T02:38:35.632611]   2026-08-29: 84 evento(s)
+[2026-08-29T02:38:35.632620]   2026-08-30: 84 evento(s)
+[2026-08-29T02:38:35.632625]   2026-08-31: 84 evento(s)
+[2026-08-29T02:38:35.632629]   2026-09-01: 84 evento(s)
+[2026-08-29T02:38:35.632633]   2026-09-02: 84 evento(s)
+[2026-08-29T02:38:35.632637]   2026-09-03: 84 evento(s)
+[2026-08-29T02:38:35.632641]   2026-09-04: 84 evento(s)
+[2026-08-29T02:38:35.632645]   2026-09-05: 84 evento(s)
+[2026-08-29T02:38:35.632649]   2026-09-06: 84 evento(s)
+[2026-08-29T02:38:35.632652]   2026-09-07: 84 evento(s)
+[2026-08-29T02:38:35.632657]   2026-09-08: 84 evento(s)
+[2026-08-29T02:38:35.632660]   2026-09-09: 84 evento(s)
+[2026-08-29T02:38:35.632664]   2026-09-10: 84 evento(s)
+[2026-08-29T02:38:35.632668]   2026-09-11: 84 evento(s)
+[2026-08-29T02:38:35.632675]   2026-09-12: 84 evento(s)
+[2026-08-29T02:38:35.632699]   2026-09-13: 84 evento(s)
+[2026-08-29T02:38:35.632707]   2026-09-14: 84 evento(s)
+[2026-08-29T02:38:35.632711]   2026-09-15: 84 evento(s)
+[2026-08-29T02:38:35.632718]   2026-09-16: 84 evento(s)
+[2026-08-29T02:38:35.632722]   2026-09-17: 84 evento(s)
+[2026-08-29T02:38:35.632728]   2026-09-18: 84 evento(s)
+[2026-08-29T02:38:35.632733]   2026-09-19: 84 evento(s)
+[2026-08-29T02:38:35.632739]   2026-09-20: 84 evento(s)
+[2026-08-29T02:38:35.632743]   2026-09-21: 84 evento(s)
+[2026-08-29T02:38:35.632749]   2026-09-22: 84 evento(s)
+[2026-08-29T02:38:35.632754]   2026-09-23: 84 evento(s)
+[2026-08-29T02:38:35.632760]   2026-09-24: 84 evento(s)
+[2026-08-29T02:38:35.632764]   2026-09-25: 84 evento(s)
+[2026-08-29T02:38:35.632769]   2026-09-26: 84 evento(s)
+[2026-08-29T02:38:35.632773]   2026-09-27: 84 evento(s)
+[2026-08-29T02:38:35.632779]   2026-09-28: 84 evento(s)
+[2026-08-29T02:38:35.632783]   2026-09-29: 84 evento(s)
+[2026-08-29T02:38:35.632787]   2026-09-30: 84 evento(s)
+[2026-08-29T02:38:35.632793]   2026-10-01: 84 evento(s)
+[2026-08-29T02:38:35.632798]   2026-10-02: 84 evento(s)
+[2026-08-29T02:38:35.632804]   2026-10-03: 84 evento(s)
+[2026-08-29T02:38:35.632809]   2026-10-04: 84 evento(s)
+[2026-08-29T02:38:35.632815]   2026-10-05: 84 evento(s)
+[2026-08-29T02:38:35.632819]   2026-10-06: 84 evento(s)
+[2026-08-29T02:38:35.632824]   2026-10-07: 84 evento(s)
+[2026-08-29T02:38:35.632828]   2026-10-08: 84 evento(s)
+[2026-08-29T02:38:35.632833]   2026-10-09: 84 evento(s)
+[2026-08-29T02:38:35.632837]   2026-10-10: 84 evento(s)
+[2026-08-29T02:38:35.632842]   2026-10-11: 84 evento(s)
+[2026-08-29T02:38:35.632849]   2026-10-12: 84 evento(s)
+[2026-08-29T02:38:35.632853]   2026-10-13: 84 evento(s)
+[2026-08-29T02:38:35.632857]   2026-10-14: 84 evento(s)
+[2026-08-29T02:38:35.632861]   2026-10-15: 84 evento(s)
+[2026-08-29T02:38:35.632864]   2026-10-16: 84 evento(s)
+[2026-08-29T02:38:35.632870]   2026-10-17: 84 evento(s)
+[2026-08-29T02:38:35.632875]   2026-10-18: 84 evento(s)
+[2026-08-29T02:38:35.632879]   2026-10-19: 84 evento(s)
+[2026-08-29T02:38:35.632883]   2026-10-20: 84 evento(s)
+[2026-08-29T02:38:35.632886]   2026-10-21: 84 evento(s)
+[2026-08-29T02:38:35.632890]   2026-10-22: 84 evento(s)
+[2026-08-29T02:38:35.632896]   2026-10-23: 84 evento(s)
+[2026-08-29T02:38:35.632914]   2026-10-24: 84 evento(s)
+[2026-08-29T02:38:35.632918]   2026-10-25: 84 evento(s)
+[2026-08-29T02:38:35.632923]   2026-10-26: 84 evento(s)
+[2026-08-29T02:38:35.632926]   2026-10-27: 84 evento(s)
+[2026-08-29T02:38:35.632932]   2026-10-28: 84 evento(s)
+[2026-08-29T02:38:35.632935]   2026-10-29: 84 evento(s)
+[2026-08-29T02:38:35.673091] Agenda salva: 69 dias, 5796 eventos pendentes.
+[2026-08-29 02:38:33] Extração OK.
+[2026-08-29 02:38:33] Executando notify_telegram.py…
+[2026-08-29T02:39:14.990631] Rate limit (429). Aguardando 22s… retry 1/5
+[2026-08-29T02:40:15.130945] Rate limit (429). Aguardando 23s… retry 1/5
+[2026-08-29T02:41:17.548527] Rate limit (429). Aguardando 21s… retry 1/5
+[2026-08-29T02:42:16.371128] Rate limit (429). Aguardando 23s… retry 1/5
+[2026-08-29T02:43:17.975278] Rate limit (429). Aguardando 23s… retry 1/5
+[2026-08-29T02:44:20.704929] Rate limit (429). Aguardando 21s… retry 1/5
+[2026-08-29T02:45:20.424884] Rate limit (429). Aguardando 22s… retry 1/5
+[2026-08-29T02:46:20.282485] Rate limit (429). Aguardando 23s… retry 1/5
+[2026-08-29T02:47:21.547640] Rate limit (429). Aguardando 22s… retry 1/5
+[2026-08-29T02:48:22.084258] Rate limit (429). Aguardando 23s… retry 1/5
+[2026-08-29T02:49:23.638931] Rate limit (429). Aguardando 22s… retry 1/5
+[2026-08-29T02:50:24.578095] Rate limit (429). Aguardando 22s… retry 1/5
+[2026-08-29T02:51:24.888926] Rate limit (429). Aguardando 23s… retry 1/5
+[2026-08-29T02:52:26.254904] Rate limit (429). Aguardando 22s… retry 1/5
+[2026-08-29T02:53:25.862107] Rate limit (429). Aguardando 23s… retry 1/5
+[2026-08-29T02:54:27.495876] Rate limit (429). Aguardando 22s… retry 1/5
+[2026-08-29T02:55:28.783878] Rate limit (429). Aguardando 22s… retry 1/5
+[2026-08-29T02:56:29.522554] Rate limit (429). Aguardando 22s… retry 1/5
+[2026-08-29T02:57:30.224128] Rate limit (429). Aguardando 22s… retry 1/5
+[2026-08-29T02:58:30.294590] Rate limit (429). Aguardando 22s… retry 1/5
+[2026-08-29T02:59:31.346481] Rate limit (429). Aguardando 21s… retry 1/5
+[2026-08-29T03:00:31.538979] Rate limit (429). Aguardando 22s… retry 1/5
+[2026-08-29T03:01:31.661473] Rate limit (429). Aguardando 23s… retry 1/5
+[2026-08-29T03:02:33.626994] Rate limit (429). Aguardando 22s… retry 1/5
+[2026-08-29T03:03:34.134028] Rate limit (429). Aguardando 23s… retry 1/5
+[2026-08-29T03:04:36.157721] Rate limit (429). Aguardando 22s… retry 1/5
+[2026-08-29T03:05:37.112164] Rate limit (429). Aguardando 23s… retry 1/5
+[2026-08-29T03:06:38.377081] Rate limit (429). Aguardando 22s… retry 1/5
+[2026-08-29T03:07:39.398183] Rate limit (429). Aguardando 21s… retry 1/5
+[2026-08-29T03:08:38.926513] Rate limit (429). Aguardando 23s… retry 1/5
+[2026-08-29T03:09:40.408466] Rate limit (429). Aguardando 22s… retry 1/5
+[2026-08-29T03:10:40.758018] Rate limit (429). Aguardando 23s… retry 1/5
+[2026-08-29T03:11:43.741162] Rate limit (429). Aguardando 21s… retry 1/5
+[2026-08-29T03:12:44.274152] Rate limit (429). Aguardando 21s… retry 1/5
+[2026-08-29T03:13:24.500254] Concluído. 621 mensagem(ns) enviada(s), 0 falha(s). 69 dia(s).
+[2026-08-29 02:38:33] Notificação OK.
+[2026-08-29 02:38:33] Pipeline concluído com sucesso.
+=== $(date '+%Y-%m-%d %H:%M:%S') - Starting agenda extraction ===
+[2026-08-29T06:00:06.883507] Iniciando extração: 2026-08-22 → 2026-10-28
+[2026-08-29T06:00:06.883744] Buscando página 1 (2026-08-22 → 2026-10-28) …
+[2026-08-29T06:00:08.938428]   → 84 eventos (total 84, páginas 1)
+[2026-08-29T06:00:08.938628] Total único de eventos da API: 84
+[2026-08-29T06:00:08.978073] Eventos concluídos (filtrados): 0
+[2026-08-29T06:00:08.978183] Eventos expandidos em entradas de dia: 5796
+[2026-08-29T06:00:08.979986]   2026-08-22: 84 evento(s)
+[2026-08-29T06:00:08.980047]   2026-08-23: 84 evento(s)
+[2026-08-29T06:00:08.980059]   2026-08-24: 84 evento(s)
+[2026-08-29T06:00:08.980069]   2026-08-25: 84 evento(s)
+[2026-08-29T06:00:08.980079]   2026-08-26: 84 evento(s)
+[2026-08-29T06:00:08.980088]   2026-08-27: 84 evento(s)
+[2026-08-29T06:00:08.980112]   2026-08-28: 84 evento(s)
+[2026-08-29T06:00:08.980122]   2026-08-29: 84 evento(s)
+[2026-08-29T06:00:08.980130]   2026-08-30: 84 evento(s)
+[2026-08-29T06:00:08.980138]   2026-08-31: 84 evento(s)
+[2026-08-29T06:00:08.980147]   2026-09-01: 84 evento(s)
+[2026-08-29T06:00:08.980154]   2026-09-02: 84 evento(s)
+[2026-08-29T06:00:08.980163]   2026-09-03: 84 evento(s)
+[2026-08-29T06:00:08.980177]   2026-09-04: 84 evento(s)
+[2026-08-29T06:00:08.980187]   2026-09-05: 84 evento(s)
+[2026-08-29T06:00:08.980196]   2026-09-06: 84 evento(s)
+[2026-08-29T06:00:08.980204]   2026-09-07: 84 evento(s)
+[2026-08-29T06:00:08.980212]   2026-09-08: 84 evento(s)
+[2026-08-29T06:00:08.980221]   2026-09-09: 84 evento(s)
+[2026-08-29T06:00:08.980230]   2026-09-10: 84 evento(s)
+[2026-08-29T06:00:08.980239]   2026-09-11: 84 evento(s)
+[2026-08-29T06:00:08.980246]   2026-09-12: 84 evento(s)
+[2026-08-29T06:00:08.980255]   2026-09-13: 84 evento(s)
+[2026-08-29T06:00:08.980263]   2026-09-14: 84 evento(s)
+[2026-08-29T06:00:08.980276]   2026-09-15: 84 evento(s)
+[2026-08-29T06:00:08.980285]   2026-09-16: 84 evento(s)
+[2026-08-29T06:00:08.980294]   2026-09-17: 84 evento(s)
+[2026-08-29T06:00:08.980302]   2026-09-18: 84 evento(s)
+[2026-08-29T06:00:08.980311]   2026-09-19: 84 evento(s)
+[2026-08-29T06:00:08.980318]   2026-09-20: 84 evento(s)
+[2026-08-29T06:00:08.980327]   2026-09-21: 84 evento(s)
+[2026-08-29T06:00:08.980339]   2026-09-22: 84 evento(s)
+[2026-08-29T06:00:08.980348]   2026-09-23: 84 evento(s)
+[2026-08-29T06:00:08.980356]   2026-09-24: 84 evento(s)
+[2026-08-29T06:00:08.980369]   2026-09-25: 84 evento(s)
+[2026-08-29T06:00:08.980378]   2026-09-26: 84 evento(s)
+[2026-08-29T06:00:08.980386]   2026-09-27: 84 evento(s)
+[2026-08-29T06:00:08.980395]   2026-09-28: 84 evento(s)
+[2026-08-29T06:00:08.980404]   2026-09-29: 84 evento(s)
+[2026-08-29T06:00:08.980413]   2026-09-30: 84 evento(s)
+[2026-08-29T06:00:08.980425]   2026-10-01: 84 evento(s)
+[2026-08-29T06:00:08.980433]   2026-10-02: 84 evento(s)
+[2026-08-29T06:00:08.980442]   2026-10-03: 84 evento(s)
+[2026-08-29T06:00:08.980450]   2026-10-04: 84 evento(s)
+[2026-08-29T06:00:08.980463]   2026-10-05: 84 evento(s)
+[2026-08-29T06:00:08.980472]   2026-10-06: 84 evento(s)
+[2026-08-29T06:00:08.980481]   2026-10-07: 84 evento(s)
+[2026-08-29T06:00:08.980490]   2026-10-08: 84 evento(s)
+[2026-08-29T06:00:08.980498]   2026-10-09: 84 evento(s)
+[2026-08-29T06:00:08.980506]   2026-10-10: 84 evento(s)
+[2026-08-29T06:00:08.980515]   2026-10-11: 84 evento(s)
+[2026-08-29T06:00:08.980524]   2026-10-12: 84 evento(s)
+[2026-08-29T06:00:08.980532]   2026-10-13: 84 evento(s)
+[2026-08-29T06:00:08.980540]   2026-10-14: 84 evento(s)
+[2026-08-29T06:00:08.980552]   2026-10-15: 84 evento(s)
+[2026-08-29T06:00:08.980561]   2026-10-16: 84 evento(s)
+[2026-08-29T06:00:08.980569]   2026-10-17: 84 evento(s)
+[2026-08-29T06:00:08.980577]   2026-10-18: 84 evento(s)
+[2026-08-29T06:00:08.980589]   2026-10-19: 84 evento(s)
+[2026-08-29T06:00:08.980597]   2026-10-20: 84 evento(s)
+[2026-08-29T06:00:08.980605]   2026-10-21: 84 evento(s)
+[2026-08-29T06:00:08.980614]   2026-10-22: 84 evento(s)
+[2026-08-29T06:00:08.980622]   2026-10-23: 84 evento(s)
+[2026-08-29T06:00:08.980631]   2026-10-24: 84 evento(s)
+[2026-08-29T06:00:08.980639]   2026-10-25: 84 evento(s)
+[2026-08-29T06:00:08.980648]   2026-10-26: 84 evento(s)
+[2026-08-29T06:00:08.980659]   2026-10-27: 84 evento(s)
+[2026-08-29T06:00:08.980668]   2026-10-28: 84 evento(s)
+[2026-08-29T06:00:08.980677]   2026-10-29: 84 evento(s)
+[2026-08-29T06:00:09.015841] Agenda salva: 69 dias, 5796 eventos pendentes.
+=== $(date '+%Y-%m-%d %H:%M:%S') - Extraction completed successfully ===
+=== $(date '+%Y-%m-%d %H:%M:%S') - End of run ===
+=== $(date '+%Y-%m-%d %H:%M:%S') - Starting agenda extraction ===
+[2026-08-29T12:00:27.487308] Iniciando extração: 2026-08-22 → 2026-10-28
+[2026-08-29T12:00:27.487930] Buscando página 1 (2026-08-22 → 2026-10-28) …
+[2026-08-29T12:00:29.604423]   → 84 eventos (total 84, páginas 1)
+[2026-08-29T12:00:29.604721] Total único de eventos da API: 84
+[2026-08-29T12:00:29.694405] Eventos concluídos (filtrados): 0
+[2026-08-29T12:00:29.694475] Eventos expandidos em entradas de dia: 5796
+[2026-08-29T12:00:29.696207]   2026-08-22: 84 evento(s)
+[2026-08-29T12:00:29.696332]   2026-08-23: 84 evento(s)
+[2026-08-29T12:00:29.696342]   2026-08-24: 84 evento(s)
+[2026-08-29T12:00:29.696345]   2026-08-25: 84 evento(s)
+[2026-08-29T12:00:29.696348]   2026-08-26: 84 evento(s)
+[2026-08-29T12:00:29.696351]   2026-08-27: 84 evento(s)
+[2026-08-29T12:00:29.696354]   2026-08-28: 84 evento(s)
+[2026-08-29T12:00:29.696357]   2026-08-29: 84 evento(s)
+[2026-08-29T12:00:29.696360]   2026-08-30: 84 evento(s)
+[2026-08-29T12:00:29.696363]   2026-08-31: 84 evento(s)
+[2026-08-29T12:00:29.696366]   2026-09-01: 84 evento(s)
+[2026-08-29T12:00:29.696369]   2026-09-02: 84 evento(s)
+[2026-08-29T12:00:29.696372]   2026-09-03: 84 evento(s)
+[2026-08-29T12:00:29.696375]   2026-09-04: 84 evento(s)
+[2026-08-29T12:00:29.696378]   2026-09-05: 84 evento(s)
+[2026-08-29T12:00:29.696381]   2026-09-06: 84 evento(s)
+[2026-08-29T12:00:29.696384]   2026-09-07: 84 evento(s)
+[2026-08-29T12:00:29.696387]   2026-09-08: 84 evento(s)
+[2026-08-29T12:00:29.696390]   2026-09-09: 84 evento(s)
+[2026-08-29T12:00:29.696393]   2026-09-10: 84 evento(s)
+[2026-08-29T12:00:29.696397]   2026-09-11: 84 evento(s)
+[2026-08-29T12:00:29.696399]   2026-09-12: 84 evento(s)
+[2026-08-29T12:00:29.696403]   2026-09-13: 84 evento(s)
+[2026-08-29T12:00:29.696406]   2026-09-14: 84 evento(s)
+[2026-08-29T12:00:29.696409]   2026-09-15: 84 evento(s)
+[2026-08-29T12:00:29.696418]   2026-09-16: 84 evento(s)
+[2026-08-29T12:00:29.696422]   2026-09-17: 84 evento(s)
+[2026-08-29T12:00:29.696425]   2026-09-18: 84 evento(s)
+[2026-08-29T12:00:29.696428]   2026-09-19: 84 evento(s)
+[2026-08-29T12:00:29.696431]   2026-09-20: 84 evento(s)
+[2026-08-29T12:00:29.696435]   2026-09-21: 84 evento(s)
+[2026-08-29T12:00:29.696439]   2026-09-22: 84 evento(s)
+[2026-08-29T12:00:29.696442]   2026-09-23: 84 evento(s)
+[2026-08-29T12:00:29.696446]   2026-09-24: 84 evento(s)
+[2026-08-29T12:00:29.696449]   2026-09-25: 84 evento(s)
+[2026-08-29T12:00:29.696452]   2026-09-26: 84 evento(s)
+[2026-08-29T12:00:29.696456]   2026-09-27: 84 evento(s)
+[2026-08-29T12:00:29.696459]   2026-09-28: 84 evento(s)
+[2026-08-29T12:00:29.696463]   2026-09-29: 84 evento(s)
+[2026-08-29T12:00:29.696466]   2026-09-30: 84 evento(s)
+[2026-08-29T12:00:29.696470]   2026-10-01: 84 evento(s)
+[2026-08-29T12:00:29.696473]   2026-10-02: 84 evento(s)
+[2026-08-29T12:00:29.696482]   2026-10-03: 84 evento(s)
+[2026-08-29T12:00:29.696491]   2026-10-04: 84 evento(s)
+[2026-08-29T12:00:29.696495]   2026-10-05: 84 evento(s)
+[2026-08-29T12:00:29.696498]   2026-10-06: 84 evento(s)
+[2026-08-29T12:00:29.696501]   2026-10-07: 84 evento(s)
+[2026-08-29T12:00:29.696505]   2026-10-08: 84 evento(s)
+[2026-08-29T12:00:29.696508]   2026-10-09: 84 evento(s)
+[2026-08-29T12:00:29.696511]   2026-10-10: 84 evento(s)
+[2026-08-29T12:00:29.696515]   2026-10-11: 84 evento(s)
+[2026-08-29T12:00:29.696518]   2026-10-12: 84 evento(s)
+[2026-08-29T12:00:29.696522]   2026-10-13: 84 evento(s)
+[2026-08-29T12:00:29.696538]   2026-10-14: 84 evento(s)
+[2026-08-29T12:00:29.696542]   2026-10-15: 84 evento(s)
+[2026-08-29T12:00:29.696545]   2026-10-16: 84 evento(s)
+[2026-08-29T12:00:29.696548]   2026-10-17: 84 evento(s)
+[2026-08-29T12:00:29.696551]   2026-10-18: 84 evento(s)
+[2026-08-29T12:00:29.696554]   2026-10-19: 84 evento(s)
+[2026-08-29T12:00:29.696558]   2026-10-20: 84 evento(s)
+[2026-08-29T12:00:29.696561]   2026-10-21: 84 evento(s)
+[2026-08-29T12:00:29.696565]   2026-10-22: 84 evento(s)
+[2026-08-29T12:00:29.696569]   2026-10-23: 84 evento(s)
+[2026-08-29T12:00:29.696572]   2026-10-24: 84 evento(s)
+[2026-08-29T12:00:29.696575]   2026-10-25: 84 evento(s)
+[2026-08-29T12:00:29.696579]   2026-10-26: 84 evento(s)
+[2026-08-29T12:00:29.696582]   2026-10-27: 84 evento(s)
+[2026-08-29T12:00:29.696586]   2026-10-28: 84 evento(s)
+[2026-08-29T12:00:29.696589]   2026-10-29: 84 evento(s)
+[2026-08-29T12:00:29.750896] Agenda salva: 69 dias, 5796 eventos pendentes.
+=== $(date '+%Y-%m-%d %H:%M:%S') - Extraction completed successfully ===
+=== $(date '+%Y-%m-%d %H:%M:%S') - End of run ===
+=== $(date '+%Y-%m-%d %H:%M:%S') - Starting agenda extraction ===
+[2026-08-29T18:00:07.657657] Iniciando extração: 2026-08-22 → 2026-10-28
+[2026-08-29T18:00:07.657769] Buscando página 1 (2026-08-22 → 2026-10-28) …
+[2026-08-29T18:00:09.689839]   → 84 eventos (total 84, páginas 1)
+[2026-08-29T18:00:09.690040] Total único de eventos da API: 84
+[2026-08-29T18:00:09.727939] Eventos concluídos (filtrados): 0
+[2026-08-29T18:00:09.728002] Eventos expandidos em entradas de dia: 5796
+[2026-08-29T18:00:09.729897]   2026-08-22: 84 evento(s)
+[2026-08-29T18:00:09.729945]   2026-08-23: 84 evento(s)
+[2026-08-29T18:00:09.729956]   2026-08-24: 84 evento(s)
+[2026-08-29T18:00:09.729964]   2026-08-25: 84 evento(s)
+[2026-08-29T18:00:09.729972]   2026-08-26: 84 evento(s)
+[2026-08-29T18:00:09.729980]   2026-08-27: 84 evento(s)
+[2026-08-29T18:00:09.729987]   2026-08-28: 84 evento(s)
+[2026-08-29T18:00:09.729995]   2026-08-29: 84 evento(s)
+[2026-08-29T18:00:09.730002]   2026-08-30: 84 evento(s)
+[2026-08-29T18:00:09.730009]   2026-08-31: 84 evento(s)
+[2026-08-29T18:00:09.730017]   2026-09-01: 84 evento(s)
+[2026-08-29T18:00:09.730024]   2026-09-02: 84 evento(s)
+[2026-08-29T18:00:09.730031]   2026-09-03: 84 evento(s)
+[2026-08-29T18:00:09.730039]   2026-09-04: 84 evento(s)
+[2026-08-29T18:00:09.730046]   2026-09-05: 84 evento(s)
+[2026-08-29T18:00:09.730053]   2026-09-06: 84 evento(s)
+[2026-08-29T18:00:09.730061]   2026-09-07: 84 evento(s)
+[2026-08-29T18:00:09.730068]   2026-09-08: 84 evento(s)
+[2026-08-29T18:00:09.730075]   2026-09-09: 84 evento(s)
+[2026-08-29T18:00:09.730082]   2026-09-10: 84 evento(s)
+[2026-08-29T18:00:09.730090]   2026-09-11: 84 evento(s)
+[2026-08-29T18:00:09.730097]   2026-09-12: 84 evento(s)
+[2026-08-29T18:00:09.730104]   2026-09-13: 84 evento(s)
+[2026-08-29T18:00:09.730111]   2026-09-14: 84 evento(s)
+[2026-08-29T18:00:09.730119]   2026-09-15: 84 evento(s)
+[2026-08-29T18:00:09.730126]   2026-09-16: 84 evento(s)
+[2026-08-29T18:00:09.730134]   2026-09-17: 84 evento(s)
+[2026-08-29T18:00:09.730141]   2026-09-18: 84 evento(s)
+[2026-08-29T18:00:09.730148]   2026-09-19: 84 evento(s)
+[2026-08-29T18:00:09.730155]   2026-09-20: 84 evento(s)
+[2026-08-29T18:00:09.730163]   2026-09-21: 84 evento(s)
+[2026-08-29T18:00:09.730170]   2026-09-22: 84 evento(s)
+[2026-08-29T18:00:09.730178]   2026-09-23: 84 evento(s)
+[2026-08-29T18:00:09.730185]   2026-09-24: 84 evento(s)
+[2026-08-29T18:00:09.730192]   2026-09-25: 84 evento(s)
+[2026-08-29T18:00:09.730199]   2026-09-26: 84 evento(s)
+[2026-08-29T18:00:09.730207]   2026-09-27: 84 evento(s)
+[2026-08-29T18:00:09.730214]   2026-09-28: 84 evento(s)
+[2026-08-29T18:00:09.730221]   2026-09-29: 84 evento(s)
+[2026-08-29T18:00:09.730229]   2026-09-30: 84 evento(s)
+[2026-08-29T18:00:09.730236]   2026-10-01: 84 evento(s)
+[2026-08-29T18:00:09.730243]   2026-10-02: 84 evento(s)
+[2026-08-29T18:00:09.730258]   2026-10-03: 84 evento(s)
+[2026-08-29T18:00:09.730266]   2026-10-04: 84 evento(s)
+[2026-08-29T18:00:09.730274]   2026-10-05: 84 evento(s)
+[2026-08-29T18:00:09.730283]   2026-10-06: 84 evento(s)
+[2026-08-29T18:00:09.730291]   2026-10-07: 84 evento(s)
+[2026-08-29T18:00:09.730299]   2026-10-08: 84 evento(s)
+[2026-08-29T18:00:09.730308]   2026-10-09: 84 evento(s)
+[2026-08-29T18:00:09.730316]   2026-10-10: 84 evento(s)
+[2026-08-29T18:00:09.730324]   2026-10-11: 84 evento(s)
+[2026-08-29T18:00:09.730332]   2026-10-12: 84 evento(s)
+[2026-08-29T18:00:09.730340]   2026-10-13: 84 evento(s)
+[2026-08-29T18:00:09.730348]   2026-10-14: 84 evento(s)
+[2026-08-29T18:00:09.730356]   2026-10-15: 84 evento(s)
+[2026-08-29T18:00:09.730364]   2026-10-16: 84 evento(s)
+[2026-08-29T18:00:09.730371]   2026-10-17: 84 evento(s)
+[2026-08-29T18:00:09.730378]   2026-10-18: 84 evento(s)
+[2026-08-29T18:00:09.730386]   2026-10-19: 84 evento(s)
+[2026-08-29T18:00:09.730393]   2026-10-20: 84 evento(s)
+[2026-08-29T18:00:09.730401]   2026-10-21: 84 evento(s)
+[2026-08-29T18:00:09.730408]   2026-10-22: 84 evento(s)
+[2026-08-29T18:00:09.730416]   2026-10-23: 84 evento(s)
+[2026-08-29T18:00:09.730440]   2026-10-24: 84 evento(s)
+[2026-08-29T18:00:09.730448]   2026-10-25: 84 evento(s)
+[2026-08-29T18:00:09.730455]   2026-10-26: 84 evento(s)
+[2026-08-29T18:00:09.730463]   2026-10-27: 84 evento(s)
+[2026-08-29T18:00:09.730470]   2026-10-28: 84 evento(s)
+[2026-08-29T18:00:09.730478]   2026-10-29: 84 evento(s)
+[2026-08-29T18:00:09.765367] Agenda salva: 69 dias, 5796 eventos pendentes.
+=== $(date '+%Y-%m-%d %H:%M:%S') - Extraction completed successfully ===
+=== $(date '+%Y-%m-%d %H:%M:%S') - End of run ===
+=== $(date '+%Y-%m-%d %H:%M:%S') - Starting agenda extraction ===
+[2026-08-30T06:00:29.293532] Iniciando extração: 2026-08-23 → 2026-10-29
+[2026-08-30T06:00:29.293675] Buscando página 1 (2026-08-23 → 2026-10-29) …
+[2026-08-30T06:00:31.677178]   → 84 eventos (total 84, páginas 1)
+[2026-08-30T06:00:31.677393] Total único de eventos da API: 84
+[2026-08-30T06:00:31.714165] Eventos concluídos (filtrados): 0
+[2026-08-30T06:00:31.714279] Eventos expandidos em entradas de dia: 5796
+[2026-08-30T06:00:31.716101]   2026-08-23: 84 evento(s)
+[2026-08-30T06:00:31.716150]   2026-08-24: 84 evento(s)
+[2026-08-30T06:00:31.716160]   2026-08-25: 84 evento(s)
+[2026-08-30T06:00:31.716168]   2026-08-26: 84 evento(s)
+[2026-08-30T06:00:31.716176]   2026-08-27: 84 evento(s)
+[2026-08-30T06:00:31.716183]   2026-08-28: 84 evento(s)
+[2026-08-30T06:00:31.716191]   2026-08-29: 84 evento(s)
+[2026-08-30T06:00:31.716198]   2026-08-30: 84 evento(s)
+[2026-08-30T06:00:31.716205]   2026-08-31: 84 evento(s)
+[2026-08-30T06:00:31.716212]   2026-09-01: 84 evento(s)
+[2026-08-30T06:00:31.716219]   2026-09-02: 84 evento(s)
+[2026-08-30T06:00:31.716227]   2026-09-03: 84 evento(s)
+[2026-08-30T06:00:31.716234]   2026-09-04: 84 evento(s)
+[2026-08-30T06:00:31.716241]   2026-09-05: 84 evento(s)
+[2026-08-30T06:00:31.716249]   2026-09-06: 84 evento(s)
+[2026-08-30T06:00:31.716256]   2026-09-07: 84 evento(s)
+[2026-08-30T06:00:31.716263]   2026-09-08: 84 evento(s)
+[2026-08-30T06:00:31.716270]   2026-09-09: 84 evento(s)
+[2026-08-30T06:00:31.716277]   2026-09-10: 84 evento(s)
+[2026-08-30T06:00:31.716284]   2026-09-11: 84 evento(s)
+[2026-08-30T06:00:31.716291]   2026-09-12: 84 evento(s)
+[2026-08-30T06:00:31.716299]   2026-09-13: 84 evento(s)
+[2026-08-30T06:00:31.716306]   2026-09-14: 84 evento(s)
+[2026-08-30T06:00:31.716313]   2026-09-15: 84 evento(s)
+[2026-08-30T06:00:31.716320]   2026-09-16: 84 evento(s)
+[2026-08-30T06:00:31.716327]   2026-09-17: 84 evento(s)
+[2026-08-30T06:00:31.716335]   2026-09-18: 84 evento(s)
+[2026-08-30T06:00:31.716342]   2026-09-19: 84 evento(s)
+[2026-08-30T06:00:31.716350]   2026-09-20: 84 evento(s)
+[2026-08-30T06:00:31.716357]   2026-09-21: 84 evento(s)
+[2026-08-30T06:00:31.716364]   2026-09-22: 84 evento(s)
+[2026-08-30T06:00:31.716371]   2026-09-23: 84 evento(s)
+[2026-08-30T06:00:31.716378]   2026-09-24: 84 evento(s)
+[2026-08-30T06:00:31.716385]   2026-09-25: 84 evento(s)
+[2026-08-30T06:00:31.716393]   2026-09-26: 84 evento(s)
+[2026-08-30T06:00:31.716400]   2026-09-27: 84 evento(s)
+[2026-08-30T06:00:31.716407]   2026-09-28: 84 evento(s)
+[2026-08-30T06:00:31.716414]   2026-09-29: 84 evento(s)
+[2026-08-30T06:00:31.716421]   2026-09-30: 84 evento(s)
+[2026-08-30T06:00:31.716428]   2026-10-01: 84 evento(s)
+[2026-08-30T06:00:31.716435]   2026-10-02: 84 evento(s)
+[2026-08-30T06:00:31.716443]   2026-10-03: 84 evento(s)
+[2026-08-30T06:00:31.716450]   2026-10-04: 84 evento(s)
+[2026-08-30T06:00:31.716457]   2026-10-05: 84 evento(s)
+[2026-08-30T06:00:31.716464]   2026-10-06: 84 evento(s)
+[2026-08-30T06:00:31.716471]   2026-10-07: 84 evento(s)
+[2026-08-30T06:00:31.716478]   2026-10-08: 84 evento(s)
+[2026-08-30T06:00:31.716485]   2026-10-09: 84 evento(s)
+[2026-08-30T06:00:31.716492]   2026-10-10: 84 evento(s)
+[2026-08-30T06:00:31.716499]   2026-10-11: 84 evento(s)
+[2026-08-30T06:00:31.716506]   2026-10-12: 84 evento(s)
+[2026-08-30T06:00:31.716514]   2026-10-13: 84 evento(s)
+[2026-08-30T06:00:31.716521]   2026-10-14: 84 evento(s)
+[2026-08-30T06:00:31.716536]   2026-10-15: 84 evento(s)
+[2026-08-30T06:00:31.716546]   2026-10-16: 84 evento(s)
+[2026-08-30T06:00:31.716568]   2026-10-17: 84 evento(s)
+[2026-08-30T06:00:31.716575]   2026-10-18: 84 evento(s)
+[2026-08-30T06:00:31.716584]   2026-10-19: 84 evento(s)
+[2026-08-30T06:00:31.716592]   2026-10-20: 84 evento(s)
+[2026-08-30T06:00:31.716600]   2026-10-21: 84 evento(s)
+[2026-08-30T06:00:31.716607]   2026-10-22: 84 evento(s)
+[2026-08-30T06:00:31.716614]   2026-10-23: 84 evento(s)
+[2026-08-30T06:00:31.716623]   2026-10-24: 84 evento(s)
+[2026-08-30T06:00:31.716631]   2026-10-25: 84 evento(s)
+[2026-08-30T06:00:31.716640]   2026-10-26: 84 evento(s)
+[2026-08-30T06:00:31.716649]   2026-10-27: 84 evento(s)
+[2026-08-30T06:00:31.716656]   2026-10-28: 84 evento(s)
+[2026-08-30T06:00:31.716664]   2026-10-29: 84 evento(s)
+[2026-08-30T06:00:31.716671]   2026-10-30: 84 evento(s)
+[2026-08-30T06:00:31.753626] Agenda salva: 69 dias, 5796 eventos pendentes.
+=== $(date '+%Y-%m-%d %H:%M:%S') - Extraction completed successfully ===
+=== $(date '+%Y-%m-%d %H:%M:%S') - End of run ===
+=== $(date '+%Y-%m-%d %H:%M:%S') - Starting agenda extraction ===
+[2026-08-30T12:00:55.858257] Iniciando extração: 2026-08-23 → 2026-10-29
+[2026-08-30T12:00:55.858305] Buscando página 1 (2026-08-23 → 2026-10-29) …
+[2026-08-30T12:00:58.142407]   → 84 eventos (total 84, páginas 1)
+[2026-08-30T12:00:58.142530] Total único de eventos da API: 84
+[2026-08-30T12:00:58.176914] Eventos concluídos (filtrados): 0
+[2026-08-30T12:00:58.176965] Eventos expandidos em entradas de dia: 5796
+[2026-08-30T12:00:58.181592]   2026-08-23: 84 evento(s)
+[2026-08-30T12:00:58.181686]   2026-08-24: 84 evento(s)
+[2026-08-30T12:00:58.181698]   2026-08-25: 84 evento(s)
+[2026-08-30T12:00:58.181704]   2026-08-26: 84 evento(s)
+[2026-08-30T12:00:58.181709]   2026-08-27: 84 evento(s)
+[2026-08-30T12:00:58.181715]   2026-08-28: 84 evento(s)
+[2026-08-30T12:00:58.181722]   2026-08-29: 84 evento(s)
+[2026-08-30T12:00:58.181731]   2026-08-30: 84 evento(s)
+[2026-08-30T12:00:58.181736]   2026-08-31: 84 evento(s)
+[2026-08-30T12:00:58.181741]   2026-09-01: 84 evento(s)
+[2026-08-30T12:00:58.181746]   2026-09-02: 84 evento(s)
+[2026-08-30T12:00:58.181752]   2026-09-03: 84 evento(s)
+[2026-08-30T12:00:58.181764]   2026-09-04: 84 evento(s)
+[2026-08-30T12:00:58.181774]   2026-09-05: 84 evento(s)
+[2026-08-30T12:00:58.181784]   2026-09-06: 84 evento(s)
+[2026-08-30T12:00:58.181795]   2026-09-07: 84 evento(s)
+[2026-08-30T12:00:58.181805]   2026-09-08: 84 evento(s)
+[2026-08-30T12:00:58.181814]   2026-09-09: 84 evento(s)
+[2026-08-30T12:00:58.181824]   2026-09-10: 84 evento(s)
+[2026-08-30T12:00:58.181835]   2026-09-11: 84 evento(s)
+[2026-08-30T12:00:58.181844]   2026-09-12: 84 evento(s)
+[2026-08-30T12:00:58.181853]   2026-09-13: 84 evento(s)
+[2026-08-30T12:00:58.181860]   2026-09-14: 84 evento(s)
+[2026-08-30T12:00:58.181871]   2026-09-15: 84 evento(s)
+[2026-08-30T12:00:58.181883]   2026-09-16: 84 evento(s)
+[2026-08-30T12:00:58.181891]   2026-09-17: 84 evento(s)
+[2026-08-30T12:00:58.181900]   2026-09-18: 84 evento(s)
+[2026-08-30T12:00:58.181908]   2026-09-19: 84 evento(s)
+[2026-08-30T12:00:58.181917]   2026-09-20: 84 evento(s)
+[2026-08-30T12:00:58.181925]   2026-09-21: 84 evento(s)
+[2026-08-30T12:00:58.181934]   2026-09-22: 84 evento(s)
+[2026-08-30T12:00:58.181943]   2026-09-23: 84 evento(s)
+[2026-08-30T12:00:58.181953]   2026-09-24: 84 evento(s)
+[2026-08-30T12:00:58.181959]   2026-09-25: 84 evento(s)
+[2026-08-30T12:00:58.181964]   2026-09-26: 84 evento(s)
+[2026-08-30T12:00:58.181969]   2026-09-27: 84 evento(s)
+[2026-08-30T12:00:58.181974]   2026-09-28: 84 evento(s)
+[2026-08-30T12:00:58.181979]   2026-09-29: 84 evento(s)
+[2026-08-30T12:00:58.181985]   2026-09-30: 84 evento(s)
+[2026-08-30T12:00:58.181991]   2026-10-01: 84 evento(s)
+[2026-08-30T12:00:58.181997]   2026-10-02: 84 evento(s)
+[2026-08-30T12:00:58.182007]   2026-10-03: 84 evento(s)
+[2026-08-30T12:00:58.182017]   2026-10-04: 84 evento(s)
+[2026-08-30T12:00:58.182028]   2026-10-05: 84 evento(s)
+[2026-08-30T12:00:58.182038]   2026-10-06: 84 evento(s)
+[2026-08-30T12:00:58.182049]   2026-10-07: 84 evento(s)
+[2026-08-30T12:00:58.182059]   2026-10-08: 84 evento(s)
+[2026-08-30T12:00:58.182082]   2026-10-09: 84 evento(s)
+[2026-08-30T12:00:58.182093]   2026-10-10: 84 evento(s)
+[2026-08-30T12:00:58.182103]   2026-10-11: 84 evento(s)
+[2026-08-30T12:00:58.182113]   2026-10-12: 84 evento(s)
+[2026-08-30T12:00:58.182123]   2026-10-13: 84 evento(s)
+[2026-08-30T12:00:58.182132]   2026-10-14: 84 evento(s)
+[2026-08-30T12:00:58.182142]   2026-10-15: 84 evento(s)
+[2026-08-30T12:00:58.182156]   2026-10-16: 84 evento(s)
+[2026-08-30T12:00:58.182165]   2026-10-17: 84 evento(s)
+[2026-08-30T12:00:58.182174]   2026-10-18: 84 evento(s)
+[2026-08-30T12:00:58.182183]   2026-10-19: 84 evento(s)
+[2026-08-30T12:00:58.182191]   2026-10-20: 84 evento(s)
+[2026-08-30T12:00:58.182202]   2026-10-21: 84 evento(s)
+[2026-08-30T12:00:58.182209]   2026-10-22: 84 evento(s)
+[2026-08-30T12:00:58.182214]   2026-10-23: 84 evento(s)
+[2026-08-30T12:00:58.182222]   2026-10-24: 84 evento(s)
+[2026-08-30T12:00:58.182232]   2026-10-25: 84 evento(s)
+[2026-08-30T12:00:58.182242]   2026-10-26: 84 evento(s)
+[2026-08-30T12:00:58.182251]   2026-10-27: 84 evento(s)
+[2026-08-30T12:00:58.182260]   2026-10-28: 84 evento(s)
+[2026-08-30T12:00:58.182268]   2026-10-29: 84 evento(s)
+[2026-08-30T12:00:58.182278]   2026-10-30: 84 evento(s)
+[2026-08-30T12:00:58.216833] Agenda salva: 69 dias, 5796 eventos pendentes.
+=== $(date '+%Y-%m-%d %H:%M:%S') - Extraction completed successfully ===
+=== $(date '+%Y-%m-%d %H:%M:%S') - End of run ===
+=== $(date '+%Y-%m-%d %H:%M:%S') - Starting agenda extraction ===
+[2026-08-30T18:00:41.451553] Iniciando extração: 2026-08-23 → 2026-10-29
+[2026-08-30T18:00:41.451621] Buscando página 1 (2026-08-23 → 2026-10-29) …
+[2026-08-30T18:00:43.383251]   → 84 eventos (total 84, páginas 1)
+[2026-08-30T18:00:43.383375] Total único de eventos da API: 84
+[2026-08-30T18:00:43.445103] Eventos concluídos (filtrados): 0
+[2026-08-30T18:00:43.445184] Eventos expandidos em entradas de dia: 5796
+[2026-08-30T18:00:43.448273]   2026-08-23: 84 evento(s)
+[2026-08-30T18:00:43.448391]   2026-08-24: 84 evento(s)
+[2026-08-30T18:00:43.448411]   2026-08-25: 84 evento(s)
+[2026-08-30T18:00:43.448425]   2026-08-26: 84 evento(s)
+[2026-08-30T18:00:43.448437]   2026-08-27: 84 evento(s)
+[2026-08-30T18:00:43.448450]   2026-08-28: 84 evento(s)
+[2026-08-30T18:00:43.448461]   2026-08-29: 84 evento(s)
+[2026-08-30T18:00:43.448473]   2026-08-30: 84 evento(s)
+[2026-08-30T18:00:43.448488]   2026-08-31: 84 evento(s)
+[2026-08-30T18:00:43.448500]   2026-09-01: 84 evento(s)
+[2026-08-30T18:00:43.448516]   2026-09-02: 84 evento(s)
+[2026-08-30T18:00:43.448531]   2026-09-03: 84 evento(s)
+[2026-08-30T18:00:43.448543]   2026-09-04: 84 evento(s)
+[2026-08-30T18:00:43.448555]   2026-09-05: 84 evento(s)
+[2026-08-30T18:00:43.448567]   2026-09-06: 84 evento(s)
+[2026-08-30T18:00:43.448580]   2026-09-07: 84 evento(s)
+[2026-08-30T18:00:43.448593]   2026-09-08: 84 evento(s)
+[2026-08-30T18:00:43.448605]   2026-09-09: 84 evento(s)
+[2026-08-30T18:00:43.448616]   2026-09-10: 84 evento(s)
+[2026-08-30T18:00:43.448628]   2026-09-11: 84 evento(s)
+[2026-08-30T18:00:43.448640]   2026-09-12: 84 evento(s)
+[2026-08-30T18:00:43.448651]   2026-09-13: 84 evento(s)
+[2026-08-30T18:00:43.448663]   2026-09-14: 84 evento(s)
+[2026-08-30T18:00:43.448678]   2026-09-15: 84 evento(s)
+[2026-08-30T18:00:43.448691]   2026-09-16: 84 evento(s)
+[2026-08-30T18:00:43.448708]   2026-09-17: 84 evento(s)
+[2026-08-30T18:00:43.448752]   2026-09-18: 84 evento(s)
+[2026-08-30T18:00:43.448775]   2026-09-19: 84 evento(s)
+[2026-08-30T18:00:43.448791]   2026-09-20: 84 evento(s)
+[2026-08-30T18:00:43.448804]   2026-09-21: 84 evento(s)
+[2026-08-30T18:00:43.448817]   2026-09-22: 84 evento(s)
+[2026-08-30T18:00:43.448829]   2026-09-23: 84 evento(s)
+[2026-08-30T18:00:43.448841]   2026-09-24: 84 evento(s)
+[2026-08-30T18:00:43.448853]   2026-09-25: 84 evento(s)
+[2026-08-30T18:00:43.448865]   2026-09-26: 84 evento(s)
+[2026-08-30T18:00:43.448876]   2026-09-27: 84 evento(s)
+[2026-08-30T18:00:43.448888]   2026-09-28: 84 evento(s)
+[2026-08-30T18:00:43.448904]   2026-09-29: 84 evento(s)
+[2026-08-30T18:00:43.448932]   2026-09-30: 84 evento(s)
+[2026-08-30T18:00:43.448944]   2026-10-01: 84 evento(s)
+[2026-08-30T18:00:43.448958]   2026-10-02: 84 evento(s)
+[2026-08-30T18:00:43.448973]   2026-10-03: 84 evento(s)
+[2026-08-30T18:00:43.448985]   2026-10-04: 84 evento(s)
+[2026-08-30T18:00:43.448999]   2026-10-05: 84 evento(s)
+[2026-08-30T18:00:43.449014]   2026-10-06: 84 evento(s)
+[2026-08-30T18:00:43.449025]   2026-10-07: 84 evento(s)
+[2026-08-30T18:00:43.449044]   2026-10-08: 84 evento(s)
+[2026-08-30T18:00:43.449056]   2026-10-09: 84 evento(s)
+[2026-08-30T18:00:43.449067]   2026-10-10: 84 evento(s)
+[2026-08-30T18:00:43.449078]   2026-10-11: 84 evento(s)
+[2026-08-30T18:00:43.449088]   2026-10-12: 84 evento(s)
+[2026-08-30T18:00:43.449100]   2026-10-13: 84 evento(s)
+[2026-08-30T18:00:43.449111]   2026-10-14: 84 evento(s)
+[2026-08-30T18:00:43.449124]   2026-10-15: 84 evento(s)
+[2026-08-30T18:00:43.449136]   2026-10-16: 84 evento(s)
+[2026-08-30T18:00:43.449146]   2026-10-17: 84 evento(s)
+[2026-08-30T18:00:43.449194]   2026-10-18: 84 evento(s)
+[2026-08-30T18:00:43.449212]   2026-10-19: 84 evento(s)
+[2026-08-30T18:00:43.449224]   2026-10-20: 84 evento(s)
+[2026-08-30T18:00:43.451758]   2026-10-21: 84 evento(s)
+[2026-08-30T18:00:43.451817]   2026-10-22: 84 evento(s)
+[2026-08-30T18:00:43.451834]   2026-10-23: 84 evento(s)
+[2026-08-30T18:00:43.451844]   2026-10-24: 84 evento(s)
+[2026-08-30T18:00:43.451858]   2026-10-25: 84 evento(s)
+[2026-08-30T18:00:43.451870]   2026-10-26: 84 evento(s)
+[2026-08-30T18:00:43.451881]   2026-10-27: 84 evento(s)
+[2026-08-30T18:00:43.451892]   2026-10-28: 84 evento(s)
+[2026-08-30T18:00:43.451904]   2026-10-29: 84 evento(s)
+[2026-08-30T18:00:43.451915]   2026-10-30: 84 evento(s)
+[2026-08-30T18:00:43.496702] Agenda salva: 69 dias, 5796 eventos pendentes.
+=== $(date '+%Y-%m-%d %H:%M:%S') - Extraction completed successfully ===
+=== $(date '+%Y-%m-%d %H:%M:%S') - End of run ===
+=== $(date '+%Y-%m-%d %H:%M:%S') - Starting agenda extraction ===
+[2026-08-31T06:00:38.132998] Iniciando extração: 2026-08-24 → 2026-10-30
+[2026-08-31T06:00:38.133069] Buscando página 1 (2026-08-24 → 2026-10-30) …
+[2026-08-31T06:00:40.058953]   → 84 eventos (total 84, páginas 1)
+[2026-08-31T06:00:40.059130] Total único de eventos da API: 84
+[2026-08-31T06:00:40.092229] Eventos concluídos (filtrados): 0
+[2026-08-31T06:00:40.092292] Eventos expandidos em entradas de dia: 5796
+[2026-08-31T06:00:40.093947]   2026-08-24: 84 evento(s)
+[2026-08-31T06:00:40.093994]   2026-08-25: 84 evento(s)
+[2026-08-31T06:00:40.094004]   2026-08-26: 84 evento(s)
+[2026-08-31T06:00:40.094012]   2026-08-27: 84 evento(s)
+[2026-08-31T06:00:40.094021]   2026-08-28: 84 evento(s)
+[2026-08-31T06:00:40.094030]   2026-08-29: 84 evento(s)
+[2026-08-31T06:00:40.094038]   2026-08-30: 84 evento(s)
+[2026-08-31T06:00:40.094045]   2026-08-31: 84 evento(s)
+[2026-08-31T06:00:40.094054]   2026-09-01: 84 evento(s)
+[2026-08-31T06:00:40.094062]   2026-09-02: 84 evento(s)
+[2026-08-31T06:00:40.094070]   2026-09-03: 84 evento(s)
+[2026-08-31T06:00:40.094077]   2026-09-04: 84 evento(s)
+[2026-08-31T06:00:40.094085]   2026-09-05: 84 evento(s)
+[2026-08-31T06:00:40.094093]   2026-09-06: 84 evento(s)
+[2026-08-31T06:00:40.094100]   2026-09-07: 84 evento(s)
+[2026-08-31T06:00:40.094108]   2026-09-08: 84 evento(s)
+[2026-08-31T06:00:40.094116]   2026-09-09: 84 evento(s)
+[2026-08-31T06:00:40.094123]   2026-09-10: 84 evento(s)
+[2026-08-31T06:00:40.094131]   2026-09-11: 84 evento(s)
+[2026-08-31T06:00:40.094138]   2026-09-12: 84 evento(s)
+[2026-08-31T06:00:40.094146]   2026-09-13: 84 evento(s)
+[2026-08-31T06:00:40.094154]   2026-09-14: 84 evento(s)
+[2026-08-31T06:00:40.094161]   2026-09-15: 84 evento(s)
+[2026-08-31T06:00:40.094169]   2026-09-16: 84 evento(s)
+[2026-08-31T06:00:40.094177]   2026-09-17: 84 evento(s)
+[2026-08-31T06:00:40.094185]   2026-09-18: 84 evento(s)
+[2026-08-31T06:00:40.094193]   2026-09-19: 84 evento(s)
+[2026-08-31T06:00:40.094201]   2026-09-20: 84 evento(s)
+[2026-08-31T06:00:40.094208]   2026-09-21: 84 evento(s)
+[2026-08-31T06:00:40.094216]   2026-09-22: 84 evento(s)
+[2026-08-31T06:00:40.094238]   2026-09-23: 84 evento(s)
+[2026-08-31T06:00:40.094246]   2026-09-24: 84 evento(s)
+[2026-08-31T06:00:40.094253]   2026-09-25: 84 evento(s)
+[2026-08-31T06:00:40.094261]   2026-09-26: 84 evento(s)
+[2026-08-31T06:00:40.094269]   2026-09-27: 84 evento(s)
+[2026-08-31T06:00:40.094276]   2026-09-28: 84 evento(s)
+[2026-08-31T06:00:40.094284]   2026-09-29: 84 evento(s)
+[2026-08-31T06:00:40.094291]   2026-09-30: 84 evento(s)
+[2026-08-31T06:00:40.094298]   2026-10-01: 84 evento(s)
+[2026-08-31T06:00:40.094306]   2026-10-02: 84 evento(s)
+[2026-08-31T06:00:40.094313]   2026-10-03: 84 evento(s)
+[2026-08-31T06:00:40.094321]   2026-10-04: 84 evento(s)
+[2026-08-31T06:00:40.094329]   2026-10-05: 84 evento(s)
+[2026-08-31T06:00:40.094336]   2026-10-06: 84 evento(s)
+[2026-08-31T06:00:40.094344]   2026-10-07: 84 evento(s)
+[2026-08-31T06:00:40.094351]   2026-10-08: 84 evento(s)
+[2026-08-31T06:00:40.094359]   2026-10-09: 84 evento(s)
+[2026-08-31T06:00:40.094366]   2026-10-10: 84 evento(s)
+[2026-08-31T06:00:40.094374]   2026-10-11: 84 evento(s)
+[2026-08-31T06:00:40.094381]   2026-10-12: 84 evento(s)
+[2026-08-31T06:00:40.094389]   2026-10-13: 84 evento(s)
+[2026-08-31T06:00:40.094397]   2026-10-14: 84 evento(s)
+[2026-08-31T06:00:40.094404]   2026-10-15: 84 evento(s)
+[2026-08-31T06:00:40.094411]   2026-10-16: 84 evento(s)
+[2026-08-31T06:00:40.094418]   2026-10-17: 84 evento(s)
+[2026-08-31T06:00:40.094426]   2026-10-18: 84 evento(s)
+[2026-08-31T06:00:40.094433]   2026-10-19: 84 evento(s)
+[2026-08-31T06:00:40.094441]   2026-10-20: 84 evento(s)
+[2026-08-31T06:00:40.094448]   2026-10-21: 84 evento(s)
+[2026-08-31T06:00:40.094456]   2026-10-22: 84 evento(s)
+[2026-08-31T06:00:40.094464]   2026-10-23: 84 evento(s)
+[2026-08-31T06:00:40.094471]   2026-10-24: 84 evento(s)
+[2026-08-31T06:00:40.094479]   2026-10-25: 84 evento(s)
+[2026-08-31T06:00:40.094486]   2026-10-26: 84 evento(s)
+[2026-08-31T06:00:40.094493]   2026-10-27: 84 evento(s)
+[2026-08-31T06:00:40.094501]   2026-10-28: 84 evento(s)
+[2026-08-31T06:00:40.094509]   2026-10-29: 84 evento(s)
+[2026-08-31T06:00:40.094516]   2026-10-30: 84 evento(s)
+[2026-08-31T06:00:40.094524]   2026-10-31: 84 evento(s)
+[2026-08-31T06:00:40.128658] Agenda salva: 69 dias, 5796 eventos pendentes.
+=== $(date '+%Y-%m-%d %H:%M:%S') - Extraction completed successfully ===
+=== $(date '+%Y-%m-%d %H:%M:%S') - End of run ===
+=== $(date '+%Y-%m-%d %H:%M:%S') - Starting agenda extraction ===
+[2026-09-01T09:07:38.056380] Iniciando extração: 2026-08-25 → 2026-10-31
+[2026-09-01T09:07:38.056409] Buscando página 1 (2026-08-25 → 2026-10-31) …
+[2026-09-01T09:07:40.231740]   → 84 eventos (total 84, páginas 1)
+[2026-09-01T09:07:40.231875] Total único de eventos da API: 84
+[2026-09-01T09:07:40.273412] Eventos concluídos (filtrados): 0
+[2026-09-01T09:07:40.273449] Eventos expandidos em entradas de dia: 5796
+[2026-09-01T09:07:40.275054]   2026-08-25: 84 evento(s)
+[2026-09-01T09:07:40.275072]   2026-08-26: 84 evento(s)
+[2026-09-01T09:07:40.275076]   2026-08-27: 84 evento(s)
+[2026-09-01T09:07:40.275078]   2026-08-28: 84 evento(s)
+[2026-09-01T09:07:40.275081]   2026-08-29: 84 evento(s)
+[2026-09-01T09:07:40.275083]   2026-08-30: 84 evento(s)
+[2026-09-01T09:07:40.275086]   2026-08-31: 84 evento(s)
+[2026-09-01T09:07:40.275088]   2026-09-01: 84 evento(s)
+[2026-09-01T09:07:40.275090]   2026-09-02: 84 evento(s)
+[2026-09-01T09:07:40.275093]   2026-09-03: 84 evento(s)
+[2026-09-01T09:07:40.275095]   2026-09-04: 84 evento(s)
+[2026-09-01T09:07:40.275099]   2026-09-05: 84 evento(s)
+[2026-09-01T09:07:40.275102]   2026-09-06: 84 evento(s)
+[2026-09-01T09:07:40.275104]   2026-09-07: 84 evento(s)
+[2026-09-01T09:07:40.275106]   2026-09-08: 84 evento(s)
+[2026-09-01T09:07:40.275109]   2026-09-09: 84 evento(s)
+[2026-09-01T09:07:40.275111]   2026-09-10: 84 evento(s)
+[2026-09-01T09:07:40.275113]   2026-09-11: 84 evento(s)
+[2026-09-01T09:07:40.275115]   2026-09-12: 84 evento(s)
+[2026-09-01T09:07:40.275118]   2026-09-13: 84 evento(s)
+[2026-09-01T09:07:40.275120]   2026-09-14: 84 evento(s)
+[2026-09-01T09:07:40.275122]   2026-09-15: 84 evento(s)
+[2026-09-01T09:07:40.275140]   2026-09-16: 84 evento(s)
+[2026-09-01T09:07:40.275142]   2026-09-17: 84 evento(s)
+[2026-09-01T09:07:40.275144]   2026-09-18: 84 evento(s)
+[2026-09-01T09:07:40.275146]   2026-09-19: 84 evento(s)
+[2026-09-01T09:07:40.275148]   2026-09-20: 84 evento(s)
+[2026-09-01T09:07:40.275150]   2026-09-21: 84 evento(s)
+[2026-09-01T09:07:40.275152]   2026-09-22: 84 evento(s)
+[2026-09-01T09:07:40.275154]   2026-09-23: 84 evento(s)
+[2026-09-01T09:07:40.275156]   2026-09-24: 84 evento(s)
+[2026-09-01T09:07:40.275158]   2026-09-25: 84 evento(s)
+[2026-09-01T09:07:40.275161]   2026-09-26: 84 evento(s)
+[2026-09-01T09:07:40.275164]   2026-09-27: 84 evento(s)
+[2026-09-01T09:07:40.275166]   2026-09-28: 84 evento(s)
+[2026-09-01T09:07:40.275167]   2026-09-29: 84 evento(s)
+[2026-09-01T09:07:40.275169]   2026-09-30: 84 evento(s)
+[2026-09-01T09:07:40.275171]   2026-10-01: 84 evento(s)
+[2026-09-01T09:07:40.275173]   2026-10-02: 84 evento(s)
+[2026-09-01T09:07:40.275175]   2026-10-03: 84 evento(s)
+[2026-09-01T09:07:40.275177]   2026-10-04: 84 evento(s)
+[2026-09-01T09:07:40.275179]   2026-10-05: 84 evento(s)
+[2026-09-01T09:07:40.275181]   2026-10-06: 84 evento(s)
+[2026-09-01T09:07:40.275183]   2026-10-07: 84 evento(s)
+[2026-09-01T09:07:40.275185]   2026-10-08: 84 evento(s)
+[2026-09-01T09:07:40.275187]   2026-10-09: 84 evento(s)
+[2026-09-01T09:07:40.275188]   2026-10-10: 84 evento(s)
+[2026-09-01T09:07:40.275190]   2026-10-11: 84 evento(s)
+[2026-09-01T09:07:40.275194]   2026-10-12: 84 evento(s)
+[2026-09-01T09:07:40.275196]   2026-10-13: 84 evento(s)
+[2026-09-01T09:07:40.275198]   2026-10-14: 84 evento(s)
+[2026-09-01T09:07:40.275200]   2026-10-15: 84 evento(s)
+[2026-09-01T09:07:40.275202]   2026-10-16: 84 evento(s)
+[2026-09-01T09:07:40.275204]   2026-10-17: 84 evento(s)
+[2026-09-01T09:07:40.275206]   2026-10-18: 84 evento(s)
+[2026-09-01T09:07:40.275208]   2026-10-19: 84 evento(s)
+[2026-09-01T09:07:40.275210]   2026-10-20: 84 evento(s)
+[2026-09-01T09:07:40.275212]   2026-10-21: 84 evento(s)
+[2026-09-01T09:07:40.275214]   2026-10-22: 84 evento(s)
+[2026-09-01T09:07:40.275216]   2026-10-23: 84 evento(s)
+[2026-09-01T09:07:40.275217]   2026-10-24: 84 evento(s)
+[2026-09-01T09:07:40.275219]   2026-10-25: 84 evento(s)
+[2026-09-01T09:07:40.275221]   2026-10-26: 84 evento(s)
+[2026-09-01T09:07:40.275225]   2026-10-27: 84 evento(s)
+[2026-09-01T09:07:40.275227]   2026-10-28: 84 evento(s)
+[2026-09-01T09:07:40.275229]   2026-10-29: 84 evento(s)
+[2026-09-01T09:07:40.275231]   2026-10-30: 84 evento(s)
+[2026-09-01T09:07:40.275233]   2026-10-31: 84 evento(s)
+[2026-09-01T09:07:40.275235]   2026-11-01: 84 evento(s)
+[2026-09-01T09:07:40.314567] Agenda salva: 69 dias, 5796 eventos pendentes.
+=== $(date '+%Y-%m-%d %H:%M:%S') - Extraction completed successfully ===
+=== $(date '+%Y-%m-%d %H:%M:%S') - End of run ===
+=== $(date '+%Y-%m-%d %H:%M:%S') - Starting agenda extraction ===
+[2026-09-01T12:00:41.809263] Iniciando extração: 2026-08-25 → 2026-10-31
+[2026-09-01T12:00:41.809749] Buscando página 1 (2026-08-25 → 2026-10-31) …
+[2026-09-01T12:00:44.474114]   → 85 eventos (total 85, páginas 1)
+[2026-09-01T12:00:44.474487] Total único de eventos da API: 85
+[2026-09-01T12:00:44.511248] Eventos concluídos (filtrados): 0
+[2026-09-01T12:00:44.511359] Eventos expandidos em entradas de dia: 5857
+[2026-09-01T12:00:44.513164]   2026-08-25: 84 evento(s)
+[2026-09-01T12:00:44.513193]   2026-08-26: 84 evento(s)
+[2026-09-01T12:00:44.513198]   2026-08-27: 84 evento(s)
+[2026-09-01T12:00:44.513200]   2026-08-28: 84 evento(s)
+[2026-09-01T12:00:44.513203]   2026-08-29: 84 evento(s)
+[2026-09-01T12:00:44.513206]   2026-08-30: 84 evento(s)
+[2026-09-01T12:00:44.513208]   2026-08-31: 84 evento(s)
+[2026-09-01T12:00:44.513211]   2026-09-01: 85 evento(s)
+[2026-09-01T12:00:44.513214]   2026-09-02: 85 evento(s)
+[2026-09-01T12:00:44.513217]   2026-09-03: 85 evento(s)
+[2026-09-01T12:00:44.513220]   2026-09-04: 85 evento(s)
+[2026-09-01T12:00:44.513223]   2026-09-05: 85 evento(s)
+[2026-09-01T12:00:44.513225]   2026-09-06: 85 evento(s)
+[2026-09-01T12:00:44.513228]   2026-09-07: 85 evento(s)
+[2026-09-01T12:00:44.513240]   2026-09-08: 85 evento(s)
+[2026-09-01T12:00:44.513243]   2026-09-09: 85 evento(s)
+[2026-09-01T12:00:44.513245]   2026-09-10: 85 evento(s)
+[2026-09-01T12:00:44.513247]   2026-09-11: 85 evento(s)
+[2026-09-01T12:00:44.513250]   2026-09-12: 85 evento(s)
+[2026-09-01T12:00:44.513253]   2026-09-13: 85 evento(s)
+[2026-09-01T12:00:44.513255]   2026-09-14: 85 evento(s)
+[2026-09-01T12:00:44.513257]   2026-09-15: 85 evento(s)
+[2026-09-01T12:00:44.513260]   2026-09-16: 85 evento(s)
+[2026-09-01T12:00:44.513262]   2026-09-17: 85 evento(s)
+[2026-09-01T12:00:44.513264]   2026-09-18: 85 evento(s)
+[2026-09-01T12:00:44.513268]   2026-09-19: 85 evento(s)
+[2026-09-01T12:00:44.513270]   2026-09-20: 85 evento(s)
+[2026-09-01T12:00:44.513273]   2026-09-21: 85 evento(s)
+[2026-09-01T12:00:44.513275]   2026-09-22: 85 evento(s)
+[2026-09-01T12:00:44.513277]   2026-09-23: 85 evento(s)
+[2026-09-01T12:00:44.513280]   2026-09-24: 85 evento(s)
+[2026-09-01T12:00:44.513282]   2026-09-25: 85 evento(s)
+[2026-09-01T12:00:44.513284]   2026-09-26: 85 evento(s)
+[2026-09-01T12:00:44.513287]   2026-09-27: 85 evento(s)
+[2026-09-01T12:00:44.513290]   2026-09-28: 85 evento(s)
+[2026-09-01T12:00:44.513292]   2026-09-29: 85 evento(s)
+[2026-09-01T12:00:44.513295]   2026-09-30: 85 evento(s)
+[2026-09-01T12:00:44.513297]   2026-10-01: 85 evento(s)
+[2026-09-01T12:00:44.513299]   2026-10-02: 85 evento(s)
+[2026-09-01T12:00:44.513302]   2026-10-03: 85 evento(s)
+[2026-09-01T12:00:44.513304]   2026-10-04: 85 evento(s)
+[2026-09-01T12:00:44.513307]   2026-10-05: 85 evento(s)
+[2026-09-01T12:00:44.513309]   2026-10-06: 85 evento(s)
+[2026-09-01T12:00:44.513311]   2026-10-07: 85 evento(s)
+[2026-09-01T12:00:44.513314]   2026-10-08: 85 evento(s)
+[2026-09-01T12:00:44.513316]   2026-10-09: 85 evento(s)
+[2026-09-01T12:00:44.513318]   2026-10-10: 85 evento(s)
+[2026-09-01T12:00:44.513321]   2026-10-11: 85 evento(s)
+[2026-09-01T12:00:44.513323]   2026-10-12: 85 evento(s)
+[2026-09-01T12:00:44.513325]   2026-10-13: 85 evento(s)
+[2026-09-01T12:00:44.513328]   2026-10-14: 85 evento(s)
+[2026-09-01T12:00:44.513331]   2026-10-15: 85 evento(s)
+[2026-09-01T12:00:44.513333]   2026-10-16: 85 evento(s)
+[2026-09-01T12:00:44.513336]   2026-10-17: 85 evento(s)
+[2026-09-01T12:00:44.513338]   2026-10-18: 85 evento(s)
+[2026-09-01T12:00:44.513340]   2026-10-19: 85 evento(s)
+[2026-09-01T12:00:44.513343]   2026-10-20: 85 evento(s)
+[2026-09-01T12:00:44.513345]   2026-10-21: 85 evento(s)
+[2026-09-01T12:00:44.513347]   2026-10-22: 85 evento(s)
+[2026-09-01T12:00:44.513350]   2026-10-23: 85 evento(s)
+[2026-09-01T12:00:44.513352]   2026-10-24: 85 evento(s)
+[2026-09-01T12:00:44.513354]   2026-10-25: 85 evento(s)
+[2026-09-01T12:00:44.513357]   2026-10-26: 85 evento(s)
+[2026-09-01T12:00:44.513359]   2026-10-27: 85 evento(s)
+[2026-09-01T12:00:44.513361]   2026-10-28: 85 evento(s)
+[2026-09-01T12:00:44.513364]   2026-10-29: 85 evento(s)
+[2026-09-01T12:00:44.513366]   2026-10-30: 85 evento(s)
+[2026-09-01T12:00:44.513369]   2026-10-31: 85 evento(s)
+[2026-09-01T12:00:44.513371]   2026-11-01: 84 evento(s)
+[2026-09-01T12:00:44.544032] Agenda salva: 69 dias, 5857 eventos pendentes.
+=== $(date '+%Y-%m-%d %H:%M:%S') - Extraction completed successfully ===
+=== $(date '+%Y-%m-%d %H:%M:%S') - End of run ===
+=== $(date '+%Y-%m-%d %H:%M:%S') - Starting agenda extraction ===
+[2026-09-01T18:00:50.330141] Iniciando extração: 2026-08-25 → 2026-10-31
+[2026-09-01T18:00:50.330252] Buscando página 1 (2026-08-25 → 2026-10-31) …
+[2026-09-01T18:00:52.452628]   → 85 eventos (total 85, páginas 1)
+[2026-09-01T18:00:52.453019] Total único de eventos da API: 85
+[2026-09-01T18:00:52.491684] Eventos concluídos (filtrados): 0
+[2026-09-01T18:00:52.491748] Eventos expandidos em entradas de dia: 5857
+[2026-09-01T18:00:52.493431]   2026-08-25: 84 evento(s)
+[2026-09-01T18:00:52.493460]   2026-08-26: 84 evento(s)
+[2026-09-01T18:00:52.493465]   2026-08-27: 84 evento(s)
+[2026-09-01T18:00:52.493468]   2026-08-28: 84 evento(s)
+[2026-09-01T18:00:52.493471]   2026-08-29: 84 evento(s)
+[2026-09-01T18:00:52.493474]   2026-08-30: 84 evento(s)
+[2026-09-01T18:00:52.493486]   2026-08-31: 84 evento(s)
+[2026-09-01T18:00:52.493489]   2026-09-01: 85 evento(s)
+[2026-09-01T18:00:52.493491]   2026-09-02: 85 evento(s)
+[2026-09-01T18:00:52.493493]   2026-09-03: 85 evento(s)
+[2026-09-01T18:00:52.493496]   2026-09-04: 85 evento(s)
+[2026-09-01T18:00:52.493499]   2026-09-05: 85 evento(s)
+[2026-09-01T18:00:52.493502]   2026-09-06: 85 evento(s)
+[2026-09-01T18:00:52.493505]   2026-09-07: 85 evento(s)
+[2026-09-01T18:00:52.493508]   2026-09-08: 85 evento(s)
+[2026-09-01T18:00:52.493510]   2026-09-09: 85 evento(s)
+[2026-09-01T18:00:52.493513]   2026-09-10: 85 evento(s)
+[2026-09-01T18:00:52.493516]   2026-09-11: 85 evento(s)
+[2026-09-01T18:00:52.493518]   2026-09-12: 85 evento(s)
+[2026-09-01T18:00:52.493521]   2026-09-13: 85 evento(s)
+[2026-09-01T18:00:52.493523]   2026-09-14: 85 evento(s)
+[2026-09-01T18:00:52.493526]   2026-09-15: 85 evento(s)
+[2026-09-01T18:00:52.493529]   2026-09-16: 85 evento(s)
+[2026-09-01T18:00:52.493531]   2026-09-17: 85 evento(s)
+[2026-09-01T18:00:52.493534]   2026-09-18: 85 evento(s)
+[2026-09-01T18:00:52.493537]   2026-09-19: 85 evento(s)
+[2026-09-01T18:00:52.493540]   2026-09-20: 85 evento(s)
+[2026-09-01T18:00:52.493542]   2026-09-21: 85 evento(s)
+[2026-09-01T18:00:52.493545]   2026-09-22: 85 evento(s)
+[2026-09-01T18:00:52.493548]   2026-09-23: 85 evento(s)
+[2026-09-01T18:00:52.493551]   2026-09-24: 85 evento(s)
+[2026-09-01T18:00:52.493553]   2026-09-25: 85 evento(s)
+[2026-09-01T18:00:52.493556]   2026-09-26: 85 evento(s)
+[2026-09-01T18:00:52.493559]   2026-09-27: 85 evento(s)
+[2026-09-01T18:00:52.493562]   2026-09-28: 85 evento(s)
+[2026-09-01T18:00:52.493565]   2026-09-29: 85 evento(s)
+[2026-09-01T18:00:52.493567]   2026-09-30: 85 evento(s)
+[2026-09-01T18:00:52.493570]   2026-10-01: 85 evento(s)
+[2026-09-01T18:00:52.493573]   2026-10-02: 85 evento(s)
+[2026-09-01T18:00:52.493576]   2026-10-03: 85 evento(s)
+[2026-09-01T18:00:52.493579]   2026-10-04: 85 evento(s)
+[2026-09-01T18:00:52.493582]   2026-10-05: 85 evento(s)
+[2026-09-01T18:00:52.493584]   2026-10-06: 85 evento(s)
+[2026-09-01T18:00:52.493587]   2026-10-07: 85 evento(s)
+[2026-09-01T18:00:52.493590]   2026-10-08: 85 evento(s)
+[2026-09-01T18:00:52.493593]   2026-10-09: 85 evento(s)
+[2026-09-01T18:00:52.493595]   2026-10-10: 85 evento(s)
+[2026-09-01T18:00:52.493598]   2026-10-11: 85 evento(s)
+[2026-09-01T18:00:52.493601]   2026-10-12: 85 evento(s)
+[2026-09-01T18:00:52.493604]   2026-10-13: 85 evento(s)
+[2026-09-01T18:00:52.493607]   2026-10-14: 85 evento(s)
+[2026-09-01T18:00:52.493610]   2026-10-15: 85 evento(s)
+[2026-09-01T18:00:52.493613]   2026-10-16: 85 evento(s)
+[2026-09-01T18:00:52.493615]   2026-10-17: 85 evento(s)
+[2026-09-01T18:00:52.493618]   2026-10-18: 85 evento(s)
+[2026-09-01T18:00:52.493621]   2026-10-19: 85 evento(s)
+[2026-09-01T18:00:52.493624]   2026-10-20: 85 evento(s)
+[2026-09-01T18:00:52.493626]   2026-10-21: 85 evento(s)
+[2026-09-01T18:00:52.493629]   2026-10-22: 85 evento(s)
+[2026-09-01T18:00:52.493632]   2026-10-23: 85 evento(s)
+[2026-09-01T18:00:52.493635]   2026-10-24: 85 evento(s)
+[2026-09-01T18:00:52.493638]   2026-10-25: 85 evento(s)
+[2026-09-01T18:00:52.493640]   2026-10-26: 85 evento(s)
+[2026-09-01T18:00:52.493643]   2026-10-27: 85 evento(s)
+[2026-09-01T18:00:52.493646]   2026-10-28: 85 evento(s)
+[2026-09-01T18:00:52.493649]   2026-10-29: 85 evento(s)
+[2026-09-01T18:00:52.493652]   2026-10-30: 85 evento(s)
+[2026-09-01T18:00:52.493654]   2026-10-31: 85 evento(s)
+[2026-09-01T18:00:52.493657]   2026-11-01: 84 evento(s)
+[2026-09-01T18:00:52.526940] Agenda salva: 69 dias, 5857 eventos pendentes.
+=== $(date '+%Y-%m-%d %H:%M:%S') - Extraction completed successfully ===
+=== $(date '+%Y-%m-%d %H:%M:%S') - End of run ===
+=== $(date '+%Y-%m-%d %H:%M:%S') - Starting agenda extraction ===
+[2026-09-02T06:00:07.714199] Iniciando extração: 2026-08-26 → 2026-11-01
+[2026-09-02T06:00:07.714332] Buscando página 1 (2026-08-26 → 2026-11-01) …
+[2026-09-02T06:00:09.799181]   → 85 eventos (total 85, páginas 1)
+[2026-09-02T06:00:09.799577] Total único de eventos da API: 85
+[2026-09-02T06:00:09.835849] Eventos concluídos (filtrados): 0
+[2026-09-02T06:00:09.835900] Eventos expandidos em entradas de dia: 5858
+[2026-09-02T06:00:09.837522]   2026-08-26: 84 evento(s)
+[2026-09-02T06:00:09.837579]   2026-08-27: 84 evento(s)
+[2026-09-02T06:00:09.837600]   2026-08-28: 84 evento(s)
+[2026-09-02T06:00:09.837613]   2026-08-29: 84 evento(s)
+[2026-09-02T06:00:09.837625]   2026-08-30: 84 evento(s)
+[2026-09-02T06:00:09.837637]   2026-08-31: 84 evento(s)
+[2026-09-02T06:00:09.837648]   2026-09-01: 85 evento(s)
+[2026-09-02T06:00:09.837660]   2026-09-02: 85 evento(s)
+[2026-09-02T06:00:09.837675]   2026-09-03: 85 evento(s)
+[2026-09-02T06:00:09.837691]   2026-09-04: 85 evento(s)
+[2026-09-02T06:00:09.837707]   2026-09-05: 85 evento(s)
+[2026-09-02T06:00:09.837723]   2026-09-06: 85 evento(s)
+[2026-09-02T06:00:09.837739]   2026-09-07: 85 evento(s)
+[2026-09-02T06:00:09.837755]   2026-09-08: 85 evento(s)
+[2026-09-02T06:00:09.837771]   2026-09-09: 85 evento(s)
+[2026-09-02T06:00:09.837787]   2026-09-10: 85 evento(s)
+[2026-09-02T06:00:09.837803]   2026-09-11: 85 evento(s)
+[2026-09-02T06:00:09.837818]   2026-09-12: 85 evento(s)
+[2026-09-02T06:00:09.837835]   2026-09-13: 85 evento(s)
+[2026-09-02T06:00:09.837854]   2026-09-14: 85 evento(s)
+[2026-09-02T06:00:09.837868]   2026-09-15: 85 evento(s)
+[2026-09-02T06:00:09.837872]   2026-09-16: 85 evento(s)
+[2026-09-02T06:00:09.837875]   2026-09-17: 85 evento(s)
+[2026-09-02T06:00:09.837877]   2026-09-18: 85 evento(s)
+[2026-09-02T06:00:09.837879]   2026-09-19: 85 evento(s)
+[2026-09-02T06:00:09.837882]   2026-09-20: 85 evento(s)
+[2026-09-02T06:00:09.837884]   2026-09-21: 85 evento(s)
+[2026-09-02T06:00:09.837887]   2026-09-22: 85 evento(s)
+[2026-09-02T06:00:09.837889]   2026-09-23: 85 evento(s)
+[2026-09-02T06:00:09.837892]   2026-09-24: 85 evento(s)
+[2026-09-02T06:00:09.837894]   2026-09-25: 85 evento(s)
+[2026-09-02T06:00:09.837897]   2026-09-26: 85 evento(s)
+[2026-09-02T06:00:09.837899]   2026-09-27: 85 evento(s)
+[2026-09-02T06:00:09.837902]   2026-09-28: 85 evento(s)
+[2026-09-02T06:00:09.837904]   2026-09-29: 85 evento(s)
+[2026-09-02T06:00:09.837907]   2026-09-30: 85 evento(s)
+[2026-09-02T06:00:09.837909]   2026-10-01: 85 evento(s)
+[2026-09-02T06:00:09.837912]   2026-10-02: 85 evento(s)
+[2026-09-02T06:00:09.837914]   2026-10-03: 85 evento(s)
+[2026-09-02T06:00:09.837917]   2026-10-04: 85 evento(s)
+[2026-09-02T06:00:09.837919]   2026-10-05: 85 evento(s)
+[2026-09-02T06:00:09.837922]   2026-10-06: 85 evento(s)
+[2026-09-02T06:00:09.837924]   2026-10-07: 85 evento(s)
+[2026-09-02T06:00:09.837926]   2026-10-08: 85 evento(s)
+[2026-09-02T06:00:09.837929]   2026-10-09: 85 evento(s)
+[2026-09-02T06:00:09.837931]   2026-10-10: 85 evento(s)
+[2026-09-02T06:00:09.837934]   2026-10-11: 85 evento(s)
+[2026-09-02T06:00:09.837936]   2026-10-12: 85 evento(s)
+[2026-09-02T06:00:09.837939]   2026-10-13: 85 evento(s)
+[2026-09-02T06:00:09.837941]   2026-10-14: 85 evento(s)
+[2026-09-02T06:00:09.837944]   2026-10-15: 85 evento(s)
+[2026-09-02T06:00:09.837946]   2026-10-16: 85 evento(s)
+[2026-09-02T06:00:09.837949]   2026-10-17: 85 evento(s)
+[2026-09-02T06:00:09.837951]   2026-10-18: 85 evento(s)
+[2026-09-02T06:00:09.837954]   2026-10-19: 85 evento(s)
+[2026-09-02T06:00:09.837956]   2026-10-20: 85 evento(s)
+[2026-09-02T06:00:09.837959]   2026-10-21: 85 evento(s)
+[2026-09-02T06:00:09.837961]   2026-10-22: 85 evento(s)
+[2026-09-02T06:00:09.837964]   2026-10-23: 85 evento(s)
+[2026-09-02T06:00:09.837967]   2026-10-24: 85 evento(s)
+[2026-09-02T06:00:09.837969]   2026-10-25: 85 evento(s)
+[2026-09-02T06:00:09.837972]   2026-10-26: 85 evento(s)
+[2026-09-02T06:00:09.837974]   2026-10-27: 85 evento(s)
+[2026-09-02T06:00:09.837977]   2026-10-28: 85 evento(s)
+[2026-09-02T06:00:09.837979]   2026-10-29: 85 evento(s)
+[2026-09-02T06:00:09.837982]   2026-10-30: 85 evento(s)
+[2026-09-02T06:00:09.837985]   2026-10-31: 85 evento(s)
+[2026-09-02T06:00:09.837987]   2026-11-01: 85 evento(s)
+[2026-09-02T06:00:09.837989]   2026-11-02: 84 evento(s)
+[2026-09-02T06:00:09.868967] Agenda salva: 69 dias, 5858 eventos pendentes.
+=== $(date '+%Y-%m-%d %H:%M:%S') - Extraction completed successfully ===
+=== $(date '+%Y-%m-%d %H:%M:%S') - End of run ===
+=== $(date '+%Y-%m-%d %H:%M:%S') - Starting agenda extraction ===
+[2026-09-02T12:00:15.590781] Iniciando extração: 2026-08-26 → 2026-11-01
+[2026-09-02T12:00:15.590825] Buscando página 1 (2026-08-26 → 2026-11-01) …
+[2026-09-02T12:00:17.760458]   → 86 eventos (total 86, páginas 1)
+[2026-09-02T12:00:17.760775] Total único de eventos da API: 86
+[2026-09-02T12:00:17.798633] Eventos concluídos (filtrados): 0
+[2026-09-02T12:00:17.798686] Eventos expandidos em entradas de dia: 5919
+[2026-09-02T12:00:17.800361]   2026-08-26: 84 evento(s)
+[2026-09-02T12:00:17.800386]   2026-08-27: 84 evento(s)
+[2026-09-02T12:00:17.800390]   2026-08-28: 84 evento(s)
+[2026-09-02T12:00:17.800393]   2026-08-29: 84 evento(s)
+[2026-09-02T12:00:17.800395]   2026-08-30: 84 evento(s)
+[2026-09-02T12:00:17.800398]   2026-08-31: 84 evento(s)
+[2026-09-02T12:00:17.800401]   2026-09-01: 85 evento(s)
+[2026-09-02T12:00:17.800403]   2026-09-02: 86 evento(s)
+[2026-09-02T12:00:17.800406]   2026-09-03: 86 evento(s)
+[2026-09-02T12:00:17.800408]   2026-09-04: 86 evento(s)
+[2026-09-02T12:00:17.800411]   2026-09-05: 86 evento(s)
+[2026-09-02T12:00:17.800413]   2026-09-06: 86 evento(s)
+[2026-09-02T12:00:17.800415]   2026-09-07: 86 evento(s)
+[2026-09-02T12:00:17.800418]   2026-09-08: 86 evento(s)
+[2026-09-02T12:00:17.800420]   2026-09-09: 86 evento(s)
+[2026-09-02T12:00:17.800423]   2026-09-10: 86 evento(s)
+[2026-09-02T12:00:17.800425]   2026-09-11: 86 evento(s)
+[2026-09-02T12:00:17.800429]   2026-09-12: 86 evento(s)
+[2026-09-02T12:00:17.800431]   2026-09-13: 86 evento(s)
+[2026-09-02T12:00:17.800434]   2026-09-14: 86 evento(s)
+[2026-09-02T12:00:17.800437]   2026-09-15: 86 evento(s)
+[2026-09-02T12:00:17.800440]   2026-09-16: 86 evento(s)
+[2026-09-02T12:00:17.800443]   2026-09-17: 86 evento(s)
+[2026-09-02T12:00:17.800445]   2026-09-18: 86 evento(s)
+[2026-09-02T12:00:17.800448]   2026-09-19: 86 evento(s)
+[2026-09-02T12:00:17.800452]   2026-09-20: 86 evento(s)
+[2026-09-02T12:00:17.800455]   2026-09-21: 86 evento(s)
+[2026-09-02T12:00:17.800457]   2026-09-22: 86 evento(s)
+[2026-09-02T12:00:17.800460]   2026-09-23: 86 evento(s)
+[2026-09-02T12:00:17.800464]   2026-09-24: 86 evento(s)
+[2026-09-02T12:00:17.800467]   2026-09-25: 86 evento(s)
+[2026-09-02T12:00:17.800469]   2026-09-26: 86 evento(s)
+[2026-09-02T12:00:17.800472]   2026-09-27: 86 evento(s)
+[2026-09-02T12:00:17.800475]   2026-09-28: 86 evento(s)
+[2026-09-02T12:00:17.800478]   2026-09-29: 86 evento(s)
+[2026-09-02T12:00:17.800481]   2026-09-30: 86 evento(s)
+[2026-09-02T12:00:17.800484]   2026-10-01: 86 evento(s)
+[2026-09-02T12:00:17.800487]   2026-10-02: 86 evento(s)
+[2026-09-02T12:00:17.800490]   2026-10-03: 86 evento(s)
+[2026-09-02T12:00:17.800493]   2026-10-04: 86 evento(s)
+[2026-09-02T12:00:17.800496]   2026-10-05: 86 evento(s)
+[2026-09-02T12:00:17.800499]   2026-10-06: 86 evento(s)
+[2026-09-02T12:00:17.800502]   2026-10-07: 86 evento(s)
+[2026-09-02T12:00:17.800505]   2026-10-08: 86 evento(s)
+[2026-09-02T12:00:17.800507]   2026-10-09: 86 evento(s)
+[2026-09-02T12:00:17.800510]   2026-10-10: 86 evento(s)
+[2026-09-02T12:00:17.800513]   2026-10-11: 86 evento(s)
+[2026-09-02T12:00:17.800516]   2026-10-12: 86 evento(s)
+[2026-09-02T12:00:17.800519]   2026-10-13: 86 evento(s)
+[2026-09-02T12:00:17.800522]   2026-10-14: 86 evento(s)
+[2026-09-02T12:00:17.800526]   2026-10-15: 86 evento(s)
+[2026-09-02T12:00:17.800528]   2026-10-16: 86 evento(s)
+[2026-09-02T12:00:17.800531]   2026-10-17: 86 evento(s)
+[2026-09-02T12:00:17.800534]   2026-10-18: 86 evento(s)
+[2026-09-02T12:00:17.800537]   2026-10-19: 86 evento(s)
+[2026-09-02T12:00:17.800540]   2026-10-20: 86 evento(s)
+[2026-09-02T12:00:17.800543]   2026-10-21: 86 evento(s)
+[2026-09-02T12:00:17.800546]   2026-10-22: 86 evento(s)
+[2026-09-02T12:00:17.800549]   2026-10-23: 86 evento(s)
+[2026-09-02T12:00:17.800552]   2026-10-24: 86 evento(s)
+[2026-09-02T12:00:17.800556]   2026-10-25: 86 evento(s)
+[2026-09-02T12:00:17.800559]   2026-10-26: 86 evento(s)
+[2026-09-02T12:00:17.800577]   2026-10-27: 86 evento(s)
+[2026-09-02T12:00:17.800580]   2026-10-28: 86 evento(s)
+[2026-09-02T12:00:17.800582]   2026-10-29: 86 evento(s)
+[2026-09-02T12:00:17.800585]   2026-10-30: 86 evento(s)
+[2026-09-02T12:00:17.800587]   2026-10-31: 86 evento(s)
+[2026-09-02T12:00:17.800590]   2026-11-01: 86 evento(s)
+[2026-09-02T12:00:17.800593]   2026-11-02: 84 evento(s)
+[2026-09-02T12:00:17.834726] Agenda salva: 69 dias, 5919 eventos pendentes.
+=== $(date '+%Y-%m-%d %H:%M:%S') - Extraction completed successfully ===
+=== $(date '+%Y-%m-%d %H:%M:%S') - End of run ===
+=== $(date '+%Y-%m-%d %H:%M:%S') - Starting agenda extraction ===
+[2026-09-02T18:00:23.991164] Iniciando extração: 2026-08-26 → 2026-11-01
+[2026-09-02T18:00:23.991214] Buscando página 1 (2026-08-26 → 2026-11-01) …
+[2026-09-02T18:00:26.359260]   → 86 eventos (total 86, páginas 1)
+[2026-09-02T18:00:26.359646] Total único de eventos da API: 86
+[2026-09-02T18:00:26.387484] Eventos concluídos (filtrados): 0
+[2026-09-02T18:00:26.387528] Eventos expandidos em entradas de dia: 5919
+[2026-09-02T18:00:26.389053]   2026-08-26: 84 evento(s)
+[2026-09-02T18:00:26.389086]   2026-08-27: 84 evento(s)
+[2026-09-02T18:00:26.389090]   2026-08-28: 84 evento(s)
+[2026-09-02T18:00:26.389093]   2026-08-29: 84 evento(s)
+[2026-09-02T18:00:26.389095]   2026-08-30: 84 evento(s)
+[2026-09-02T18:00:26.389098]   2026-08-31: 84 evento(s)
+[2026-09-02T18:00:26.389102]   2026-09-01: 85 evento(s)
+[2026-09-02T18:00:26.389105]   2026-09-02: 86 evento(s)
+[2026-09-02T18:00:26.389108]   2026-09-03: 86 evento(s)
+[2026-09-02T18:00:26.389110]   2026-09-04: 86 evento(s)
+[2026-09-02T18:00:26.389113]   2026-09-05: 86 evento(s)
+[2026-09-02T18:00:26.389116]   2026-09-06: 86 evento(s)
+[2026-09-02T18:00:26.389118]   2026-09-07: 86 evento(s)
+[2026-09-02T18:00:26.389121]   2026-09-08: 86 evento(s)
+[2026-09-02T18:00:26.389123]   2026-09-09: 86 evento(s)
+[2026-09-02T18:00:26.389126]   2026-09-10: 86 evento(s)
+[2026-09-02T18:00:26.389128]   2026-09-11: 86 evento(s)
+[2026-09-02T18:00:26.389131]   2026-09-12: 86 evento(s)
+[2026-09-02T18:00:26.389133]   2026-09-13: 86 evento(s)
+[2026-09-02T18:00:26.389136]   2026-09-14: 86 evento(s)
+[2026-09-02T18:00:26.389138]   2026-09-15: 86 evento(s)
+[2026-09-02T18:00:26.389141]   2026-09-16: 86 evento(s)
+[2026-09-02T18:00:26.389144]   2026-09-17: 86 evento(s)
+[2026-09-02T18:00:26.389146]   2026-09-18: 86 evento(s)
+[2026-09-02T18:00:26.389149]   2026-09-19: 86 evento(s)
+[2026-09-02T18:00:26.389151]   2026-09-20: 86 evento(s)
+[2026-09-02T18:00:26.389154]   2026-09-21: 86 evento(s)
+[2026-09-02T18:00:26.389156]   2026-09-22: 86 evento(s)
+[2026-09-02T18:00:26.389159]   2026-09-23: 86 evento(s)
+[2026-09-02T18:00:26.389161]   2026-09-24: 86 evento(s)
+[2026-09-02T18:00:26.389164]   2026-09-25: 86 evento(s)
+[2026-09-02T18:00:26.389167]   2026-09-26: 86 evento(s)
+[2026-09-02T18:00:26.389169]   2026-09-27: 86 evento(s)
+[2026-09-02T18:00:26.389172]   2026-09-28: 86 evento(s)
+[2026-09-02T18:00:26.389174]   2026-09-29: 86 evento(s)
+[2026-09-02T18:00:26.389177]   2026-09-30: 86 evento(s)
+[2026-09-02T18:00:26.389179]   2026-10-01: 86 evento(s)
+[2026-09-02T18:00:26.389182]   2026-10-02: 86 evento(s)
+[2026-09-02T18:00:26.389185]   2026-10-03: 86 evento(s)
+[2026-09-02T18:00:26.389187]   2026-10-04: 86 evento(s)
+[2026-09-02T18:00:26.389190]   2026-10-05: 86 evento(s)
+[2026-09-02T18:00:26.389192]   2026-10-06: 86 evento(s)
+[2026-09-02T18:00:26.389195]   2026-10-07: 86 evento(s)
+[2026-09-02T18:00:26.389198]   2026-10-08: 86 evento(s)
+[2026-09-02T18:00:26.389200]   2026-10-09: 86 evento(s)
+[2026-09-02T18:00:26.389203]   2026-10-10: 86 evento(s)
+[2026-09-02T18:00:26.389205]   2026-10-11: 86 evento(s)
+[2026-09-02T18:00:26.389208]   2026-10-12: 86 evento(s)
+[2026-09-02T18:00:26.389211]   2026-10-13: 86 evento(s)
+[2026-09-02T18:00:26.389213]   2026-10-14: 86 evento(s)
+[2026-09-02T18:00:26.389216]   2026-10-15: 86 evento(s)
+[2026-09-02T18:00:26.389218]   2026-10-16: 86 evento(s)
+[2026-09-02T18:00:26.389221]   2026-10-17: 86 evento(s)
+[2026-09-02T18:00:26.389224]   2026-10-18: 86 evento(s)
+[2026-09-02T18:00:26.389239]   2026-10-19: 86 evento(s)
+[2026-09-02T18:00:26.389242]   2026-10-20: 86 evento(s)
+[2026-09-02T18:00:26.389244]   2026-10-21: 86 evento(s)
+[2026-09-02T18:00:26.389246]   2026-10-22: 86 evento(s)
+[2026-09-02T18:00:26.389248]   2026-10-23: 86 evento(s)
+[2026-09-02T18:00:26.389251]   2026-10-24: 86 evento(s)
+[2026-09-02T18:00:26.389253]   2026-10-25: 86 evento(s)
+[2026-09-02T18:00:26.389256]   2026-10-26: 86 evento(s)
+[2026-09-02T18:00:26.389258]   2026-10-27: 86 evento(s)
+[2026-09-02T18:00:26.389260]   2026-10-28: 86 evento(s)
+[2026-09-02T18:00:26.389262]   2026-10-29: 86 evento(s)
+[2026-09-02T18:00:26.389265]   2026-10-30: 86 evento(s)
+[2026-09-02T18:00:26.389267]   2026-10-31: 86 evento(s)
+[2026-09-02T18:00:26.389269]   2026-11-01: 86 evento(s)
+[2026-09-02T18:00:26.389271]   2026-11-02: 84 evento(s)
+[2026-09-02T18:00:26.419443] Agenda salva: 69 dias, 5919 eventos pendentes.
+=== $(date '+%Y-%m-%d %H:%M:%S') - Extraction completed successfully ===
+=== $(date '+%Y-%m-%d %H:%M:%S') - End of run ===
+=== $(date '+%Y-%m-%d %H:%M:%S') - Starting agenda extraction ===
+[2026-09-03T06:00:41.460799] Iniciando extração: 2026-08-27 → 2026-11-02
+[2026-09-03T06:00:41.460848] Buscando página 1 (2026-08-27 → 2026-11-02) …
+[2026-09-03T06:00:43.966495]   → 86 eventos (total 86, páginas 1)
+[2026-09-03T06:00:43.966683] Total único de eventos da API: 86
+[2026-09-03T06:00:43.996095] Eventos concluídos (filtrados): 0
+[2026-09-03T06:00:43.996148] Eventos expandidos em entradas de dia: 5921
+[2026-09-03T06:00:43.997737]   2026-08-27: 84 evento(s)
+[2026-09-03T06:00:43.997765]   2026-08-28: 84 evento(s)
+[2026-09-03T06:00:43.997770]   2026-08-29: 84 evento(s)
+[2026-09-03T06:00:43.997773]   2026-08-30: 84 evento(s)
+[2026-09-03T06:00:43.997775]   2026-08-31: 84 evento(s)
+[2026-09-03T06:00:43.997778]   2026-09-01: 85 evento(s)
+[2026-09-03T06:00:43.997780]   2026-09-02: 86 evento(s)
+[2026-09-03T06:00:43.997783]   2026-09-03: 86 evento(s)
+[2026-09-03T06:00:43.997785]   2026-09-04: 86 evento(s)
+[2026-09-03T06:00:43.997788]   2026-09-05: 86 evento(s)
+[2026-09-03T06:00:43.997790]   2026-09-06: 86 evento(s)
+[2026-09-03T06:00:43.997793]   2026-09-07: 86 evento(s)
+[2026-09-03T06:00:43.997795]   2026-09-08: 86 evento(s)
+[2026-09-03T06:00:43.997798]   2026-09-09: 86 evento(s)
+[2026-09-03T06:00:43.997801]   2026-09-10: 86 evento(s)
+[2026-09-03T06:00:43.997803]   2026-09-11: 86 evento(s)
+[2026-09-03T06:00:43.997805]   2026-09-12: 86 evento(s)
+[2026-09-03T06:00:43.997809]   2026-09-13: 86 evento(s)
+[2026-09-03T06:00:43.997811]   2026-09-14: 86 evento(s)
+[2026-09-03T06:00:43.997815]   2026-09-15: 86 evento(s)
+[2026-09-03T06:00:43.997818]   2026-09-16: 86 evento(s)
+[2026-09-03T06:00:43.997821]   2026-09-17: 86 evento(s)
+[2026-09-03T06:00:43.997824]   2026-09-18: 86 evento(s)
+[2026-09-03T06:00:43.997827]   2026-09-19: 86 evento(s)
+[2026-09-03T06:00:43.997830]   2026-09-20: 86 evento(s)
+[2026-09-03T06:00:43.997834]   2026-09-21: 86 evento(s)
+[2026-09-03T06:00:43.997837]   2026-09-22: 86 evento(s)
+[2026-09-03T06:00:43.997840]   2026-09-23: 86 evento(s)
+[2026-09-03T06:00:43.997844]   2026-09-24: 86 evento(s)
+[2026-09-03T06:00:43.997847]   2026-09-25: 86 evento(s)
+[2026-09-03T06:00:43.997849]   2026-09-26: 86 evento(s)
+[2026-09-03T06:00:43.997852]   2026-09-27: 86 evento(s)
+[2026-09-03T06:00:43.997855]   2026-09-28: 86 evento(s)
+[2026-09-03T06:00:43.997858]   2026-09-29: 86 evento(s)
+[2026-09-03T06:00:43.997861]   2026-09-30: 86 evento(s)
+[2026-09-03T06:00:43.997864]   2026-10-01: 86 evento(s)
+[2026-09-03T06:00:43.997867]   2026-10-02: 86 evento(s)
+[2026-09-03T06:00:43.997870]   2026-10-03: 86 evento(s)
+[2026-09-03T06:00:43.997873]   2026-10-04: 86 evento(s)
+[2026-09-03T06:00:43.997876]   2026-10-05: 86 evento(s)
+[2026-09-03T06:00:43.997879]   2026-10-06: 86 evento(s)
+[2026-09-03T06:00:43.997882]   2026-10-07: 86 evento(s)
+[2026-09-03T06:00:43.997885]   2026-10-08: 86 evento(s)
+[2026-09-03T06:00:43.997888]   2026-10-09: 86 evento(s)
+[2026-09-03T06:00:43.997890]   2026-10-10: 86 evento(s)
+[2026-09-03T06:00:43.997893]   2026-10-11: 86 evento(s)
+[2026-09-03T06:00:43.997910]   2026-10-12: 86 evento(s)
+[2026-09-03T06:00:43.997913]   2026-10-13: 86 evento(s)
+[2026-09-03T06:00:43.997915]   2026-10-14: 86 evento(s)
+[2026-09-03T06:00:43.997918]   2026-10-15: 86 evento(s)
+[2026-09-03T06:00:43.997926]   2026-10-16: 86 evento(s)
+[2026-09-03T06:00:43.997929]   2026-10-17: 86 evento(s)
+[2026-09-03T06:00:43.997932]   2026-10-18: 86 evento(s)
+[2026-09-03T06:00:43.997934]   2026-10-19: 86 evento(s)
+[2026-09-03T06:00:43.997937]   2026-10-20: 86 evento(s)
+[2026-09-03T06:00:43.997940]   2026-10-21: 86 evento(s)
+[2026-09-03T06:00:43.997943]   2026-10-22: 86 evento(s)
+[2026-09-03T06:00:43.997945]   2026-10-23: 86 evento(s)
+[2026-09-03T06:00:43.997948]   2026-10-24: 86 evento(s)
+[2026-09-03T06:00:43.997950]   2026-10-25: 86 evento(s)
+[2026-09-03T06:00:43.997955]   2026-10-26: 86 evento(s)
+[2026-09-03T06:00:43.997958]   2026-10-27: 86 evento(s)
+[2026-09-03T06:00:43.997960]   2026-10-28: 86 evento(s)
+[2026-09-03T06:00:43.997963]   2026-10-29: 86 evento(s)
+[2026-09-03T06:00:43.997966]   2026-10-30: 86 evento(s)
+[2026-09-03T06:00:43.997969]   2026-10-31: 86 evento(s)
+[2026-09-03T06:00:43.997971]   2026-11-01: 86 evento(s)
+[2026-09-03T06:00:43.997974]   2026-11-02: 86 evento(s)
+[2026-09-03T06:00:43.997977]   2026-11-03: 84 evento(s)
+[2026-09-03T06:00:44.030201] Agenda salva: 69 dias, 5921 eventos pendentes.
+=== $(date '+%Y-%m-%d %H:%M:%S') - Extraction completed successfully ===
+=== $(date '+%Y-%m-%d %H:%M:%S') - End of run ===

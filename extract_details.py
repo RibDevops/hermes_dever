@@ -1,8 +1,11 @@
 #!/usr/bin/env python3
 """
 Extrator de eventos do calendário Bernoulli (La Salle).
-Consulta a API por intervalo de datas com paginação real,
-filtra eventos já concluídos, agrupa por data e salva em JSON.
+CORREÇÕES:
+  1. API_BASE = api.bernoulli.com.br
+  2. Remove range=week que filtrava resultados
+  3. EXPANDE eventos recorrentes/longos para TODOS os dias entre startDate e endDate
+  4. Agrupa corretamente por data local (Brasília)
 """
 
 import os
@@ -16,18 +19,17 @@ from collections import defaultdict
 import requests
 from dotenv import load_dotenv
 
-import database  # ← persistência
+import database
 
 load_dotenv()
 
-# ── Config ──────────────────────────────────────────────────
 BERNOULLI_TOKEN = os.getenv("BERNOULLI_TOKEN", "").strip()
-
-API_BASE = "https://mb4.bernoulli.com.br"
+API_BASE = "https://api.bernoulli.com.br"
 ENDPOINT = f"{API_BASE}/api/calendario/events"
+PORTAL_BASE = "https://mb4.bernoulli.com.br"
 
 FILTERS = {
-    "range": "week",
+    # REMOVIDO: "range": "week"  — estava filtrando resultados!
     "status": "published",
     "grade": "12",
     "class": "109576",
@@ -47,13 +49,14 @@ def log(msg: str):
     print(f"[{datetime.now().isoformat()}] {msg}", flush=True)
 
 
-def iso_date(d: datetime) -> str:
-    return d.astimezone(BR_TZ).strftime("%Y-%m-%d")
-
-
 def parse_api_datetime(iso_str: str) -> datetime:
     iso_str = iso_str.replace("Z", "+00:00")
     return datetime.fromisoformat(iso_str)
+
+
+def to_br_date(d: datetime) -> str:
+    """Converte datetime aware para string YYYY-MM-DD em Brasília."""
+    return d.astimezone(BR_TZ).strftime("%Y-%m-%d")
 
 
 def clean_html(raw_html: str) -> str:
@@ -73,7 +76,9 @@ def fetch_all_events(start_date: str, end_date: str) -> list[dict]:
     headers = {
         "Authorization": f"Bearer {BERNOULLI_TOKEN}",
         "Accept": "application/json",
-        "User-Agent": "HermesBot/2.0",
+        "User-Agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36",
+        "Origin": PORTAL_BASE,
+        "Referer": f"{PORTAL_BASE}/",
     }
 
     all_events = []
@@ -102,7 +107,7 @@ def fetch_all_events(start_date: str, end_date: str) -> list[dict]:
         total_pages = meta.get("totalPages", 1)
         total_items = meta.get("total", 0)
 
-        log(f"  → {len(data)} eventos recebidos (total {total_items}, páginas {total_pages})")
+        log(f"  → {len(data)} eventos (total {total_items}, páginas {total_pages})")
         all_events.extend(data)
 
         if page >= total_pages or not data:
@@ -118,14 +123,12 @@ def fetch_all_events(start_date: str, end_date: str) -> list[dict]:
             seen.add(eid)
             unique.append(ev)
 
-    log(f"Total único de eventos: {len(unique)}")
+    log(f"Total único de eventos da API: {len(unique)}")
     return unique
 
 
 def transform_event(ev: dict) -> dict:
-    start_dt = parse_api_datetime(ev.get("startDate", ""))
-    date_br = iso_date(start_dt)
-
+    """Extrai dados úteis de um evento da API."""
     start_time = ev.get("startTime", "")[:5]
     end_time = ev.get("endTime", "")[:5]
     time_str = f"{start_time} – {end_time}" if end_time and end_time != start_time else start_time
@@ -138,28 +141,69 @@ def transform_event(ev: dict) -> dict:
     for att in attachments:
         blob = att.get("blobName", "")
         if blob:
-            links.append(f"{API_BASE}/api/storage/download/{blob}")
+            links.append(f"{PORTAL_BASE}/api/storage/download/{blob}")
 
     return {
         "id": ev.get("id"),
-        "date": date_br,
-        "time": time_str,
         "title": ev.get("title", "Sem título"),
         "type": ev.get("type", "event"),
         "description": clean_html(ev.get("description", "")),
         "author": author,
         "links": links,
+        "time": time_str,
+        # Guardamos as datas brutas para expansão
+        "_start_dt": parse_api_datetime(ev.get("startDate", "")),
+        "_end_dt": parse_api_datetime(ev.get("endDate", "")),
     }
 
 
-def build_agenda(events: list[dict]) -> dict:
+def expand_event_to_days(ev: dict, query_start: str, query_end: str) -> list[tuple[str, dict]]:
+    """
+    Expande um evento para todos os dias entre startDate e endDate
+    que caem dentro do intervalo de busca.
+    Retorna lista de (data_str, evento_copia).
+    """
+    start_dt = ev["_start_dt"]
+    end_dt = ev["_end_dt"]
+    q_start = datetime.strptime(query_start, "%Y-%m-%d").replace(tzinfo=BR_TZ)
+    q_end = datetime.strptime(query_end, "%Y-%m-%d").replace(tzinfo=BR_TZ) + timedelta(days=1)
+
+    # Limita o range do evento ao intervalo de busca
+    effective_start = max(start_dt, q_start)
+    effective_end = min(end_dt, q_end)
+
+    if effective_start > effective_end:
+        return []
+
+    results = []
+    current = effective_start
+    while current <= effective_end:
+        date_str = to_br_date(current)
+        # Cria cópia sem os campos internos
+        copy = {k: v for k, v in ev.items() if not k.startswith("_")}
+        copy["date"] = date_str
+        results.append((date_str, copy))
+        current += timedelta(days=1)
+
+    return results
+
+
+def build_agenda(expanded_events: list[tuple[str, dict]]) -> dict:
+    """Agrupa eventos por data, remove duplicatas por ID no mesmo dia, ordena."""
     by_date = defaultdict(list)
-    for ev in events:
-        by_date[ev["date"]].append(ev)
+    seen_per_day = defaultdict(set)
+
+    for date_str, ev in expanded_events:
+        eid = ev["id"]
+        if eid in seen_per_day[date_str]:
+            continue  # evita duplicata no mesmo dia
+        seen_per_day[date_str].add(eid)
+        by_date[date_str].append(ev)
 
     sorted_dates = sorted(by_date.keys())
     agenda = {}
     for d in sorted_dates:
+        # Ordena por horário dentro do dia
         day_events = sorted(by_date[d], key=lambda x: x["time"])
         agenda[d] = day_events
     return agenda
@@ -179,26 +223,35 @@ def main():
             json.dump({}, f, ensure_ascii=False, indent=2)
         return
 
-    # ── FILTRA CONCLUÍDOS ───────────────────────────────────
-    skipped = 0
-    transformed = []
+    # ── TRANSFORMA E EXPANDE ──────────────────────────────────
+    skipped_completed = 0
+    expanded = []
+
     for ev in raw_events:
         eid = ev.get("id")
         if database.is_completed(eid):
-            skipped += 1
+            skipped_completed += 1
             continue
-        transformed.append(transform_event(ev))
 
-    log(f"Eventos filtrados (já concluídos): {skipped}")
+        transformed = transform_event(ev)
+        day_entries = expand_event_to_days(transformed, start, end)
+        expanded.extend(day_entries)
 
-    agenda = build_agenda(transformed)
+    log(f"Eventos concluídos (filtrados): {skipped_completed}")
+    log(f"Eventos expandidos em entradas de dia: {len(expanded)}")
+
+    agenda = build_agenda(expanded)
+
+    # Log de resumo por dia
+    for d in sorted(agenda.keys()):
+        log(f"  {d}: {len(agenda[d])} evento(s)")
 
     out_file = "agenda_events_by_date.json"
     with open(out_file, "w", encoding="utf-8") as f:
         json.dump(agenda, f, ensure_ascii=False, indent=2)
 
     total_events = sum(len(v) for v in agenda.values())
-    log(f"Agenda salva em '{out_file}': {len(agenda)} dias, {total_events} eventos pendentes.")
+    log(f"Agenda salva: {len(agenda)} dias, {total_events} eventos pendentes.")
 
 
 if __name__ == "__main__":
