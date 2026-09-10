@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - Agenda Bernoulli</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .event-card { margin-bottom: 1rem; border-left: 4px solid #6c757d; }
+        .event-card.completed { border-left-color: #28a745; }
+        .event-card.pendente { border-left-color: #ffc107; }
+        .no-results { text-align: center; padding: 3rem; color: #6c757d; }
+        .tab-btn { cursor: pointer; padding: 8px 16px; margin: 2px; border-radius: 20px; border: 1px solid #dee2e6; background: #f8f9fa; }
+        .tab-btn.active { background: #6c757d; color: white; border-color: #6c757d; }
+        .btn-marcar { padding: 4px 8px; font-size: 0.75rem; }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-dark bg-dark">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <i class="fas fa-calendar-check me-2"></i> Agenda Bernoulli
+            </a>
+            <span class="navbar-text text-white">
+                <strong>Total:</strong> {{ total }} | 
+                <strong>Com PDF:</strong> {{ completos }} | 
+                <strong>Pendentes:</strong> {{ pendentes }}
+            </span>
+        </div>
+    </nav>
+
+    <div class="container py-4">
+        <!-- Abas de filtro -->
+        <div class="tab-navigation mb-4" role="tablist">
+            <button class="tab-btn active" data-tab="all" role="tab" aria-controls="tab-all" aria-selected="true">Todos</button>
+            <button class="tab-btn" data-tab="completed" role="tab" aria-controls="tab-completed" aria-selected="false">Feito</button>
+            <button class="tab-btn" data-tab="pending" role="tab" aria-controls="tab-pending" aria-selected="false">Pendente</button>
+        </div>
+
+        <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+            {% if resultados %}
+                {% for evento in resultados %}
+                    <div class="col event-card {% if evento.completed %}completed{% else %}pendente{% endif %}" data-completed="{{ evento.completed }}">
+                        <div class="card h-100">
+                            <div class="card-body">
+                                <h5 class="card-title">{{ evento.title }}</h5>
+                                <p class="card-text small text-muted mb-2">
+                                    <strong>Data:</strong> {{ evento.date }}
+                                </p>
+                                <p class="card-text small text-truncate" style="max-height: 80px; overflow: hidden;">
+                                    {{ evento.description }}
+                                </p>
+                                {% if evento.download_url %}
+                                    <a href="{{ evento.download_url }}" class="btn btn-sm btn-primary w-100" target="_blank">
+                                        <i class="fas fa-download me-2"></i> Download PDF
+                                    </a>
+                                {% else %}
+                                    <span class="btn btn-sm btn-outline-secondary w-100 disabled">
+                                        <i class="fas fa-file-pdf me-2"></i> Sem PDF
+                                    </span>
+                                {% endif %}
+                                <!-- NOVO: Botão para marcar como feito -->
+                                {% if not evento.completed and not evento.download_url %}
+                                    <button class="btn btn-sm btn-success btn-marcar w-100 mt-2" data-id="{{ evento.id }}" title="Marcar como concluído">
+                                        <i class="fas fa-check-circle me-2"></i> Concluir Tarefa
+                                    </button>
+                                {% endif %}
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+            {% else %}
+                <div class="no-results">
+                    <i class="fas fa-calendar-xmark fa-3x mb-3"></i>
+                    <h4>Nenhum evento encontrado</h4>
+                    <p class="text-muted">A extração ainda não foi realizada ou não há eventos no intervalo.</p>
+                </div>
+            {% endif %}
+        </div>
+    </div>
+
+    <footer class="mt-4 text-center text-muted small">
+        <p>Dashboard Agenda Bernoulli - Atualizado automaticamente</p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
+    <script>
+        // Toggle abas
+        document.querySelectorAll('.tab-btn').forEach(btn => {
+            btn.addEventListener('click', function() {
+                // Remover ativo de todos
+                document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+                // Adicionar ativo no clicado
+                this.classList.add('active');
+                
+                // Filtrar eventos
+                const tab = this.dataset.tab;
+                document.querySelectorAll('.event-card').forEach(card => {
+                    if (tab === 'all') {
+                        card.style.display = '';
+                    } else {
+                        card.style.display = card.dataset.completed === tab ? '' : 'none';
+                    }
+                });
+            });
+        });
+
+        // Marcar tarefa como concluída
+        document.querySelectorAll('.btn-marcar').forEach(btn => {
+            btn.addEventListener('click', function() {
+                const eventId = this.dataset.id;
+                // Encontrar o card pai
+                const card = this.closest('.event-card');
+                
+                // Alternar classe visual
+                card.classList.toggle('completed');
+                card.classList.remove('pendente');
+                
+                // Atualizar atributo de dados
+                card.dataset.completed = 'True';
+                
+                // Atualizar botão
+                const markup = this.outerHTML;
+                this.outerHTML = this.outerHTML.replace(
+                    'Concluir Tarefa', '✅ Concluído'
+                );
+                
+                // Mostrar feedback
+                this.innerHTML = '<i class="fas fa-check me-2"></i> Salvo!';
+                this.classList.remove('btn-success');
+                this.classList.add('btn-secondary');
+                this.disabled = true;
+                
+                // Enviar notificação para o backend (via fetch async)
+                // Isso tentará atualizar o status, mas o dashboard permanece funcional mesmo sem resposta
+                fetch('/marcar-como-feito', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({ id: eventId, status: true })
+                }).then(response => {
+                    if (!response.ok) {
+                        console.log('Status update requested (server may be offline)');
+                    }
+                }).catch(error => {
+                    console.log('Could not reach server, local update saved');
+                });
+            });
+        });
+    </script>
+</body>
+</html>

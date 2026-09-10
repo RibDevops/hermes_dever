@@ -6,3 +6,42 @@ telegram_cfg.json
 agenda*.json
 __pycache__/
 venv/
+
+.env
+__pycache__/
+*.pyc
+*.json
+!exemplo.json
+
+# Ambiente
+.env
+.env.local
+venv/
+.venv/
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Logs e temporários
+*.log
+*.tmp
+*.swp
+*.swo
+*~
+
+# Dados gerados
+agenda*.json
+telegram_cfg.json
+cookies.json
+
+# Banco SQLite
+*.db
+*.db-journal
+*.db-wal
+
+# PIDs
+*.pid
+
+# IDE
+.vscode/
+.idea/
