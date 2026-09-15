@@ -1,0 +1,5 @@
+{% extends "agenda_app/base.html" %}{% block content %}
+<h2>Turmas</h2><table><tr><th>Nome</th><th>Grade</th><th>Ativa</th></tr>
+{% for t in turmas %}<tr><td>{{t.nome}}</td><td>{{t.grade}}</td><td>{{t.ativa}}</td></tr>{% endfor %}</table>
+<form method="post">{% csrf_token %}<input name="nome" placeholder="Nome"><input name="grade"><button>+ Turma</button></form>
+{% endblock %}

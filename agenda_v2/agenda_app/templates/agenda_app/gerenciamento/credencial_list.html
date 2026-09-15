@@ -1,0 +1,9 @@
+{% extends "agenda_app/base.html" %}{% block content %}
+<h2>Gerenciamento — {{ tab|capfirst }}</h2>
+<a href="?tab={{ tab }}&acao=criar">+ Novo</a>
+<table><tr><th>ID</th><th>Nome / Título</th><th>Ações</th></tr>
+{% for obj in objetos %}<tr><td>{{ obj.id }}</td><td>{{ obj.nome|default:obj.title|default:obj.username }}</td><td>
+<a href="?tab={{ tab }}&acao=editar&id={{ obj.id }}">Editar</a>
+<form method="post" action="/gerenciamento/" style="display:inline">{% csrf_token %}<input type="hidden" name="tab" value="{{ tab }}"><input type="hidden" name="acao" value="excluir"><input type="hidden" name="id" value="{{ obj.id }}"><button onclick="return confirm('Excluir?')">Excluir</button></form>
+</td></tr>{% endfor %}</table>
+{% endblock %}

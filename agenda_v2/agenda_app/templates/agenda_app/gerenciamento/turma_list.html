@@ -1,0 +1,24 @@
+{% extends "agenda_app/base.html" %}
+{% block content %}
+<h2>Gerenciamento — Turmas</h2>
+<a href="?acao=criar">+ Nova Turma</a>
+<table><tr><th>Nome</th><th>Grade</th><th>Ativa</th><th>Ações</th></tr>
+{% for t in turmas %}
+<tr>
+  <td>{{ t.nome }}</td>
+  <td>{{ t.grade }}</td>
+  <td>{{ t.ativa }}</td>
+  <td>
+    <a href="/gerenciamento/?acao=editar&tab=turmas&id={{ t.id }}">Editar</a>
+    <form method="post" action="/gerenciamento/" style="display:inline">
+      {% csrf_token %}
+      <input type="hidden" name="acao" value="excluir">
+      <input type="hidden" name="tab" value="turmas">
+      <input type="hidden" name="id" value="{{ t.id }}">
+      <button onclick="return confirm('Excluir turma {{ t.nome }}?')">Excluir</button>
+    </form>
+  </td>
+</tr>
+{% endfor %}
+</table>
+{% endblock %}

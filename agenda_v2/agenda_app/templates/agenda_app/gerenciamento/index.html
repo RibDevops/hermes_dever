@@ -1,0 +1,28 @@
+{% extends "agenda_app/base.html" %}
+{% block content %}
+<h2>⚙️ Gerenciamento</h2>
+<div style="display:flex;gap:8px;margin-bottom:16px">
+<a href="?aba=turmas" class="{% if aba == 'turmas' %}active{% endif %}">Turmas</a>
+<a href="?aba=usuarios" class="{% if aba == 'usuarios' %}active{% endif %}">Usuários</a>
+<a href="?aba=credenciais" class="{% if aba == 'credenciais' %}active{% endif %}">Credenciais</a>
+<a href="?aba=tarefas" class="{% if aba == 'tarefas' %}active{% endif %}">Tarefas</a>
+<a href="?aba=conclusoes" class="{% if aba == 'conclusoes' %}active{% endif %}">Conclusões</a>
+</div>
+
+{% if aba == 'turmas' %}
+<table><tr><th>Nome</th><th>Grade</th><th>Ativa</th></tr>
+{% for t in turmas %}<tr><td>{{t.nome}}</td><td>{{t.grade}}</td><td>{{t.ativa}}</td></tr>{% endfor %}</table>
+{% endif %}
+
+{% if aba == 'usuarios' %}
+<table><tr><th>Username</th><th>Turma</th></tr>
+{% for u in usuarios %}<tr><td>{{u.username}}</td><td>{{u.profile.turma.nome|default:'-'}}></td></tr>{% endfor %}</table>
+{% endif %}
+
+{% if aba == 'credenciais' %}
+<table><tr><th>Turma</th><th>Usuário Portal</th></tr>
+{% for p in portais %}<tr><td>{{p.turma.nome}}</td><td>{{p.usuario_portal}}</td></tr>{% endfor %}</table>
+{% endif %}
+
+<!-- Botão criar (简化): apenas formulário básico por aba -->
+{% endblock %}

@@ -1,0 +1,9 @@
+{% extends "agenda_app/base.html" %}
+{% block content %}
+<h2>PortalSecure — CRUD</h2>
+<table><tr><th>Turma</th><th>Usuário</th><th>Atualizado</th></tr>
+{% for p in itens %}<tr>
+<td>{{ p.turma.nome }}</td><td>{{ p.usuario_portal }}</td><td>{{ p.atualizado_em }}</td>
+</tr>{% endfor %}</table>
+<a href="?create=1">+ Novo</a>
+{% endblock %}

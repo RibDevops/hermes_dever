@@ -1,0 +1,7 @@
+{% extends "agenda_app/base.html" %}{% block content %}
+<h2>Gerenciamento — {{ tab|capfirst }} {% if obj %}Editar{% else %}Criar{% endif %}</h2>
+<form method="post" action="/gerenciamento/">{% csrf_token %}<input type="hidden" name="tab" value="{{ tab }}"><input type="hidden" name="acao" value="{% if obj %}salvar{% else %}criar{% endif %}">{% if obj %}<input type="hidden" name="id" value="{{ obj.id }}">{% endif %}
+<label>Nome/Título: <input name="nome" value="{{ obj.nome|default:obj.title|default:'' }}"></label><br>
+<button>Salvar</button> <a href="/gerenciamento/?tab={{ tab }}">Cancelar</a>
+</form>
+{% endblock %}

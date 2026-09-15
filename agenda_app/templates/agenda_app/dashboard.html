@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Dashboard da Agenda</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        body { font-family: Arial, sans-serif; margin: 40px; background-color: #f5f5f5; }
+        .container { max-width: 1200px; margin: 0 auto; background: white; padding: 20px; border-radius: 8px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); }
+        h1 { color: #333; text-align: center; }
+        .filters { margin: 20px 0; text-align: center; }
+        .filters a { margin: 0 10px; padding: 8px 16px; text-decoration: none; background: #007bff; color: white; border-radius: 4px; }
+        .filters a.active { background: #0056b3; }
+        .filters a:hover { background: #0056b3; }
+        .item { border: 1px solid #ddd; margin: 15px 0; padding: 15px; border-radius: 6px; background: #fff; }
+        .item h3 { margin: 0 0 10px 0; color: #2c3e50; }
+        .item .date { color: #666; font-size: 0.9em; margin-bottom: 10px; }
+        .item .description { margin: 10px 0; line-height: 1.5; color: #444; }
+        .item .download-url { margin-top: 10px; }
+        .item .download-url a { color: #28a745; text-decoration: none; }
+        .item .download-url a:hover { text-decoration: underline; }
+        .item .actions { margin-top: 15px; text-align: right; }
+        .item .toggle-btn { padding: 8px 16px; border: none; border-radius: 4px; cursor: pointer; font-size: 1em; }
+        .item .toggle-btn.completed { background: #28a745; color: white; }
+        .item .toggle-btn.pending { background: #ffc107; color: #212529; }
+        .status-badge { display: inline-block; padding: 3px 8px; border-radius: 12px; font-size: 0.8em; font-weight: bold; }
+        .status-badge.completed { background: #d4edda; color: #155724; }
+        .status-badge.pending { background: #fff3cd; color: #856404; }
+        .no-items { text-align: center; color: #666; padding: 40px; }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h1>Dashboard da Agenda</h1>
+    <div class="filters">
+        <a href="?status=all" class="{% if status_filter == 'all' %}active{% endif %}">Todas</a>
+        <a href="?status=pending" class="{% if status_filter == 'pending' %}active{% endif %}">Pendentes</a>
+        <a href="?status=completed" class="{% if status_filter == 'completed' %}active{% endif %}">Concluídas</a>
+    </div>
+
+    {% if items %}
+        {% for item in items %}
+        <div class="item">
+            <h3>{{ item.title }}</h3>
+            <div class="date"><strong>Data:</strong> {{ item.date }}</div>
+            {% if item.description %}
+                <div class="description"><strong>Descrição:</strong> {{ item.description|linebreaksbr }}</div>
+            {% endif %}
+            {% if item.download_url %}
+                <div class="download-url"><strong>Download:</strong> <a href="{{ item.download_url }}" target="_blank">Link para download</a></div>
+            {% endif %}
+            <div class="status-badge {% if item.completed %}completed{% else %}pending{% endif %}">
+                {{ item.get_completed_display|default:item.completed|yesno:"Concluído,Pendente" }}
+            </div>
+            <div class="actions">
+                <form method="post" action="{% url 'toggle_complete' item.pk %}" style="display: inline;">
+                    {% csrf_token %}
+                    <button type="submit" class="toggle-btn {% if item.completed %}completed{% else %}pending{% endif %}" id="toggle-btn-{{ item.pk }}">
+                        {% if item.completed %}Desmarcar como concluído{% else %}Marcar como concluído{% endif %}
+                    </button>
+                </form>
+            </div>
+        </div>
+        {% endfor %}
+    {% else %}
+        <div class="no-items">Nenhum item encontrado.</div>
+    {% endif %}
+</div>
+
+<script>
+    // Optional: AJAX toggle for better UX (without page reload)
+    document.querySelectorAll('form[action^="/toggle/"]').forEach(form => {
+        form.addEventListener('submit', function(e) {
+            e.preventDefault();
+            const form = this;
+            const url = form.action;
+            fetch(url, {
+                method: 'POST',
+                headers: {
+                    'X-CSRFToken': document.querySelector('[name=csrfmiddlewaretoken]').value,
+                    'X-Requested-With': 'XMLHttpRequest'
+                },
+                body: new FormData(form)
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.status === 'success') {
+                    const btn = document.getElementById('toggle-btn-' + form.action.match(/\/toggle\/(\d+)\//)[1]);
+                    btn.textContent = data.completed ? 'Desmarcar como concluído' : 'Marcar como concluído';
+                    btn.className = 'toggle-btn ' + (data.completed ? 'completed' : 'pending');
+                }
+            })
+            .catch(err => console.error('Erro:', err));
+        });
+    });
+</script>
+</body>
+</html>

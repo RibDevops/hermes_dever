@@ -1,0 +1,5 @@
+{% extends "agenda_app/base.html" %}{% block content %}
+<h2>Confirmar exclusão</h2>
+<p>Excluir <strong>{{ obj.nome|default:obj.title|default:obj.username }}</strong>?</p>
+<form method="post" action="/gerenciamento/">{% csrf_token %}<input type="hidden" name="tab" value="{{ tab }}"><input type="hidden" name="acao" value="excluir_confirmado"><input type="hidden" name="id" value="{{ obj.id }}"><button>Sim, excluir</button> <a href="/gerenciamento/?tab={{ tab }}">Cancelar</a></form>
+{% endblock %}

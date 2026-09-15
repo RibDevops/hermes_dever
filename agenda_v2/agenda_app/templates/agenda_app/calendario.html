@@ -1,0 +1,16 @@
+{% extends "agenda_app/base.html" %}
+{% block content %}
+<h2 style="margin-bottom:16px">📅 Calendário — {{ turma.nome }}</h2>
+{% regroup itens by date as por_data %}
+{% for grupo in por_data %}
+  <div class="section" style="color:var(--muted);margin:18px 0 8px">📅 {{ grupo.grouper }}</div>
+  {% for item in grupo.list %}
+  <div class="card">
+    <div style="flex:1"><h3>{{ item.title }}</h3>
+      {% if item.download_url %}<div class="data"><a href="{{ item.download_url }}" target="_blank">📄 PDF</a></div>{% endif %}
+    </div>
+    {% if item.concluida %}<span class="badge ok">✓</span>{% else %}<span class="badge pend">⏳</span>{% endif %}
+  </div>
+  {% endfor %}
+{% endfor %}
+{% endblock %}

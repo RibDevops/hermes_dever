@@ -1,0 +1,26 @@
+{% extends "agenda_app/base.html" %}
+{% block content %}
+<div class="filters">
+  <a href="/" class="{% if status == 'todas' %}active{% endif %}">Todas ({{ total }})</a>
+  <a href="{% url 'pendentes' %}" class="{% if status == 'pendentes' %}active{% endif %}">Pendentes ({{ qtd_pendentes }})</a>
+  <a href="{% url 'concluidas' %}" class="{% if status == 'concluidas' %}active{% endif %}">Concluídas ({{ qtd_concluidas }})</a>
+</div>
+{% for item in itens %}
+<div class="card">
+  <div style="flex:1">
+    <h3>{{ item.title }}</h3>
+    <div class="data">📅 {{ item.date }}
+      {% if item.download_url %} · <a href="{{ item.download_url }}" target="_blank">📄 PDF</a>{% endif %}
+    </div>
+    <div class="desc">{{ item.description|striptags|truncatechars:200 }}</div>
+  </div>
+  {% if item.concluida %}<span class="badge ok">Concluído</span>
+  {% else %}<span class="badge pend">Pendente</span>{% endif %}
+  <button class="toggle-btn {% if item.concluida %}on{% endif %}"
+    onclick="toggleItem({{ item.pk }}, this)">
+    {% if item.concluida %}✓ Concluído{% else %}Marcar concluído{% endif %}
+  </button>
+</div>
+{% empty %}<p style="color:var(--muted)">Nenhuma tarefa neste filtro.</p>
+{% endfor %}
+{% endblock %}
