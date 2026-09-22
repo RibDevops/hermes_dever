@@ -10,10 +10,17 @@ load_dotenv()
 BERNOULLI_USER = os.getenv("BERNOULLI_USER", "")
 BERNOULLI_PASS = os.getenv("BERNOULLI_PASS", "")
 
-from scrapling.fetchers import DynamicFetcher, DynamicSession
+try:
+    from scrapling.fetchers import DynamicFetcher, DynamicSession
+except ImportError:  # Dependência opcional para teste manual com navegador.
+    DynamicFetcher = DynamicSession = None
 
 def test_login_and_extract():
     """Testa login e extração no portal mb4.bernoulli.com.br"""
+    if DynamicSession is None:
+        raise RuntimeError(
+            "Instale a dependência opcional 'scrapling' para executar este teste"
+        )
     
     # Usar DynamicSession para manter cookies e estado entre requests
     with DynamicSession(
