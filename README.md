@@ -49,6 +49,21 @@ python manage.py migrate
 
 O `--fake-initial` só deve ser usado quando a estrutura existente tiver sido conferida; ele registra a migração como aplicada sem recriar tabelas. Não use `--fake` para esconder diferenças de esquema.
 
+## Banco local e dados extraídos
+
+O arquivo `db.sqlite3` armazena dados recebidos pelo robô, incluindo agenda, turmas, credenciais do portal e conclusões. Ele é local, está no `.gitignore` e **não deve ser enviado ao GitHub**. Faça backup antes de limpar a base.
+
+Para recriar uma base local vazia:
+
+```powershell
+# PowerShell — use somente se aceitar perder os dados locais
+Copy-Item .\db.sqlite3 .\db.sqlite3.backup -ErrorAction SilentlyContinue
+Remove-Item .\db.sqlite3 -Force -ErrorAction SilentlyContinue
+python manage.py migrate
+```
+
+Depois da recriação, configure as credenciais no `.env` e execute `python manage.py import_agenda` para buscar novamente os dados do portal. A remoção da base local não apaga os dados do site de origem, mas elimina os dados armazenados localmente pelo robô.
+
 ## Operação
 
 ```bash
