@@ -43,6 +43,9 @@ cookies.json
 # PIDs
 *.pid
 
+# Executáveis (nunca versionar binários grandes)
+*.exe
+
 # IDE
 .vscode/
 .idea/
