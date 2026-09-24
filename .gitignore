@@ -35,10 +35,10 @@ telegram_cfg.json
 cookies.json
 
 # Banco SQLite
-*.db
-*.sqlite3
-*.db-journal
-*.db-wal
+# *.db
+# *.sqlite3
+# *.db-journal
+# *.db-wal
 
 # PIDs
 *.pid
