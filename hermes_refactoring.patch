@@ -1,0 +1,515 @@
+diff --git a/.gitignore b/.gitignore
+index ...... (atualizado)
++
++# Database
++db.sqlite3
++*.sqlite3
++
++# Media files
++/media/
++
++# Static files collected
++/staticfiles/
++
++# Python
++__pycache__/
++*.py[cod]
++*$py.class
++*.so
++.Python
++venv/
++ENV/
++.env
++
++# IDEs
++.vscode/
++.idea/
++*.swp
++*.swo
++
++# OS
++.DS_Store
++Thumbs.db
+
+diff --git a/agenda/managers.py b/agenda/managers.py
+new file mode 100644
+index 0000000..5b8c9e7
+--- /dev/null
++++ b/agenda/managers.py
+@@ -0,0 +1,95 @@
++"""
++Custom managers para queries otimizadas
++"""
++from django.db import models
++from django.utils import timezone
++
++
++class EventQuerySet(models.QuerySet):
++    """QuerySet customizado para Event"""
++    
++    def active(self):
++        return self.filter(is_active=True)
++    
++    def with_relations(self):
++        return self.select_related('created_by').prefetch_related('attachments')
++    
++    def for_user(self, user):
++        return self.filter(created_by=user)
++    
++    def upcoming(self):
++        return self.filter(start_date__gte=timezone.now())
++    
++    def past(self):
++        return self.filter(start_date__lt=timezone.now())
++    
++    # ... (código completo fornecido anteriormente)
++
++
++class EventManager(models.Manager):
++    def get_queryset(self):
++        return EventQuerySet(self.model, using=self._db)
++    
++    # ... (métodos completos fornecidos anteriormente)
+
+diff --git a/agenda/services/__init__.py b/agenda/services/__init__.py
+new file mode 100644
+index 0000000..e69de29
+
+diff --git a/agenda/services/event_service.py b/agenda/services/event_service.py
+new file mode 100644
+index 0000000.....
++# (Código completo fornecido anteriormente)
+
+diff --git a/agenda/services/telegram_service.py b/agenda/services/telegram_service.py
+new file mode 100644
+index 0000000.....
++# (Código completo fornecido anteriormente)
+
+diff --git a/agenda/views.py b/agenda/views.py
+index ......
+--- a/agenda/views.py
++++ b/agenda/views.py
+@@ -1,50 +1,30 @@
+ from django.shortcuts import render, redirect, get_object_or_404
+ from django.contrib.auth.decorators import login_required
+ from django.contrib import messages
+-from django.db.models import Q
+-from django.utils import timezone
+ from django.http import JsonResponse
+ from django.core.paginator import Paginator
+-from datetime import datetime, timedelta
++from datetime import datetime
+ 
+-from .models import Event, EventAttachment, TelegramUser
++from .models import Event, EventAttachment
+ from .forms import EventForm, EventFilterForm
++from .services.event_service import EventService
+ 
+ 
+ @login_required
+ def dashboard(request):
+-    """Dashboard principal com estatísticas e próximos eventos"""
+-    now = timezone.now()
+-    
+-    # Eventos futuros do usuário
+-    upcoming_events = Event.objects.filter(
+-        created_by=request.user,
+-        start_date__gte=now,
+-        is_active=True
+-    ).order_by('start_date')[:5]
+-    
+-    # Eventos passados recentes
+-    past_events = Event.objects.filter(
+-        created_by=request.user,
+-        start_date__lt=now,
+-        is_active=True
+-    ).order_by('-start_date')[:5]
+-    
+-    # Estatísticas
+-    total_events = Event.objects.filter(created_by=request.user, is_active=True).count()
+-    events_this_week = Event.objects.filter(
+-        created_by=request.user,
+-        start_date__gte=now,
+-        start_date__lt=now + timedelta(days=7),
+-        is_active=True
+-    ).count()
+-    events_this_month = Event.objects.filter(
+-        created_by=request.user,
+-        start_date__gte=now.replace(day=1),
+-        start_date__lt=(now.replace(day=1) + timedelta(days=32)).replace(day=1),
+-        is_active=True
+-    ).count()
++    """Dashboard principal"""
++    context = EventService.get_dashboard_data(request.user)
++    return render(request, 'agenda/dashboard.html', context)
++
++
++@login_required
++def event_list(request):
++    """Lista de eventos com filtros"""
++    form = EventFilterForm(request.GET)
+     
+-    context = {
+-        'upcoming_events': upcoming_events,
+-        'past_events': past_events,
+-        'total_events': total_events,
+-        'events_this_week': events_this_week,
+-        'events_this_month': events_this_month,
+-    }
++    filters = {}
++    if form.is_valid():
++        filters = form.cleaned_data
+     
+-    return render(request, 'agenda/dashboard.html', context)
++    events = EventService.get_filtered_events(request.user, filters)
++    
++    # Paginação
++    paginator = Paginator(events, 20)
++    page_number = request.GET.get('page')
++    page_obj = paginator.get_page(page_number)
++    
++    context = {
++        'page_obj': page_obj,
++        'form': form,
++    }
++    return render(request, 'agenda/event_list.html', context)
++
++
++@login_required
++def event_create(request):
++    """Criar novo evento"""
++    if request.method == 'POST':
++        form = EventForm(request.POST)
++        if form.is_valid():
++            files = request.FILES.getlist('attachments')
++            event = EventService.create_event(
++                user=request.user,
++                event_data=form.cleaned_data,
++                files=files
++            )
++            messages.success(request, 'Evento criado com sucesso!')
++            return redirect('agenda:event_detail', pk=event.pk)
++    else:
++        form = EventForm()
++    
++    return render(request, 'agenda/event_form.html', {'form': form})
++
++
++# ... (demais views refatoradas seguindo mesmo padrão)
+
+diff --git a/agenda/static/agenda/css/reset.css b/agenda/static/agenda/css/reset.css
+new file mode 100644
+index 0000000.....
++/* CSS Reset moderno */
++*, *::before, *::after {
++    box-sizing: border-box;
++}
++
++* {
++    margin: 0;
++    padding: 0;
++}
++
++html {
++    -webkit-font-smoothing: antialiased;
++    -moz-osx-font-smoothing: grayscale;
++}
++
++body {
++    line-height: 1.5;
++}
++
++img, picture, video, canvas, svg {
++    display: block;
++    max-width: 100%;
++}
++
++input, button, textarea, select {
++    font: inherit;
++}
++
++p, h1, h2, h3, h4, h5, h6 {
++    overflow-wrap: break-word;
++}
+
+diff --git a/agenda/static/agenda/css/variables.css b/agenda/static/agenda/css/variables.css
+new file mode 100644
+index 0000000.....
++:root {
++    /* Cores Primárias */
++    --color-primary: #007AFF;
++    --color-primary-dark: #0051D5;
++    --color-primary-light: #5AC8FA;
++    
++    /* Cores Neutras */
++    --color-background: #FFFFFF;
++    --color-surface: #F5F5F7;
++    --color-surface-elevated: #FFFFFF;
++    
++    /* Texto */
++    --color-text-primary: #1D1D1F;
++    --color-text-secondary: #86868B;
++    --color-text-tertiary: #C7C7CC;
++    
++    /* Feedback */
++    --color-success: #34C759;
++    --color-warning: #FF9500;
++    --color-error: #FF3B30;
++    
++    /* ... (sistema completo fornecido anteriormente) */
++}
++
++@media (prefers-color-scheme: dark) {
++    :root {
++        --color-background: #000000;
++        --color-surface: #1C1C1E;
++        --color-surface-elevated: #2C2C2E;
++        
++        --color-text-primary: #FFFFFF;
++        --color-text-secondary: #98989D;
++        
++        /* ... */
++    }
++}
+
+diff --git a/agenda/templates/agenda/base.html b/agenda/templates/agenda/base.html
+index ......
+--- a/agenda/templates/agenda/base.html
++++ b/agenda/templates/agenda/base.html
+@@ -1,50 +1,120 @@
+ <!DOCTYPE html>
+-<html lang="pt-BR">
++<html lang="pt-BR" data-theme="light">
+ <head>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
++    <meta name="description" content="Hermes - Sistema de Gerenciamento de Agenda">
++    <meta name="theme-color" content="#007AFF">
++    
+     <title>{% block title %}Hermes - Agenda{% endblock %}</title>
++    
+     {% load static %}
+-    <link rel="stylesheet" href="{% static 'agenda/css/style.css' %}">
++    
++    <!-- CSS -->
++    <link rel="stylesheet" href="{% static 'agenda/css/reset.css' %}">
++    <link rel="stylesheet" href="{% static 'agenda/css/variables.css' %}">
++    <link rel="stylesheet" href="{% static 'agenda/css/components.css' %}">
++    <link rel="stylesheet" href="{% static 'agenda/css/layout.css' %}">
++    <link rel="stylesheet" href="{% static 'agenda/css/style.css' %}">
++    
+     {% block extra_css %}{% endblock %}
+ </head>
+ <body>
+-    <nav class="navbar">
++    <!-- Navbar -->
++    <nav class="navbar" role="navigation" aria-label="Navegação principal">
+         <div class="container">
+-            <a href="{% url 'agenda:dashboard' %}" class="logo">Hermes</a>
+-            <ul class="nav-menu">
+-                <li><a href="{% url 'agenda:dashboard' %}">Dashboard</a></li>
+-                <li><a href="{% url 'agenda:event_list' %}">Eventos</a></li>
+-                <li><a href="{% url 'agenda:event_create' %}">Novo Evento</a></li>
+-                <li><a href="{% url 'logout' %}">Sair</a></li>
+-            </ul>
++            <div class="navbar-content">
++                <!-- Logo -->
++                <a href="{% url 'agenda:dashboard' %}" class="logo" aria-label="Ir para dashboard">
++                    <span class="logo-text">Hermes</span>
++                </a>
++                
++                <!-- Menu Desktop -->
++                <ul class="nav-menu" role="menubar">
++                    <li role="none">
++                        <a href="{% url 'agenda:dashboard' %}" role="menuitem" 
++                           class="nav-link {% if request.resolver_match.url_name == 'dashboard' %}active{% endif %}">
++                            <span>Dashboard</span>
++                        </a>
++                    </li>
++                    <li role="none">
++                        <a href="{% url 'agenda:event_list' %}" role="menuitem"
++                           class="nav-link {% if 'event' in request.resolver_match.url_name %}active{% endif %}">
++                            <span>Eventos</span>
++                        </a>
++                    </li>
++                    <li role="none">
++                        <a href="{% url 'agenda:event_create' %}" role="menuitem" class="nav-link btn-primary">
++                            <span>+ Novo Evento</span>
++                        </a>
++                    </li>
++                    <li role="none">
++                        <a href="{% url 'logout' %}" role="menuitem" class="nav-link">
++                            <span>Sair</span>
++                        </a>
++                    </li>
++                </ul>
++                
++                <!-- Botão Menu Mobile -->
++                <button class="nav-toggle" aria-label="Abrir menu" aria-expanded="false">
++                    <span class="nav-toggle-icon"></span>
++                </button>
++            </div>
++            
++            <!-- Menu Mobile -->
++            <div class="nav-mobile" aria-hidden="true">
++                <ul role="menu">
++                    <li role="none"><a href="{% url 'agenda:dashboard' %}" role="menuitem">Dashboard</a></li>
++                    <li role="none"><a href="{% url 'agenda:event_list' %}" role="menuitem">Eventos</a></li>
++                    <li role="none"><a href="{% url 'agenda:event_create' %}" role="menuitem">Novo Evento</a></li>
++                    <li role="none"><a href="{% url 'logout' %}" role="menuitem">Sair</a></li>
++                </ul>
++            </div>
+         </div>
+     </nav>
+     
+-    <main class="main-content">
++    <!-- Main Content -->
++    <main class="main-content" role="main">
+         <div class="container">
++            <!-- Messages -->
+             {% if messages %}
+-                <div class="messages">
++                <div class="messages" role="alert">
+                     {% for message in messages %}
+-                        <div class="alert alert-{{ message.tags }}">
+-                            {{ message }}
++                        <div class="alert alert-{{ message.tags }}" role="status">
++                            <span class="alert-icon"></span>
++                            <span class="alert-message">{{ message }}</span>
++                            <button class="alert-close" aria-label="Fechar mensagem">×</button>
+                         </div>
+                     {% endfor %}
+                 </div>
+             {% endif %}
+             
++            <!-- Content -->
+             {% block content %}{% endblock %}
+         </div>
+     </main>
+     
+-    <footer class="footer">
++    <!-- Footer -->
++    <footer class="footer" role="contentinfo">
+         <div class="container">
+-            <p>&copy; 2024 Hermes - Sistema de Agenda</p>
++            <div class="footer-content">
++                <p class="footer-text">&copy; {% now "Y" %} Hermes - Sistema de Gerenciamento de Agenda</p>
++                <p class="footer-links">
++                    <a href="#">Sobre</a>
++                    <span>·</span>
++                    <a href="#">Ajuda</a>
++                    <span>·</span>
++                    <a href="#">Contato</a>
++                </p>
++            </div>
+         </div>
+     </footer>
+     
++    <!-- JavaScript -->
+     <script src="{% static 'agenda/js/main.js' %}"></script>
+     {% block extra_js %}{% endblock %}
++    
++    <!-- Theme Toggle -->
++    <script>
++        // Detectar preferência de tema
++        if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
++            document.documentElement.setAttribute('data-theme', 'dark');
++        }
++    </script>
+ </body>
+ </html>
+
+diff --git a/hermes/settings.py b/hermes/settings.py
+index ......
+--- a/hermes/settings.py
++++ b/hermes/settings.py
+@@ -10,6 +10,10 @@ SECRET_KEY = config('SECRET_KEY')
+ DEBUG = config('DEBUG', default=False, cast=bool)
+ ALLOWED_HOSTS = config('ALLOWED_HOSTS', default='localhost,127.0.0.1', cast=lambda v: [s.strip() for s in v.split(',')])
+ 
++# Security Settings (Production)
++if not DEBUG:
++    SECURE_SSL_REDIRECT = True
++    SESSION_COOKIE_SECURE = True
++    CSRF_COOKIE_SECURE = True
++    SECURE_BROWSER_XSS_FILTER = True
++    SECURE_CONTENT_TYPE_NOSNIFF = True
++    X_FRAME_OPTIONS = 'DENY'
++
+ INSTALLED_APPS = [
+     'django.contrib.admin',
+@@ -80,9 +90,42 @@ MEDIA_URL = '/media/'
+ MEDIA_ROOT = BASE_DIR / 'media'
+ 
++# Logging Configuration
++LOGGING = {
++    'version': 1,
++    'disable_existing_loggers': False,
++    'formatters': {
++        'verbose': {
++            'format': '{levelname} {asctime} {module} {message}',
++            'style': '{',
++        },
++    },
++    'handlers': {
++        'console': {
++            'class': 'logging.StreamHandler',
++            'formatter': 'verbose',
++        },
++        'file': {
++            'class': 'logging.FileHandler',
++            'filename': BASE_DIR / 'logs' / 'hermes.log',
++            'formatter': 'verbose',
++        },
++    },
++    'root': {
++        'handlers': ['console', 'file'],
++        'level': 'INFO',
++    },
++    'loggers': {
++        'django': {
++            'handlers': ['console', 'file'],
++            'level': 'INFO',
++            'propagate': False,
++        },
++        'agenda': {
++            'handlers': ['console', 'file'],
++            'level': 'DEBUG' if DEBUG else 'INFO',
++            'propagate': False,
++        },
++    },
++}
++
+ # Telegram
+ TELEGRAM_BOT_TOKEN = config('TELEGRAM_BOT_TOKEN', default='')
+ TELEGRAM_CHAT_ID = config('TELEGRAM_CHAT_ID', default='')
+ 
+ # Bernoulli API
+ BERNOULLI_LOGIN_URL = config('BERNOULLI_LOGIN_URL', default='')
+ BERNOULLI_API_URL = config('BERNOULLI_API_URL', default='')
+ BERNOULLI_LOGIN_FIELD_USER = config('BERNOULLI_LOGIN_FIELD_USER', default='')
+ BERNOULLI_LOGIN_FIELD_PASS = config('BERNOULLI_LOGIN_FIELD_PASS', default='')
+ BERNOULLI_TOKEN = config('BERNOULLI_TOKEN', default='')
+ DIAS_INTERVALO = config('DIAS_INTERVALO', default=89, cast=int)
+ 
+-# Configurações adicionais
++# Configurações de aplicação
+ TURMA_PADRAO_NOME = config('TURMA_PADRAO_NOME', default='Turma 01')
+-RIBEIRO_SENHA = config('RIBEIRO_SENHA', default='')  # ⚠️ REMOVER - criar usuário via admin
+
+diff --git a/requirements.txt b/requirements.txt
+index ......
+--- a/requirements.txt
++++ b/requirements.txt
+@@ -1,4 +1,10 @@
+-Django==4.2.7
++Django==4.2.11
+ python-decouple==3.8
+ python-telegram-bot==20.7
+ requests==2.31.0
++Pillow==10.2.0
++django-extensions==3.2.3
++gunicorn==21.2.0
++
++# Development
++ipython==8.21.0
