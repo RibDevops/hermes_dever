@@ -1,51 +1,78 @@
-.env
-*.log
-*.tmp
-cookies.json
-telegram_cfg.json
-agenda*.json
-__pycache__/
-venv/
-
-.env
-__pycache__/
-*.pyc
-*.json
-!exemplo.json
-
-# Ambiente
-.env
-.env.local
-venv/
-.venv/
-__pycache__/
+# Python
 *.py[cod]
 *$py.class
+__pycache__/
+*.so
+.Python
+env/
+venv/
+.venv/
+ENV/
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
 
-# Logs e temporários
+# Django
 *.log
-*.tmp
-*.swp
-*.swo
-*~
+local_settings.py
+db.sqlite3
+db.sqlite3-journal
+/media
+/staticfiles
+/static_collected
 
-# Dados gerados
-agenda*.json
-telegram_cfg.json
-cookies.json
-
-# Banco SQLite
-# *.db
-# *.sqlite3
-# *.db-journal
-# *.db-wal
-
-# PIDs
-*.pid
-
-# Executáveis (nunca versionar binários grandes)
-*.exe
+# Environment
+.env
+.env.local
+.env.*.local
 
 # IDE
 .vscode/
 .idea/
+*.swp
+*.swo
+*~
+.project
+.pydevproject
+.settings/
+
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Coverage
+htmlcov/
+.tox/
+.coverage
+.coverage.*
+coverage.xml
+*.cover
+.hypothesis/
+.pytest_cache/
+
+# Jupyter
+.ipynb_checkpoints
+
+# Temporary
+*.bak
+*.tmp
+*.temp
+*~
+
+# Logs
+*.log
+logs/

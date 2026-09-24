@@ -1,4 +1,22 @@
-Django>=5.0
-requests
-python-dotenv
-cryptography
+# Django
+Django==4.2.7
+
+# Environment
+python-decouple==3.8
+
+# Telegram Bot
+python-telegram-bot==20.7
+
+# HTTP Requests
+requests==2.31.0
+
+# Images
+Pillow==10.1.0
+
+# Timezone
+pytz==2023.3
+
+# Development (opcional)
+# pytest==7.4.3
+# pytest-django==4.7.0
+# coverage==7.3.2
