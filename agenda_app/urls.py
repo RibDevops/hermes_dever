@@ -18,5 +18,10 @@ urlpatterns = [
     path("login/", views.LoginView.as_view(), name="login"),
     path("logout/", auth_views.LogoutView.as_view(), name="logout"),
     path("gerenciamento/", gerenciamento, name="gerenciamento"),
+    path("gerenciamento/turmas/", gerenciamento, {"tab_url": "turmas"}, name="gerenciamento_turmas"),
+    path("gerenciamento/usuarios/", gerenciamento, {"tab_url": "usuarios"}, name="gerenciamento_usuarios"),
+    path("gerenciamento/credenciais/", gerenciamento, {"tab_url": "credenciais"}, name="gerenciamento_credenciais"),
+    path("gerenciamento/tarefas/", gerenciamento, {"tab_url": "tarefas"}, name="gerenciamento_tarefas"),
+    path("gerenciamento/conclusoes/", gerenciamento, {"tab_url": "conclusoes"}, name="gerenciamento_conclusoes"),
     path("portalsecure/", crud_portal, name="crud_portal"),
 ]

@@ -1,9 +1,9 @@
 {% extends "agenda_app/base.html" %}{% block content %}
-<h2>Gerenciamento — {{ tab|capfirst }}</h2>
-<a href="?tab={{ tab }}&acao=criar">+ Novo</a>
-<table><tr><th>ID</th><th>Nome / Título</th><th>Ações</th></tr>
-{% for obj in objetos %}<tr><td>{{ obj.id }}</td><td>{{ obj.nome|default:obj.title|default:obj.username }}</td><td>
-<a href="?tab={{ tab }}&acao=editar&id={{ obj.id }}">Editar</a>
-<form method="post" action="/gerenciamento/" style="display:inline">{% csrf_token %}<input type="hidden" name="tab" value="{{ tab }}"><input type="hidden" name="acao" value="excluir"><input type="hidden" name="id" value="{{ obj.id }}"><button onclick="return confirm('Excluir?')">Excluir</button></form>
-</td></tr>{% endfor %}</table>
+<h2 class="page-title">Gerenciamento — Credenciais do Portal</h2>
+<a href="{% url 'gerenciamento_credenciais' %}?acao=criar" class="btn btn-primary">+ Nova</a>
+<div class="table-wrap"><table class="grid"><tr><th>ID</th><th>Turma</th><th>Usuário Portal</th><th>Atualizada em</th><th>Ações</th></tr>
+{% for obj in portais %}<tr><td>{{ obj.id }}</td><td>{{ obj.turma.nome }}</td><td>{{ obj.usuario_portal }}</td><td>{{ obj.atualizado_em|date:"d/m/Y H:i"|default:"-" }}</td><td>
+<a href="{% url 'gerenciamento_credenciais' %}?acao=editar&id={{ obj.id }}" class="btn">Editar</a>
+<form method="post" action="{% url 'gerenciamento_credenciais' %}" class="inline-form">{% csrf_token %}<input type="hidden" name="acao" value="excluir"><input type="hidden" name="id" value="{{ obj.id }}"><button class="btn btn-danger" onclick="return confirm('Excluir?')">Excluir</button></form>
+</td></tr>{% empty %}<tr><td colspan="5">Nenhuma credencial cadastrada.</td></tr>{% endfor %}</table></div>
 {% endblock %}

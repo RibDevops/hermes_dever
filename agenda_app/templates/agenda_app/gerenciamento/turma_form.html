@@ -1,14 +1,13 @@
 {% extends "agenda_app/base.html" %}
 {% block content %}
-<h2>Gerenciamento — Turma {% if turmas %}Editar{% else %}Criar{% endif %}</h2>
-<form method="post" action="/gerenciamento/">
+<h2 class="page-title">Gerenciamento — Turma {% if obj %}Editar{% else %}Criar{% endif %}</h2>
+<form method="post" class="form-card" action="{% url 'gerenciamento_turmas' %}">
   {% csrf_token %}
-  <input type="hidden" name="tab" value="turmas">
   <input type="hidden" name="acao" value="{% if obj %}salvar{% else %}criar{% endif %}">
   {% if obj %}<input type="hidden" name="id" value="{{ obj.id }}">{% endif %}
-  <label>Nome: <input name="nome" value="{{ obj.nome|default:'' }}" required></label><br>
-  <label>Grade: <input name="grade" value="{{ obj.grade|default:'12' }}"></label><br>
-  <label>Class ID: <input name="class_id" value="{{ obj.class_id|default:'' }}"></label><br>
-  <button>Salvar</button> <a href="/gerenciamento/?tab=turmas">Cancelar</a>
+  <label>Nome: <input name="nome" value="{{ obj.nome|default:'' }}" required></label>
+  <label>Grade: <input name="grade" value="{{ obj.grade|default:'12' }}"></label>
+  <label>Class ID: <input name="class_id" value="{{ obj.class_id|default:'' }}"></label>
+  <button>Salvar</button> <a href="{% url 'gerenciamento_turmas' %}" class="cancel">Cancelar</a>
 </form>
 {% endblock %}

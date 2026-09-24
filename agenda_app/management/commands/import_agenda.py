@@ -102,6 +102,75 @@ def verificar_token_expirado(s):
     except Exception:
         return True  # assume expirado se falhar completamente
 
+
+PORTAL_DOWNLOAD_BASE = "https://mb4.bernoulli.com.br/api/storage/download"
+
+
+def _extrair_author(ev):
+    contact = ev.get("contact") or {}
+    if isinstance(contact, dict):
+        name = contact.get("name") or ""
+        if isinstance(name, str) and name.strip():
+            return name.strip()[:150]
+    for chave in ("author", "autor"):
+        valor = ev.get(chave)
+        if isinstance(valor, str) and valor.strip():
+            return valor.strip()[:150]
+    return ""
+
+
+def _extrair_time(ev):
+    direto = ev.get("time")
+    if isinstance(direto, str) and direto.strip():
+        return direto.strip()[:30]
+    inicio = str(ev.get("startTime") or ev.get("start_time") or "")[:5]
+    fim = str(ev.get("endTime") or ev.get("end_time") or "")[:5]
+    if inicio and fim and fim != inicio:
+        return f"{inicio} – {fim}"[:30]
+    return (inicio or "")[:30]
+
+
+def _extrair_type(ev):
+    tipo = str(ev.get("type") or ev.get("tipo") or "event").strip()[:20]
+    return tipo or "event"
+
+
+def _coletar_links(ev):
+    links = []
+
+    def _add(url):
+        if isinstance(url, str) and url.strip().startswith("http"):
+            url = url.strip()
+            if url not in links:
+                links.append(url)
+
+    for valor in (ev.get("links") or []):
+        if isinstance(valor, str):
+            _add(valor)
+        elif isinstance(valor, dict):
+            _add(valor.get("url") or valor.get("downloadUrl")
+                 or valor.get("download_url") or valor.get("href"))
+
+    anexos = (ev.get("attachments") or ev.get("anexos")
+              or ev.get("files") or [])
+    if isinstance(anexos, dict):
+        anexos = [anexos]
+    for anexo in anexos:
+        if isinstance(anexo, str):
+            _add(anexo)
+            continue
+        if not isinstance(anexo, dict):
+            continue
+        url = (anexo.get("url") or anexo.get("downloadUrl")
+               or anexo.get("download_url") or anexo.get("href") or "")
+        blob = (anexo.get("blobName") or anexo.get("blob_name") or "")
+        if blob and not url:
+            url = f"{PORTAL_DOWNLOAD_BASE}/{blob}"
+        _add(url)
+
+    _add(ev.get("download_url"))
+    return links
+
 class Command(BaseCommand):
     help = "Extrai e importa a agenda de todas as turmas ativas"
 
@@ -132,12 +201,9 @@ class Command(BaseCommand):
             if not eid:
                 continue
             ids_api.add(eid)
-            anexos = (ev.get("attachments") or ev.get("anexos")
-                      or ev.get("files") or [])
-            url = next((a.get("url") or a.get("downloadUrl", "")
-                        for a in anexos
-                        if str(a.get("url", a.get("downloadUrl", "")))
-                        .lower().endswith(".pdf")), "")
+            links = _coletar_links(ev)
+            url = next((u for u in links
+                        if u.lower().split("?")[0].endswith(".pdf")), "")
             _, created = AgendaItem.objects.update_or_create(
                 external_id=eid,
                 defaults={
@@ -146,6 +212,10 @@ class Command(BaseCommand):
                     "title": ev.get("title") or ev.get("titulo", ""),
                     "description": ev.get("description") or ev.get("descricao", ""),
                     "download_url": url or "",
+                    "author": _extrair_author(ev),
+                    "time": _extrair_time(ev),
+                    "type": _extrair_type(ev),
+                    "links": links,
                 })
             if created:
                 criados += 1

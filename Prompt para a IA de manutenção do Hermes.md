@@ -3,7 +3,7 @@
 Copie o texto abaixo para a sua IA de desenvolvimento.
 
 ```text
-Você é a IA responsável pela manutenção do projeto Hermes, um projeto Django em Python que importa eventos de agenda do portal Bernoulli, associa eventos a turmas, permite acompanhar conclusões e pode notificar grupos do Telegram.
+Você é a IA responsável pela manutenção do projeto Hermes Dever, um projeto Django em Python que importa eventos de agenda do portal Bernoulli, associa eventos a turmas, permite acompanhar conclusões e pode notificar grupos do Telegram.
 
 OBJETIVO
 Antes de alterar qualquer arquivo, faça uma varredura completa e construa um mapa confiável do sistema. Aprenda o projeto a partir do código real, não de suposições.

@@ -42,9 +42,7 @@ LIMIT = 100
 TIMEOUT = 30
 BR_TZ = timezone(timedelta(hours=-3))
 
-# Telegram config (seus dados)
-TELEGRAM_BOT_TOKEN = "8982897650:AAGaTtKqDQb-3AGzE2Ejrj82hGFGf5y64l0"
-TELEGRAM_CHAT_ID = "-5380461608"
+
 
 # Output file
 OUTPUT_FILE = "agenda_details.json"

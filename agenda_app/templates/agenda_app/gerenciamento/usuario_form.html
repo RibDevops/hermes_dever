@@ -1,7 +1,11 @@
 {% extends "agenda_app/base.html" %}{% block content %}
-<h2>Gerenciamento — {{ tab|capfirst }} {% if obj %}Editar{% else %}Criar{% endif %}</h2>
-<form method="post" action="/gerenciamento/">{% csrf_token %}<input type="hidden" name="tab" value="{{ tab }}"><input type="hidden" name="acao" value="{% if obj %}salvar{% else %}criar{% endif %}">{% if obj %}<input type="hidden" name="id" value="{{ obj.id }}">{% endif %}
-<label>Nome/Título: <input name="nome" value="{{ obj.nome|default:obj.title|default:'' }}"></label><br>
-<button>Salvar</button> <a href="/gerenciamento/?tab={{ tab }}">Cancelar</a>
+<h2 class="page-title">Gerenciamento — Usuário {% if obj %}Editar{% else %}Criar{% endif %}</h2>
+<form method="post" class="form-card" action="{% url 'gerenciamento_usuarios' %}">{% csrf_token %}<input type="hidden" name="acao" value="{% if obj %}salvar{% else %}criar{% endif %}">{% if obj %}<input type="hidden" name="id" value="{{ obj.id }}">{% endif %}
+<label>Username: <input name="username" value="{{ obj.username|default:'' }}" required></label>
+<label>Email: <input name="email" type="email" value="{{ obj.email|default:'' }}"></label>
+<label>Senha: <input name="password" type="password" {% if not obj %}required{% endif %} placeholder="{% if obj %}vazio = manter{% else %}obrigatória{% endif %}"></label>
+<label>Nome completo: <input name="nome_completo" value="{{ obj.profile.nome_completo|default:'' }}"></label>
+<label>Turma: <select name="turma" required>{% for t in turmas %}<option value="{{ t.id }}" {% if obj and obj.profile.turma_id == t.id %}selected{% endif %}>{{ t.nome }}</option>{% endfor %}</select></label>
+<button>Salvar</button> <a href="{% url 'gerenciamento_usuarios' %}" class="cancel">Cancelar</a>
 </form>
 {% endblock %}

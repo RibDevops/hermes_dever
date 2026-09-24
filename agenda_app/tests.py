@@ -11,7 +11,7 @@ class MigrationIntegrityTests(TestCase):
         leaves = loader.graph.leaf_nodes("agenda_app")
         self.assertEqual(
             leaves,
-            [("agenda_app", "0001_add_portalsecure")],
+            [("agenda_app", "0002_agendaitem_author_agendaitem_links_agendaitem_time_and_more")],
             "agenda_app não deve voltar a ter duas folhas de migração",
         )
 

@@ -1,0 +1,5 @@
+{% extends "agenda_app/base.html" %}{% block content %}
+<h2 class="page-title">Gerenciamento — Conclusões (somente leitura)</h2>
+<div class="table-wrap"><table class="grid"><tr><th>Usuário</th><th>Tarefa</th><th>Concluída</th><th>Atualizada em</th></tr>
+{% for obj in conclusoes %}<tr><td>{{ obj.usuario.username }}</td><td>{{ obj.item.title }}</td><td>{{ obj.concluida }}</td><td>{{ obj.atualizada_em|date:"d/m/Y H:i"|default:"-" }}</td></tr>{% empty %}<tr><td colspan="4">Nenhuma conclusão.</td></tr>{% endfor %}</table></div>
+{% endblock %}

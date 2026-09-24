@@ -1,7 +1,9 @@
 {% extends "agenda_app/base.html" %}{% block content %}
-<h2>Gerenciamento — {{ tab|capfirst }} {% if obj %}Editar{% else %}Criar{% endif %}</h2>
-<form method="post" action="/gerenciamento/">{% csrf_token %}<input type="hidden" name="tab" value="{{ tab }}"><input type="hidden" name="acao" value="{% if obj %}salvar{% else %}criar{% endif %}">{% if obj %}<input type="hidden" name="id" value="{{ obj.id }}">{% endif %}
-<label>Nome/Título: <input name="nome" value="{{ obj.nome|default:obj.title|default:'' }}"></label><br>
-<button>Salvar</button> <a href="/gerenciamento/?tab={{ tab }}">Cancelar</a>
+<h2 class="page-title">Gerenciamento — Credencial {% if obj %}Editar{% else %}Criar{% endif %}</h2>
+<form method="post" class="form-card" action="{% url 'gerenciamento_credenciais' %}">{% csrf_token %}<input type="hidden" name="acao" value="{% if obj %}salvar{% else %}criar{% endif %}">{% if obj %}<input type="hidden" name="id" value="{{ obj.id }}">{% endif %}
+<label>Turma: <select name="turma" required>{% for t in turmas %}<option value="{{ t.id }}" {% if obj and obj.turma_id == t.id %}selected{% endif %}>{{ t.nome }}</option>{% endfor %}</select></label>
+<label>Usuário no portal: <input name="usuario_portal" value="{{ obj.usuario_portal|default:'' }}" required></label>
+<label>Senha: <input name="senha" type="password" {% if not obj %}required{% endif %} placeholder="{% if obj %}vazio = manter{% else %}obrigatória{% endif %}"></label>
+<button>Salvar</button> <a href="{% url 'gerenciamento_credenciais' %}" class="cancel">Cancelar</a>
 </form>
 {% endblock %}

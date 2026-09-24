@@ -61,6 +61,13 @@ class UserProfile(models.Model):
 
 
 class AgendaItem(models.Model):
+    TIPO_CHOICES = [
+        ("task", "Tarefa"),
+        ("event", "Evento"),
+        ("assignment", "Atividade"),
+        ("assessment", "Avaliação"),
+        ("online_class", "Aula online"),
+    ]
     turma = models.ForeignKey(Turma, on_delete=models.CASCADE,
                               related_name="itens", null=True)
     external_id = models.CharField(max_length=100, unique=True)
@@ -68,6 +75,11 @@ class AgendaItem(models.Model):
     title = models.CharField(max_length=255)
     description = models.TextField(blank=True)
     download_url = models.URLField(blank=True, default="")
+    author = models.CharField(max_length=150, blank=True, default="")
+    time = models.CharField(max_length=30, blank=True, default="")
+    type = models.CharField(max_length=20, blank=True, default="event",
+                            choices=TIPO_CHOICES)
+    links = models.JSONField(blank=True, default=list)
     criado_em = models.DateTimeField(auto_now_add=True)
 
     class Meta:

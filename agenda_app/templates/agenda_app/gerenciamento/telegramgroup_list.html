@@ -1,17 +1,17 @@
 {% extends "agenda_app/base.html" %}
 {% block content %}
-<h2>Gerenciamento — Grupos Telegram</h2>
+<h2 class="page-title">Gerenciamento — Grupos Telegram</h2>
 <a href="/gerenciamento/?tab=telegram">+ Novo Grupo</a>
-<table><tr><th>Turma</th><th>Chat ID</th><th>Ativo</th><th>Ações</th></tr>
+<div class="table-wrap"><table class="grid"><tr><th>Turma</th><th>Chat ID</th><th>Ativo</th><th>Ações</th></tr>
 {% for g in telegrams %}<tr>
   <td>{{ g.turma.nome }}</td>
   <td>{{ g.chat_id }}</td>
   <td>{{ g.ativo }}</td>
   <td>
-    <a href="?tab=telegram&acao=editar&id={{ g.id }}">Editar</a>
-    <form method="post" action="/gerenciamento/" style="display:inline">
-      {% csrf_token %}<input type="hidden" name="tab" value="telegram"><input type="hidden" name="acao" value="excluir"><input type="hidden" name="id" value="{{ g.id }}"><button onclick="return confirm('Excluir grupo?')">Excluir</button>
+    <a href="?tab=telegram&acao=editar&id={{ g.id }}" class="btn">Editar</a>
+    <form method="post" action="/gerenciamento/" class="inline-form">
+      {% csrf_token %}<input type="hidden" name="tab" value="telegram"><input type="hidden" name="acao" value="excluir"><input type="hidden" name="id" value="{{ g.id }}"><button class="btn btn-danger" onclick="return confirm('Excluir grupo?')">Excluir</button>
     </form>
   </td>
-</tr>{% endfor %}</table>
+</tr>{% endfor %}</table></div>
 {% endblock %}

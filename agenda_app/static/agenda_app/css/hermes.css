@@ -1,0 +1,141 @@
+/* Hermes — Agenda Escolar | folha de estilos principal (temas dark/light) */
+:root {
+  --bg: #0d0d0f;
+  --surface: #17171b;
+  --surface-2: #1d1d23;
+  --border: #26262c;
+  --text: #e8e8ea;
+  --muted: #9a9aa3;
+  --accent: #4f8cff;
+  --accent-hover: #3b76e1;
+  --green: #22c55e;
+  --yellow: #eab308;
+  --red: #f87171;
+  --sidebar: #000;
+  --radius: 12px;
+  --shadow: 0 2px 12px rgba(0, 0, 0, .35);
+}
+[data-theme="light"] {
+  --bg: #f4f5f7;
+  --surface: #fff;
+  --surface-2: #f0f1f4;
+  --border: #e2e4e9;
+  --text: #17171b;
+  --muted: #6b6b74;
+  --sidebar: #111114;
+  --shadow: 0 2px 10px rgba(0, 0, 0, .08);
+}
+
+* { margin: 0; box-sizing: border-box; font-family: system-ui, -apple-system, "Segoe UI", sans-serif; }
+body { background: var(--bg); color: var(--text); display: flex; min-height: 100vh; }
+a { color: var(--accent); }
+.muted { color: var(--muted); }
+
+/* ── Layout ─────────────────────────────────────────── */
+.sidebar {
+  width: 240px; background: var(--sidebar); color: #e8e8ea;
+  padding: 16px 0; position: fixed; height: 100vh; overflow-y: auto;
+  z-index: 50; transition: transform .25s;
+}
+.sidebar .brand { padding: 8px 20px 18px; font-weight: 700; font-size: 1.05rem; border-bottom: 1px solid #1d1d22; }
+.sidebar .turma-badge { display: block; margin: 12px 20px 4px; padding: 8px 12px; background: #1b1b20; border-radius: 8px; font-size: .8rem; color: #9a9aa3; }
+.sidebar .turma-badge b { display: block; color: #e8e8ea; font-size: .95rem; }
+.sidebar a { display: flex; align-items: center; gap: 10px; padding: 10px 20px; color: #c9c9d1; text-decoration: none; font-size: .92rem; }
+.sidebar a:hover, .sidebar a.active { background: #1b1b20; color: #fff; border-left: 3px solid var(--accent); }
+.sidebar .section { padding: 16px 20px 6px; font-size: .7rem; letter-spacing: .12em; text-transform: uppercase; color: #6f6f78; }
+.sidebar form { padding: 6px 20px; }
+.sidebar button.sair { width: 100%; background: none; border: none; color: var(--red); cursor: pointer; padding: 10px 0; text-align: left; font-size: .92rem; }
+.sidebar .user-label { padding: 4px 20px; font-size: .85rem; color: #9a9aa3; }
+
+.content { margin-left: 240px; flex: 1; padding: 20px 28px; width: calc(100% - 240px); max-width: 1100px; }
+.topbar { display: flex; align-items: center; gap: 14px; margin-bottom: 20px; }
+.hamburger { display: none; background: none; border: 1px solid var(--border); color: var(--text); border-radius: 8px; padding: 8px 12px; cursor: pointer; font-size: 1.1rem; }
+.theme-btn { margin-left: auto; background: var(--surface); border: 1px solid var(--border); color: var(--text); border-radius: 8px; padding: 8px 12px; cursor: pointer; }
+.theme-btn:hover { border-color: var(--accent); }
+.overlay { display: none; position: fixed; inset: 0; background: rgba(0, 0, 0, .5); z-index: 40; }
+.overlay.show { display: block; }
+
+/* ── Títulos / filtros ──────────────────────────────── */
+.page-title { margin-bottom: 16px; font-size: 1.25rem; }
+.filters { display: flex; gap: 8px; margin-bottom: 18px; flex-wrap: wrap; }
+.filters a { padding: 7px 16px; border-radius: 999px; text-decoration: none; font-size: .85rem; background: var(--surface); color: var(--muted); border: 1px solid var(--border); }
+.filters a:hover { border-color: var(--accent); color: var(--text); }
+.filters a.active { background: var(--accent); color: #fff; border-color: var(--accent); }
+.tabs { display: flex; gap: 8px; margin-bottom: 16px; flex-wrap: wrap; }
+
+/* ── Cards de tarefas ───────────────────────────────── */
+.card {
+  background: var(--surface); border: 1px solid var(--border);
+  border-radius: var(--radius); padding: 16px; margin-bottom: 12px;
+  display: flex; gap: 14px; align-items: flex-start; box-shadow: var(--shadow);
+}
+.card:hover { border-color: var(--accent); }
+.card-body { flex: 1; min-width: 0; }
+.card h3 { font-size: .98rem; margin-bottom: 4px; }
+.card .data { font-size: .8rem; color: var(--muted); }
+.card .data a { margin-right: 12px; }
+.card .desc { font-size: .88rem; color: var(--muted); margin-top: 6px; }
+.card details.desc-full { margin-top: 6px; font-size: .88rem; color: var(--muted); }
+.card details.desc-full summary { cursor: pointer; color: var(--accent); }
+.card details.desc-full .full-text { margin-top: 6px; white-space: pre-wrap; }
+.card .links { margin-top: 6px; }
+.day-section-title { color: var(--muted); margin: 18px 0 8px; font-size: 1rem; }
+.empty-state { color: var(--muted); padding: 32px 0; text-align: center; }
+
+.badge { font-size: .7rem; font-weight: 700; padding: 3px 10px; border-radius: 999px; white-space: nowrap; }
+.badge.ok { background: rgba(34, 197, 94, .15); color: var(--green); }
+.badge.pend { background: rgba(234, 179, 8, .15); color: var(--yellow); }
+.toggle-btn {
+  margin-left: auto; flex-shrink: 0; background: none;
+  border: 1px solid var(--border); border-radius: 8px; padding: 8px 14px;
+  cursor: pointer; color: var(--text); font-size: .85rem;
+}
+.toggle-btn:hover { border-color: var(--green); }
+.toggle-btn.on { background: var(--green); border-color: var(--green); color: #04120a; font-weight: 700; }
+
+/* ── Botões / formulários ───────────────────────────── */
+.btn { display: inline-block; padding: 8px 14px; border-radius: 8px; border: 1px solid var(--border); background: var(--surface-2); color: var(--text); font-size: .85rem; text-decoration: none; cursor: pointer; }
+.btn:hover { border-color: var(--accent); }
+.btn-primary { background: var(--accent); border-color: var(--accent); color: #fff; font-weight: 700; }
+.btn-primary:hover { background: var(--accent-hover); }
+.btn-danger { background: none; border-color: var(--red); color: var(--red); }
+.btn-danger:hover { background: var(--red); color: #fff; }
+.inline-form { display: inline; }
+.form-card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 20px; max-width: 560px; box-shadow: var(--shadow); }
+.form-card h2 { margin-bottom: 16px; font-size: 1.1rem; }
+.form-card label { display: block; margin-bottom: 12px; font-size: .9rem; }
+.form-card input, .form-card select {
+  width: 100%; padding: 10px 12px; margin-top: 4px; border-radius: 8px;
+  border: 1px solid var(--border); background: var(--bg); color: var(--text);
+}
+.form-card input:focus, .form-card select:focus { outline: none; border-color: var(--accent); }
+.form-card button { padding: 10px 18px; border: none; border-radius: 8px; background: var(--accent); color: #fff; font-weight: 700; cursor: pointer; }
+.form-card a.cancel { margin-left: 10px; font-size: .9rem; }
+
+/* ── Tabelas (gerenciamento) ────────────────────────── */
+.table-wrap { overflow-x: auto; background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); box-shadow: var(--shadow); }
+table.grid { width: 100%; border-collapse: collapse; font-size: .88rem; }
+table.grid th, table.grid td { padding: 10px 14px; text-align: left; border-bottom: 1px solid var(--border); }
+table.grid th { background: var(--surface-2); color: var(--muted); font-size: .75rem; text-transform: uppercase; letter-spacing: .06em; }
+table.grid tr:last-child td { border-bottom: none; }
+table.grid tr:hover td { background: var(--surface-2); }
+
+/* ── Login ──────────────────────────────────────────── */
+.login-wrap { display: flex; justify-content: center; align-items: center; min-height: 100vh; width: 100%; }
+.login-card { background: var(--surface); border: 1px solid var(--border); border-radius: 14px; padding: 32px; width: min(360px, 92vw); box-shadow: var(--shadow); }
+.login-card h1 { font-size: 1.3rem; margin-bottom: 20px; text-align: center; }
+.login-card input { width: 100%; padding: 12px; margin-bottom: 12px; border-radius: 8px; border: 1px solid var(--border); background: var(--bg); color: var(--text); }
+.login-card input:focus { outline: none; border-color: var(--accent); }
+.login-card button { width: 100%; padding: 12px; border: none; border-radius: 8px; background: var(--accent); color: #fff; font-weight: 700; cursor: pointer; }
+.login-card button:hover { background: var(--accent-hover); }
+.login-card .err { color: var(--red); font-size: .85rem; margin-bottom: 12px; text-align: center; }
+
+/* ── Responsivo ─────────────────────────────────────── */
+@media (max-width: 768px) {
+  .sidebar { transform: translateX(-100%); }
+  .sidebar.open { transform: translateX(0); }
+  .content { margin-left: 0; width: 100%; padding: 14px; }
+  .hamburger { display: block; }
+  .card { flex-direction: column; }
+  .toggle-btn { margin-left: 0; width: 100%; }
+}

@@ -7,12 +7,22 @@
 </div>
 {% for item in itens %}
 <div class="card">
-  <div style="flex:1">
+  <div class="card-body">
     <h3>{{ item.title }}</h3>
-    <div class="data">📅 {{ item.date }}
-      {% if item.download_url %} · <a href="{{ item.download_url }}" target="_blank">📄 PDF</a>{% endif %}
+    <div class="data">{% if item.type == "task" %}📝 Tarefa{% elif item.type == "assignment" %}📚 Atividade{% elif item.type == "assessment" %}📝 Avaliação{% elif item.type == "online_class" %}💻 Aula online{% elif item.type == "event" %}📅 Evento{% elif item.type %}📌 {{ item.type }}{% endif %} · 📅 {{ item.date }}{% if item.time %} · ⏰ {{ item.time }}{% endif %}{% if item.author %} · 👤 {{ item.author }}{% endif %}</div>
+    {% if item.description %}
+    <details class="desc-full">
+      <summary>Ver descrição</summary>
+      <div class="full-text">{{ item.description|striptags }}</div>
+    </details>
+    {% endif %}
+    {% if item.links %}
+    <div class="data links">
+      {% for link in item.links %}<a href="{{ link }}" target="_blank">{% if ".pdf" in link|lower %}📄 PDF{% elif ".png" in link|lower or ".jpg" in link|lower or ".jpeg" in link|lower %}🖼️ PNG/IMG{% elif ".docx" in link|lower or ".doc" in link|lower %}📝 DOCX{% else %}📎 Anexo {{ forloop.counter }}{% endif %}</a>{% endfor %}
     </div>
-    <div class="desc">{{ item.description|striptags|truncatechars:200 }}</div>
+    {% elif item.download_url %}
+    <div class="data links"><a href="{{ item.download_url }}" target="_blank">📄 PDF</a></div>
+    {% endif %}
   </div>
   {% if item.concluida %}<span class="badge ok">Concluído</span>
   {% else %}<span class="badge pend">Pendente</span>{% endif %}
@@ -21,6 +31,6 @@
     {% if item.concluida %}✓ Concluído{% else %}Marcar concluído{% endif %}
   </button>
 </div>
-{% empty %}<p style="color:var(--muted)">Nenhuma tarefa neste filtro.</p>
+{% empty %}<p class="empty-state">Nenhuma tarefa neste filtro.</p>
 {% endfor %}
 {% endblock %}

@@ -1,9 +1,9 @@
 {% extends "agenda_app/base.html" %}
 {% block content %}
-<h2>Confirmar exclusão</h2>
+<h2 class="page-title">Confirmar exclusão</h2>
 <p>Deseja excluir a turma <strong>{{ obj.nome }}</strong>?</p>
-<form method="post" action="/gerenciamento/">
-  {% csrf_token %}<input type="hidden" name="tab" value="turmas"><input type="hidden" name="acao" value="excluir_confirmado"><input type="hidden" name="id" value="{{ obj.id }}">
-  <button>Sim, excluir</button> <a href="/gerenciamento/?tab=turmas">Cancelar</a>
+<form method="post" class="form-card" action="{% url 'gerenciamento_turmas' %}">
+  {% csrf_token %}<input type="hidden" name="acao" value="excluir_confirmado"><input type="hidden" name="id" value="{{ obj.id }}">
+  <button class="btn btn-danger">Sim, excluir</button> <a href="{% url 'gerenciamento_turmas' %}" class="cancel">Cancelar</a>
 </form>
 {% endblock %}

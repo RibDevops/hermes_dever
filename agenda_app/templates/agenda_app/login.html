@@ -1,24 +1,17 @@
 <!DOCTYPE html>
 <html lang="pt-br" data-theme="dark"><head><meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1"><title>Login</title>
-<style>
-:root{--bg:#0d0d0f;--surface:#17171b;--border:#26262c;--text:#e8e8ea;--accent:#4f8cff}
-body{background:var(--bg);color:var(--text);font-family:system-ui;display:flex;
-justify-content:center;align-items:center;min-height:100vh;margin:0}
-form{background:var(--surface);border:1px solid var(--border);border-radius:14px;
-padding:32px;width:min(360px,92vw)}
-h1{font-size:1.3rem;margin-bottom:20px;text-align:center}
-input{width:100%;padding:12px;margin-bottom:12px;border-radius:8px;
-border:1px solid var(--border);background:var(--bg);color:var(--text);
-box-sizing:border-box}
-button{width:100%;padding:12px;border:none;border-radius:8px;background:var(--accent);
-color:#fff;font-weight:700;cursor:pointer}
-.err{color:#f87171;font-size:.85rem;margin-bottom:12px;text-align:center}
-</style></head><body>
-<form method="post">{% csrf_token %}
+{% load static %}
+<link rel="stylesheet" href="{% static 'agenda_app/css/hermes.css' %}">
+</head><body>
+<div class="login-wrap">
+<form method="post" class="login-card">{% csrf_token %}
   <h1>🗓️ Agenda Escolar</h1>
   {% if form.errors %}<div class="err">Usuário ou senha inválidos.</div>{% endif %}
   <input type="text" name="username" placeholder="Usuário" required autofocus>
   <input type="password" name="password" placeholder="Senha" required>
   <button>Entrar</button>
-</form></body></html>
+</form>
+</div>
+<script>document.documentElement.dataset.theme=localStorage.getItem('theme')||'dark';</script>
+</body></html>

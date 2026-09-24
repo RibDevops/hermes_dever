@@ -30,8 +30,8 @@ class AlunoAdmin(admin.ModelAdmin):
 
 @admin.register(AgendaItem)
 class ItemAdmin(admin.ModelAdmin):
-    list_display = ("date", "title", "turma")
-    list_filter = ("turma",)
+    list_display = ("date", "title", "turma", "type", "author")
+    list_filter = ("turma", "type")
 
 
 @admin.register(Conclusao)

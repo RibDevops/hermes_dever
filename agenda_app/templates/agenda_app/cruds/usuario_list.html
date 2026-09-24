@@ -1,5 +1,5 @@
 {% extends "agenda_app/base.html" %}{% block content %}
-<h2>Usuários</h2><table><tr><th>Username</th><th>Turma</th></tr>
-{% for u in usuarios %}<tr><td>{{u.username}}</td><td>{{u.profile.turma.nome}}</td></tr>{% endfor %}</table>
+<h2 class="page-title">Usuários</h2><div class="table-wrap"><table class="grid"><tr><th>Username</th><th>Turma</th></tr>
+{% for u in usuarios %}<tr><td>{{u.username}}</td><td>{{u.profile.turma.nome}}</td></tr>{% endfor %}</table></div>
 <form method="post">{% csrf_token %}<input name="username"><input name="password" type="password"><select name="turma">{% for t in turmas %}<option value="{{t.id}}">{{t.nome}}</option>{% endfor %}</select><button>+ Usuário</button></form>
 {% endblock %}
